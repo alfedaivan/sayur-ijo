@@ -30,8 +30,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="{{url('/assets/TemplateUser/js/move-top.js')}}"></script>
 
 <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
-
-</script>
 <!-- start-smoth-scrolling -->
 </head>
 
@@ -43,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="#offers">Our Popular Products !!</a>
 		</div>
 		<div class="product_list_header">
-			<a href="checkout.html" class="button-cart">
+			<a href="{{url('/checkout')}}" class="button-cart">
 				<span>View My Cart</span>
 			</a>
 		</div>
@@ -53,12 +51,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="logo_products">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
-				<h1><a href="index.html"><span>Grocery</span> Store</a></h1>
+				<h1><a href="{{url('/')}}"><span>Grocery</span> Store</a></h1>
 			</div>
 			<div class="w3ls_logo_products_left1" id="menu">
 				<ul class="special_items">
-					<li><a href="index.html" class="active">Home</a><i>/</i></li>
-					<li><a href="products.html">Product</a><i>/</i></li>
+					<li><a href="{{url('/')}}">Home</a><i>/</i></li>
+					<li><a href="{{url('/product')}}">Product</a><i>/</i></li>
 					<li><a href="#footer">About Us</a></li>
 				</ul>
 			</div>
@@ -80,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="w3l_banner_nav_right_banner">
 							<h3>Make your <span>food</span> with Spicy.</h3>
 							<div class="more">
-								<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 							</div>
 						</div>
 					</li>
@@ -88,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="w3l_banner_nav_right_banner1">
 							<h3>Make your <span>food</span> with Spicy.</h3>
 							<div class="more">
-								<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 							</div>
 						</div>
 					</li>
@@ -96,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="w3l_banner_nav_right_banner2">
 							<h3>upto <i>50%</i> off.</h3>
 							<div class="more">
-								<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
 							</div>
 						</div>
 					</li>
@@ -106,10 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- flexSlider -->
             <link rel="stylesheet" href="{{url('/assets/TemplateUser/css/flexslider.css')}}" type="text/css" media="screen" property="" />
             <script defer src="{{url('/assets/TemplateUser/js/jquery.flexslider.js')}}"></script>
-
-			<script type="text/javascript">
-
-		  </script>
+			<script type="text/javascript"></script>
 		<!-- //flexSlider -->
 	</div>
 	<!-- end hero banner -->
@@ -136,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -157,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -178,7 +173,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -199,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -220,7 +215,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -241,7 +236,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -262,7 +257,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -283,7 +278,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="checkout.html" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -328,8 +323,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-md-4 w3_footer_grid">
 			<h3>what in stores</h3>
 			<ul class="w3_footer_grid_list">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="products.html">Products</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
+				<li><a href="{{url('/product')}}">Products</a></li>
 				<li><a href="#about">About</a></li>
 			</ul>
 		</div>
@@ -342,7 +337,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //footer -->
 
 <script src="{{url('/assets/TemplateUser/js/bootstrap.min.js')}}"></script>
-
 <script type="text/javascript" src="{{url('/assets/TemplateUser/js/index.js')}}"> </script>
 
 

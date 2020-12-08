@@ -90,7 +90,7 @@ ul.agileits_social_icons li a,
 	float: left;
     width: 27%;
 	margin:.1em 0 0em 10em;
-	
+
 }
 .w3l_search input[type="text"]{
 	outline: none;
@@ -165,7 +165,7 @@ ul.agileits_social_icons li a,
 /*-- login --*/
 
 
-  
+
   /* Form Module */
   .w3_login{
 	  transform: translateY(-20%);
@@ -254,7 +254,7 @@ ul.agileits_social_icons li a,
 	margin-top: -2em;
 	margin-bottom: 5em;
 	text-align: center !important;
-	
+
 }
 .pagination ul{
 	justify-content: center;
@@ -361,6 +361,53 @@ ul.agileits_social_icons li a,
     width: 20%;
     text-align: center;
     margin-left:59em;
+}
+
+/* Saqui */
+.button--saqui {
+	overflow: hidden;
+	-webkit-transition: background-color 0.3s ease-in, color 0.3s ease-in;
+	transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+.button--saqui.button--inverted {
+	background: #fff;
+	color: #37474f;
+}
+.button--saqui::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 9px 30px;
+    color: #FFFFFF;
+	-webkit-transform-origin: -25% 50%;
+	transform-origin: -25% 50%;
+	-webkit-transform: rotate3d(0, 0, 1, 45deg);
+	transform: rotate3d(0, 0, 1, 45deg);
+	-webkit-transition: -webkit-transform 0.3s ease-in;
+	transition: transform 0.3s ease-in;
+}
+.button--saqui.button--inverted::after {
+	color: #fff;
+}
+.button--saqui:hover::after,
+.button--saqui:hover {
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.button--saqui:hover {
+	background-color: #FA1818;
+	color: #656060;
+}
+.button--saqui.button--inverted:hover {
+	background-color: #3f51b5;
+	color: #3f51b5;
+}
+.button--saqui:hover::after {
+	-webkit-transform: rotate3d(0, 0, 1, 0deg);
+	transform: rotate3d(0, 0, 1, 0deg);
 }
 
 /*-- //banner --*/
@@ -490,8 +537,6 @@ a.btn.btn-primary {
     border: none;
 }
 
-webkit-appearance: none;
-}
  select.form-control.option-w3ls {
     width: 100%;
     padding: 1em 1em 1em 1em;
@@ -718,7 +763,7 @@ button.submit.check_out:hover{
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -744,31 +789,31 @@ button.submit.check_out:hover{
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    
+
     -moz-animation-name: blinker;
     -moz-animation-duration: 2s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
-    
+
     animation-name: blinker;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-@-moz-keyframes blinker {  
+@-moz-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker {  
+@-webkit-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinker {  
+@keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
@@ -845,7 +890,7 @@ li.list-group-item1 {
 .label {
 	font-weight: 300 !important;
 	border-radius:4px;
-}  
+}
 .grid_5{
 	background:none;
 	padding:2em 0;
@@ -1134,12 +1179,12 @@ td.invert-image a img {
 }
 .quantity-select .entry.value-minus:before,
 .quantity-select .entry.value-plus:before{
-	content: ""; 
+	content: "";
 	width: 13px;
-	height: 2px; 
+	height: 2px;
 	background: #000;
 	left: 50%;
-	margin-left: -7px; 
+	margin-left: -7px;
 	top: 50%;
 	margin-top: -0.5px;
 	position: absolute;
@@ -1147,9 +1192,9 @@ td.invert-image a img {
 .quantity-select .entry.value-plus:after{
 	content: "";
 	height: 13px;
-	width: 2px; 
+	width: 2px;
 	background: #000;
-	left: 50%; 
+	left: 50%;
 	margin-left: -1.4px;
     top: 50%;
     margin-top: -6.2px;
@@ -1234,7 +1279,7 @@ td.invert-image a img {
 		border-bottom-color: #fff;
 		border-left-color: #fff;
 	}
-} 
+}
 /*-- //checkout --*/
 
 /*-----start-responsive-design------*/
@@ -2199,7 +2244,7 @@ td.invert-image a img {
 	.w3ls_logo_products_left1:nth-child(3) {
 		margin: 0.5em 0 1em;
 	}
-	
+
 	.more a {
 		font-size: 13px;
 	}
@@ -2220,7 +2265,7 @@ td.invert-image a img {
 		width: 390px;
 	}
 
-	
+
 	.view p {
 		font-size: 13px;
 	}
@@ -2306,7 +2351,7 @@ td.invert-image a img {
 	}
 	.modal-dialog {
 		width: 290px;
-	}	
+	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 3px !important;
 	}
@@ -2327,7 +2372,7 @@ td.invert-image a img {
 }
 
 @media (max-width: 375px){
-	
+
 	.view p {
 		padding: 10px 10px 0px;
 	}
@@ -2394,8 +2439,8 @@ td.invert-image a img {
 		width: 100%;
 	}
 	.agile_top_brand_left_grid1 p,
-	.agileinfo_mail_grid_right input[type="text"], 
-	.agileinfo_mail_grid_right input[type="email"], 
+	.agileinfo_mail_grid_right input[type="text"],
+	.agileinfo_mail_grid_right input[type="email"],
 	.agileinfo_mail_grid_right textarea,
 	.w3agile_event_grid_right p,
 	p.animi,
