@@ -24,7 +24,7 @@
 
 <body>
   <div id="app">
-    <div class="main-wrapper">
+  <div class="main-wrapper">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
@@ -35,7 +35,7 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <img alt="image" src="{{url('/assets/TemplateAdmin/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="#" class="dropdown-item has-icon text-danger">
@@ -49,28 +49,28 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="dashboard.html">Toko Sayur</a>
+            <a href="{{url('/dashboard')}}">Toko Sayur</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="dashboard.html">Tk</a>
+            <a href="{{url('/dashboard')}}">Tk</a>
           </div>
           <ul class="sidebar-menu">
-              <li class="nav-item dropdown active">
-                <a href="dashboard.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard <i class="nav-arrow fas fa-chevron-right"></i></span></a>
+              <li class="nav-item active">
+                <a href="{{url('/dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard <i class="nav-arrow fas fa-chevron-right" style=""></i></span></a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a href="produk.html" class="nav-link"><i class="fas fa-cube"></i><span>Produk </span></a>
+              <li class="nav-item ">
+                <a href="{{url('/dashboard/product')}}" class="nav-link"><i class="fas fa-cube"></i><span>Produk </span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a href="kategori.html" class="nav-link"><i class="fas fa-th-large"></i><span>Kategori</span></a>
+              <li class="nav-item ">
+                <a href="{{url('/dashboard/category')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Kategori</span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a href="riwayat.html" class="nav-link"><i class="fas fa-history"></i><span>Riwayat Transaksi</span></a>
+              <li class="nav-item ">
+                <a href="{{url('/dashboard/transaction')}}" class="nav-link"><i class="fas fa-history"></i><span>Riwayat Transaksi</span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a href="user.html" class="nav-link"><i class="fas fa-user"></i><span>Pengguna</span></a>
+              <li class="nav-item ">
+                <a href="{{url('/dashboard/user')}}" class="nav-link"><i class="fas fa-user"></i><span>Pengguna</span></a>
               </li>
+            </ul>
         </aside>
       </div>
 
@@ -163,14 +163,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="{{url('/assets/TemplateAdmin/assets/js/stisla.js')}}"></script>
-
-  <!-- JS Libraies -->
-  <script src="{{url('/assets/TemplateAdmin/node_modules/simpleweather/jquery.simpleWeather.min.js')}}"></script>
-  <script src="{{url('/assets/TemplateAdmin/chart.js/dist/Chart.min.js')}}"></script>
-  <script src="{{url('/assets/TemplateAdmin/jqvmap/dist/jquery.vmap.min.js')}}"></script>
-  <script src="{{url('/assets/TemplateAdmin/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
-  <script src="{{url('/assets/TemplateAdmin/summernote/dist/summernote-bs4.js')}}"></script>
-  <script src="{{url('/assets/TemplateAdmin/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
 
   <!-- Template JS File -->
   <script src="{{url('/assets/TemplateAdmin/assets/js/scripts.js')}}"></script>

@@ -1434,6 +1434,13 @@ table tr:hover .table-links {
   font-size: 12px;
 }
 
+.nav-arrow {
+  position: absolute !important;
+  right: 0;
+  margin-right: 3% !important;
+  transform: translateY(55%);
+}
+
 /* 3.10 Pagination */
 .page-item .page-link {
   color: #6777ef;
