@@ -18,3 +18,4 @@ Route::get('/', 'App\Http\Controllers\UserController@Index');
 Route::get('/product', 'App\Http\Controllers\UserController@Product');
 Route::get('/checkout', 'App\Http\Controllers\UserController@Checkout');
 Route::get('/login', 'App\Http\Controllers\UserController@Login');
+Route::get('/dashboard', 'App\Http\Controllers\AdminController@Dashboard');
