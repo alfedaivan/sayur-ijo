@@ -103,14 +103,17 @@
                         <th>Nama</th>
                         <th>Action</th>
                       </tr>
+                      @php $no = 1; @endphp
+                      @foreach($kategori as $k)
                       <tr>
-                        <td>1</td>
-                        <td>Buah</td>
+                        <td>{{$no++}}</td>
+                        <td>{{$k -> kategori}}</td>
                         <td>
-                          <a href="{{url('/dashboard/category/edit')}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a>
+                          <a href="/dashboard/category/edit/{{$k->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
+                          <a href="/dashboard/category/hapus/{{$k->id}}" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
+                      @endforeach
                     </table>
                   </div>
                 </div>

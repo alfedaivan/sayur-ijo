@@ -29,7 +29,10 @@ Route::get('/dashboard/product/edit', 'App\Http\Controllers\AdminController@Prod
 // category
 Route::get('/dashboard/category', 'App\Http\Controllers\AdminController@Category');
 Route::get('/dashboard/category/add', 'App\Http\Controllers\AdminController@CategoryAdd');
-Route::get('/dashboard/category/edit', 'App\Http\Controllers\AdminController@CategoryEdit');
+Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\AdminController@CategoryAddValidation');
+Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\AdminController@CategoryEdit');
+Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\AdminController@CategoryEditValidation');
+Route::get('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete');
 // transaction
 Route::get('/dashboard/transaction', 'App\Http\Controllers\AdminController@Transaction');
 // user

@@ -76,20 +76,21 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                <form class="needs-validation" novalidate="">
+                <form method="post" action="/dashboard/category/addvalidation" >
+                {{csrf_field()}}
                   <div class="card-header">
                     <h4>Informasi Kategori</h4>
                   </div>
                   <div class="card-body">
 
                     <div class="form-group">
-                      <label>Nama</label>
-                      <input type="text" class="form-control" required="">
+                      <label>Nama Kategori</label>
+                      <input type="text" name="kategori" class="form-control" required="">
                     </div>
 
                   </div>
                   <div class="card-footer text-center">
-                    <button class="btn btn-primary" style="width: 100%;">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" value="Simpan">Submit</button>
                   </div>
 
                 </form>
