@@ -59,7 +59,7 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    // transaction
+     // transaction
     public function Transaction(){
         return view('admin/transaction/tbl_transaction');
     }
