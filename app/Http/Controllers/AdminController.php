@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
 // pages controllers
     public function Dashboard(){
-        return view('admin/dashboard');
+        return view('admin/dashboard/dashboard');
     }
     // product
     public function Product(){
