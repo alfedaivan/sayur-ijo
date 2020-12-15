@@ -53,40 +53,27 @@
                         <td>
                           <a href="/dashboard/category/edit/{{$k->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                           <a href="/dashboard/category/hapus/{{$k->id}}" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a>
-                          <!-- <a href="{{url('/dashboard/category/edit')}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData"><i class="fas fa-trash"></i></a> -->
+                          <!-- <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$k->id}}"><i class="fas fa-trash"></i></a> -->
                         </td>
                       </tr>
                       @endforeach
                     </table>
                   </div>
                 </div>
-                <div class="card-footer text-right">
-                  <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+
+                {{ $kategori->links('admin.vendor.pagination') }}
+
               </div>
             </div>
           </div>
         </section>
 
-        <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+        <!-- @foreach($kategori as $kt)
+        <div class="modal fade" id="deleteData{{$kt->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <form action="#">
+                <form action="/dashboard/category/hapus/{id}" method="post">
+
                     <div class="modal-header">
                     <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
                     </div>
@@ -95,18 +82,21 @@
                     <div class="form-group">
                         <h6>
                         <br>
-                            Yakin Ingin Menghapus <b>Apel</b> ?
+                            Yakin Ingin Menghapus <b>{{$kt -> kategori}}</b> ?
                         </h6>
                     </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-danger">Hapus</button>
+                    @csrf
+                    {{method_field('delete')}}
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
                     </div>
                 </form>
                 </div>
             </div>
         </div>
+        @endforeach -->
 
       </div>
 

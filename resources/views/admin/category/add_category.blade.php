@@ -7,6 +7,7 @@
     <div class="main-wrapper">
         @include('admin.toolbar')
         @include('admin.category.sidebarCategory')
+
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">

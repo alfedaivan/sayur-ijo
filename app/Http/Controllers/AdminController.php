@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\DB;
+
 
 class AdminController extends Controller
 {
@@ -21,11 +23,15 @@ class AdminController extends Controller
     public function ProductEdit(){
         return view('admin/product/edit_product');
     }
+    // end
 
     // category
     public function Category(){
-        $kategori = Kategori::all();
-        return view('admin/category/tbl_category',['kategori' => $kategori]);
+        $kategori = Kategori::paginate(5);
+        // $kategori = Kategori::all()->paginate(5);
+        // $kategori = DB::table('kategoris')->paginate(5);
+        return view('admin/category/tbl_category',
+        ['kategori' => $kategori]);
     }
     public function CategoryAdd(){
         return view('admin/category/add_category');
@@ -59,10 +65,15 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    // end
+
      // transaction
     public function Transaction(){
         return view('admin/transaction/tbl_transaction');
     }
+    // end
+
+
     // user
     public function User(){
         return view('admin/user/tbl_user');
@@ -73,4 +84,5 @@ class AdminController extends Controller
     public function UserEdit(){
         return view('admin/user/edit_user');
     }
+    // end
 }
