@@ -26,9 +26,9 @@
                     </div>
                   </h4>
                   <div class="card-header-form">
-                    <form>
+                    <form action="/dashboard/category" method="GET">
                       <div class="input-group ">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" name="term" id="term" class="form-control" placeholder="Search">
                         <div class="input-group-btn">
                           <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                         </div>
@@ -67,37 +67,6 @@
             </div>
           </div>
         </section>
-
-        <!-- @foreach($kategori as $kt)
-        <div class="modal fade" id="deleteData{{$kt->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <form action="/dashboard/category/hapus/{id}" method="post">
-
-                    <div class="modal-header">
-                    <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
-                    </div>
-                    <hr>
-                    <div class="modal-body">
-                    <div class="form-group">
-                        <h6>
-                        <br>
-                            Yakin Ingin Menghapus <b>{{$kt -> kategori}}</b> ?
-                        </h6>
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                    @csrf
-                    {{method_field('delete')}}
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-danger">Hapus</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-        </div>
-        @endforeach -->
-
       </div>
 
 

@@ -26,12 +26,17 @@ class AdminController extends Controller
     // end
 
     // category
-    public function Category(){
-        $kategori = Kategori::paginate(5);
-        // $kategori = Kategori::all()->paginate(5);
-        // $kategori = DB::table('kategoris')->paginate(5);
-        return view('admin/category/tbl_category',
-        ['kategori' => $kategori]);
+    public function Category(Request $request){
+        // $kategori = Kategori::paginate(5);
+        $kategori = Kategori::where([
+            ['kategori', '!=', NULL],
+            [function ($query) use ($request){
+                if(($term = $request->term)){
+                    $query->orWhere('kategori', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ]) -> paginate(5);
+        return view('admin/category/tbl_category', ['kategori' => $kategori]);
     }
     public function CategoryAdd(){
         return view('admin/category/add_category');
