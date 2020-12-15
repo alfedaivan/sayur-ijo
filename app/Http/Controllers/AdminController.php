@@ -21,6 +21,7 @@ class AdminController extends Controller
     public function ProductEdit(){
         return view('admin/product/edit_product');
     }
+
     // category
     public function Category(){
         $kategori = Kategori::all();
@@ -46,7 +47,7 @@ class AdminController extends Controller
         $this->validate($request,[
             'kategori' => 'required'
         ]);
-        
+
         $kategori= Kategori::find($id);
         $kategori->kategori = $request->kategori;
         $kategori->save();
@@ -57,6 +58,7 @@ class AdminController extends Controller
         $kategori->delete();
         return redirect()->back();
     }
+
     // transaction
     public function Transaction(){
         return view('admin/transaction/tbl_transaction');
