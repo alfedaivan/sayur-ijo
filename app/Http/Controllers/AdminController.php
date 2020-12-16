@@ -63,12 +63,12 @@ class AdminController extends Controller
         $kategori= Kategori::find($id);
         $kategori->kategori = $request->kategori;
         $kategori->save();
-        return redirect('dashboard/category');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil diupdate');
     }
     public function CategoryDelete($id){
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
-        return redirect()->back();
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil dihapus');
     }
 
     // end
