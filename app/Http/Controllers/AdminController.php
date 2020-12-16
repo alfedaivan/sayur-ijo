@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-// pages controllers
     public function Dashboard(){
         return view('admin/dashboard/dashboard');
     }
+
+
     // product
     public function Product(){
         return view('admin/product/tbl_product');
@@ -24,6 +25,7 @@ class AdminController extends Controller
         return view('admin/product/edit_product');
     }
     // end
+
 
     // category
     public function Category(Request $request){
@@ -65,14 +67,16 @@ class AdminController extends Controller
         return redirect('dashboard/category');
     }
     public function CategoryDelete($id){
-        $kategori = Kategori::find($id);
+        $kategori = Kategori::findOrFail($id);
         $kategori->delete();
         return redirect()->back();
     }
 
     // end
 
-     // transaction
+
+
+    // transaction
     public function Transaction(){
         return view('admin/transaction/tbl_transaction');
     }

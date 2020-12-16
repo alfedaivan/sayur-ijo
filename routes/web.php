@@ -33,7 +33,9 @@ Route::get('/dashboard/category/add', 'App\Http\Controllers\AdminController@Cate
 Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\AdminController@CategoryAddValidation');
 Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\AdminController@CategoryEdit');
 Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\AdminController@CategoryEditValidation');
-Route::get('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete');
+// Route::get('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete');
+
+Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete')->name('category.delete');
 
 // transaction
 Route::get('/dashboard/transaction', 'App\Http\Controllers\AdminController@Transaction');
