@@ -39,10 +39,10 @@
                             <th>Nama</th>
                             <th>Action</th>
                         </tr>
-                        @php $no = 1; @endphp
-                        @foreach($kategori as $k)
+                        <?php $i = 1; $skipped = $kategori->currentPage() * $kategori->perPage()-$kategori->perPage(); ?>
+                        @foreach($kategori as $index => $k)
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td>{{ $skipped + $i }}</td>
                             <td>{{$k -> kategori}}</td>
                             <td>
                             <a href="/dashboard/category/edit/{{$k->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
@@ -50,6 +50,7 @@
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$k->id}}"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
+                        <?php $i++; ?>
                         @endforeach
                         </table>
                     </div>

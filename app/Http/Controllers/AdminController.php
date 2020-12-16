@@ -38,7 +38,10 @@ class AdminController extends Controller
                 }
             }]
         ]) -> paginate(5);
-        return view('admin/category/tbl_category', ['kategori' => $kategori]);
+        // $skipped = ($kategori->currentPage() * $kategori->perPage()) - $kategori->perPage();
+        return view('admin/category/tbl_category', [
+            'kategori' => $kategori,
+        ]);
     }
     public function CategoryAdd(){
         return view('admin/category/add_category');
