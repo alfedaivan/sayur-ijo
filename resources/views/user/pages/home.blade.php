@@ -1,11 +1,19 @@
-@extends('user.index')
-<!-- nav -->
-@include('user.pages.nav')
-<!-- //nav -->
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+@include('user.head')
 
-@section('content')
-<!-- content -->
-<div class="banner">
+<body>
+    <!-- nav -->
+    @include('user.nav')
+    <!-- //nav -->
+    <div class="banner">
+    <!-- content -->
 	<!-- hero banner -->
 	<div class="w3l_banner_nav ">
 		<section class="slider">
@@ -37,16 +45,16 @@
 					</li>
 				</ul>
 			</div>
-		</section>
-		<!-- flexSlider -->
-            <link rel="stylesheet" href="{{url('/assets/TemplateUser/css/flexslider.css')}}" type="text/css" media="screen" property="" />
-            <script defer src="{{url('/assets/TemplateUser/js/jquery.flexslider.js')}}"></script>
-			<script type="text/javascript"></script>
-		<!-- //flexSlider -->
-	</div>
-	<!-- end hero banner -->
-	<div class="clearfix"></div>
-</div>
+            </section>
+            <!-- flexSlider -->
+                <link rel="stylesheet" href="{{url('/assets/TemplateUser/css/flexslider.css')}}" type="text/css" media="screen" property="" />
+                <script defer src="{{url('/assets/TemplateUser/js/jquery.flexslider.js')}}"></script>
+                <script type="text/javascript"></script>
+            <!-- //flexSlider -->
+        </div>
+        <!-- end hero banner -->
+        <div class="clearfix"></div>
+    </div>
 
 
 <!-- banner -->
@@ -227,6 +235,10 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
 <!-- //content -->
-@endsection()
+    </div>
+<!-- footer -->
+@include('user.footer')
+<!-- //footer -->
+</body>
+</html>

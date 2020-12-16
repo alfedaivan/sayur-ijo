@@ -1,12 +1,20 @@
-@extends('user.index')
-<!-- nav -->
-@include('user.pages.nav')
-<!-- //nav -->
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+@include('user.head')
 
-@section('content')
-<!-- content -->
+<body>
+    <!-- nav -->
+    @include('user.nav')
+    <!-- //nav -->
     <div class="banner">
-        <div class="col-md-12 w3l_banner_nav_right ">
+    <!-- content -->
+    <div class="col-md-12 w3l_banner_nav_right ">
             <div class="checkout-page privacy about">
                 <h3>Checkout</h3>
 
@@ -94,6 +102,10 @@
             </div>
         </div>
 		<div class="clearfix"></div>
-	</div>
-<!-- //content -->
-@endsection()
+    <!-- //content -->
+    </div>
+<!-- footer -->
+@include('user.footer')
+<!-- //footer -->
+</body>
+</html>

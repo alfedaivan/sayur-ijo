@@ -1,13 +1,19 @@
-@extends('user.index')
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+@include('user.head')
 
-<!-- nav -->
-@include('user.pages.navSearch')
-<!-- //nav -->
-
-@section('content')
-<!-- banner -->
-	<div class="banner">
-
+<body>
+    <!-- nav -->
+    @include('user.navSearch')
+    <!-- //nav -->
+    <div class="banner">
+    <!-- banner -->
 		<div class="top-brands mt-5" id="offers">
 			<div class="container">
 				<h3>Our Products</h3>
@@ -461,6 +467,16 @@
 			</nav>
 
 		<div class="clearfix"></div>
-	</div>
-<!-- //content -->
-@endsection()
+    <!-- //content -->
+    </div>
+
+
+
+
+
+
+<!-- footer -->
+@include('user.footer')
+<!-- //footer -->
+</body>
+</html>
