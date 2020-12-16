@@ -39,6 +39,7 @@
                             <th>Nama</th>
                             <th>Action</th>
                         </tr>
+                        <!-- looping number -->
                         <?php $i = 1; $skipped = $kategori->currentPage() * $kategori->perPage()-$kategori->perPage(); ?>
                         @foreach($kategori as $index => $k)
                         <tr>
@@ -46,7 +47,6 @@
                             <td>{{$k -> kategori}}</td>
                             <td>
                             <a href="/dashboard/category/edit/{{$k->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
-                            <!-- <a href="/dashboard/category/hapus/{{$k->id}}" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a> -->
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$k->id}}"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
@@ -56,6 +56,7 @@
                     </div>
                     </div>
 
+                    <!-- pagination -->
                     {{ $kategori->links('admin.pagination') }}
 
                 </div>

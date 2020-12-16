@@ -29,7 +29,6 @@ class AdminController extends Controller
 
     // category
     public function Category(Request $request){
-        // $kategori = Kategori::paginate(5);
         $kategori = Kategori::where([
             ['kategori', '!=', NULL],
             [function ($query) use ($request){
@@ -38,10 +37,7 @@ class AdminController extends Controller
                 }
             }]
         ]) -> paginate(5);
-        // $skipped = ($kategori->currentPage() * $kategori->perPage()) - $kategori->perPage();
-        return view('admin/category/tbl_category', [
-            'kategori' => $kategori,
-        ]);
+        return view('admin/category/tbl_category', ['kategori' => $kategori,]);
     }
     public function CategoryAdd(){
         return view('admin/category/add_category');
