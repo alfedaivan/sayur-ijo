@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('admin.head')
+@extends('admin.index')
 
-<body>
-  <div id="app">
-  <div class="main-wrapper">
-      @include('admin.toolbar')
-
+@section('content')
       @include('admin.product.sidebarProduct')
 
       <!-- Main Content -->
@@ -91,39 +85,31 @@
             </div>
           </div>
         </section>
-
-        <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <form action="#">
-                <div class="modal-header">
-                <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
-                </div>
-                <hr>
-                <div class="modal-body">
-                <div class="form-group">
-                    <h6>
-                    <br>
-                        Yakin Ingin Menghapus <b>Apel</b> ?
-                    </h6>
-                </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-danger">Hapus</button>
-                </div>
-            </form>
-            </div>
-        </div>
-        </div>
-
       </div>
 
-      @include('admin.footer')
-
+      <!-- modal delete -->
+      <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="#">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
+                    </div>
+                    <hr>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <h6>
+                            <br>
+                                Yakin Ingin Menghapus <b>Apel</b> ?
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-
-  @include('admin.script')
-</body>
-</html>
+@endsection()

@@ -1,3 +1,11 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
 <head>
     <title>Toko Sayur</title>
     <!-- for-mobile-apps -->
@@ -24,3 +32,19 @@
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
 <!-- start-smoth-scrolling -->
 </head>
+
+<body>
+
+    @yield('content')
+
+    <!-- @yield('javascript') -->
+
+<!-- footer -->
+@include('user.footer')
+<!-- //footer -->
+
+<script src="{{url('/assets/TemplateUser/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{url('/assets/TemplateUser/js/index.js')}}"> </script>
+
+</body>
+</html>

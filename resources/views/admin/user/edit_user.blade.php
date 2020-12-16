@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('admin.head')
+@extends('admin.index')
 
-<body>
-  <div id="app">
-    <div class="main-wrapper">
-        @include('admin.toolbar')
+@section('content')
         @include('admin.user.sidebarUser')
 
 <!-- Main Content -->
@@ -62,10 +57,4 @@
 
         </section>
       </div>
-      @include('admin.footer')
-    </div>
-  </div>
-
-  @include('admin.script')
-</body>
-</html>
+@endsection()

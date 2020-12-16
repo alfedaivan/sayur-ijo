@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('admin.head')
+@extends('admin.index')
 
-<body>
-  <div id="app">
-    <div class="main-wrapper">
-        @include('admin.toolbar')
+@section('content')
         @include('admin.category.sidebarCategory')
-
         <!-- Main Content -->
         <div class="main-content">
             <section class="section">
@@ -61,15 +55,19 @@
                     </div>
                     </div>
 
-                    {{ $kategori->links('admin.vendor.pagination') }}
+                    {{ $kategori->links('admin.pagination') }}
 
                 </div>
                 </div>
             </div>
             </section>
         </div>
+        </section>
+      </div>
 
-        @foreach($kategori as $k)
+
+    <!-- modal delete -->
+    @foreach($kategori as $k)
         <div class="modal fade" id="deleteData{{$k->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -96,15 +94,5 @@
                 </div>
             </div>
         </div>
-        @endforeach
-
-
-        </section>
-      </div>
-      @include('admin.footer')
-    </div>
-  </div>
-
-  @include('admin.script')
-</body>
-</html>
+    @endforeach
+@endsection()

@@ -39,5 +39,3 @@
 	</div>
 </div>
 
-<script src="{{url('/assets/TemplateUser/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{url('/assets/TemplateUser/js/index.js')}}"> </script>

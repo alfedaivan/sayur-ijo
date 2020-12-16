@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('admin.head')
+@extends('admin.index')
 
-<body>
-  <div id="app">
-    <div class="main-wrapper">
-        @include('admin.toolbar')
+@section('content')
         @include('admin.user.sidebarUser')
 
 
@@ -85,8 +80,10 @@
             </div>
           </div>
         </section>
+      </div>
 
-    <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+    <!-- modal delete -->
+      <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <form action="#">
@@ -109,12 +106,8 @@
             </form>
             </div>
         </div>
-    </div>
       </div>
-      @include('admin.footer')
-    </div>
-  </div>
 
-  @include('admin.script')
-</body>
-</html>
+@endsection()
+
+

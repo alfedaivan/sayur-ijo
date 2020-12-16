@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('admin.head')
+@extends('admin.index')
 
-<body>
-  <div id="app">
-  <div class="main-wrapper">
-    @include('admin.toolbar')
-
+@section('content')
     @include('admin.product.sidebarProduct')
 
       <!-- Main Content -->
@@ -78,10 +72,4 @@
 
         </section>
       </div>
-      @include('admin.footer')
-    </div>
-  </div>
-
-  @include('admin.script')
-</body>
-</html>
+@endsection()

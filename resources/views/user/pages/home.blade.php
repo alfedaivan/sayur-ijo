@@ -1,23 +1,11 @@
-<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-@include('user.head')
-
-<body>
-
+@extends('user.index')
 <!-- nav -->
-@include('user.nav')
+@include('user.pages.nav')
 <!-- //nav -->
 
-
-<!-- banner -->
+@section('content')
+<!-- content -->
 <div class="banner">
-
 	<!-- hero banner -->
 	<div class="w3l_banner_nav ">
 		<section class="slider">
@@ -240,11 +228,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-<!-- //top-brands -->
-
-<!-- footer -->
-@include('user.footer')
-<!-- //footer -->
-
-</body>
-</html>
+<!-- //content -->
+@endsection()
