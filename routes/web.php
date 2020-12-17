@@ -22,11 +22,14 @@ Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin
 Route::get('/dashboard', 'App\Http\Controllers\AdminController@Dashboard');
-// product
-Route::get('/dashboard/product', 'App\Http\Controllers\AdminController@Product');
-Route::get('/dashboard/product/add', 'App\Http\Controllers\AdminController@ProductAdd');
-Route::get('/dashboard/product/edit', 'App\Http\Controllers\AdminController@ProductEdit');
 
+// product
+Route::get('/dashboard/product', 'App\Http\Controllers\ProdukController@index');
+Route::get('/dashboard/product/add', 'App\Http\Controllers\ProdukController@ProductAdd');
+Route::post('/dashboard/product/addvalidation', 'App\Http\Controllers\ProdukController@ProductAddValidation');
+Route::get('/dashboard/product/edit', 'App\Http\Controllers\ProdukController@ProductEdit');
+Route::put('/dashboard/product/editvalidation/{id}', 'App\Http\Controllers\ProdukController@ProductEditValidation');
+Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\ProdukController@ProductDelete')->name('produk.delete');
 // category
 Route::get('/dashboard/category', 'App\Http\Controllers\AdminController@Category');
 Route::get('/dashboard/category/add', 'App\Http\Controllers\AdminController@CategoryAdd');

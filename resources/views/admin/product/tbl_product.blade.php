@@ -42,24 +42,24 @@
                         <th>Kategori</th>
                         <th>Harga</th>
                         <th>Stok</th>
-                        <th>Tanggal Update</th>
                         <th>Action</th>
                       </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          <img alt="image" src="../assets/img/products/product-4-50.png" width="50" data-toggle="tooltip" title="apel">
-                        </td>
-                        <td>Apel</td>
-                        <td>Buah</td>
-                        <td>Rp. 10000</td>
-                        <td>200 </td>
-                        <td>01-01-2021</td>
-                        <td>
-                          <a href="{{url('/dashboard/product/edit')}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData"><i class="fas fa-trash"></i></a>
-                        </td>
-                      </tr>
+                      <?php $i = 1; $skipped = $produk->currentPage() * $produk->perPage()-$produk->perPage(); ?>
+                        @foreach($produk as $index => $p)
+                        <tr>
+                            <td>{{ $skipped + $i }}</td>
+                            <td><img src="{{ url('/images/'.$p->foto) }}" height="75" width="75" alt="" /></td>
+                            <td>{{$p -> nama_produk}}</td>
+                            <td>{{$p -> kategori}}</td>
+                            <td>{{$p -> harga}}</td>
+                            <td>{{$p -> stok}}</td>
+                            <td>
+                            <a href="/dashboard/category/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$p->id}}"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                        @endforeach
 
                     </table>
                   </div>
@@ -67,17 +67,7 @@
                 <div class="card-footer text-right">
                   <nav class="d-inline-block">
                     <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
+                    {{ $produk->links('admin.pagination') }}
                     </ul>
                   </nav>
                 </div>
