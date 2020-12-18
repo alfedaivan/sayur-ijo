@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Produk;
+use App\Models\Kategori;
 
 class AdminController extends Controller
 {
     public function Dashboard(){
-        return view('admin/dashboard/dashboard');
+        $kategori = Kategori::all();
+        $produk = Produk::all();
+        return view('admin/dashboard/dashboard', compact('produk','kategori'));
     }
 
     // user

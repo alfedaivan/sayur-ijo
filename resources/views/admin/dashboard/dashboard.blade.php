@@ -19,7 +19,7 @@
                             <h4>Produk</h4>
                         </div>
                         <div class="card-body">
-                            100
+                            {{$produk->count()}}
                         </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <h4>Kategori</h4>
                         </div>
                         <div class="card-body">
-                            100
+                        {{$kategori->count()}}
                         </div>
                         </div>
                     </div>
