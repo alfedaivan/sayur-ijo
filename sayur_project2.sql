@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Des 2020 pada 03.07
+-- Waktu pembuatan: 18 Des 2020 pada 15.47
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.31
 
@@ -20,6 +20,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `sayur_project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `daftars`
+--
+
+CREATE TABLE `daftars` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -70,25 +80,15 @@ INSERT INTO `kategoris` (`id`, `kategori`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keranjang`
+-- Struktur dari tabel `keranjangs`
 --
 
-CREATE TABLE `keranjang` (
+CREATE TABLE `keranjangs` (
   `id` int(11) NOT NULL,
   `id_produk` int(11) NOT NULL,
   `kuantitas` int(11) NOT NULL,
   `total_harga` int(11) NOT NULL,
   `id_list` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `list`
---
-
-CREATE TABLE `list` (
-  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -171,7 +171,10 @@ CREATE TABLE `produks` (
 
 INSERT INTO `produks` (`id`, `nama_produk`, `harga`, `foto`, `stok`, `id_kategori`, `created_at`, `updated_at`) VALUES
 (12, 'kopi', 2000, 'have.jpg', 10, 6, NULL, NULL),
-(14, 'garam2', 5000, '1608182106_Simple-Location-Picker.png', 10, 6, '2020-12-16 22:15:06', '2020-12-17 18:16:30');
+(14, 'garam2', 5000, '1608182106_Simple-Location-Picker.png', 8, 6, '2020-12-16 22:15:06', '2020-12-17 21:16:03'),
+(15, 'safa2', 5000, '1608275058_20200402_145226_0000.png', 10, 6, '2020-12-18 00:04:18', '2020-12-18 00:55:43'),
+(16, 'safa3', 5000, '1608278265_20200402_145226_0000.png', 9, 7, '2020-12-18 00:57:45', '2020-12-18 00:57:45'),
+(17, 'qwerty', 5000, '1608279518_20200402_145226_0000.png', 10, 17, '2020-12-18 01:18:38', '2020-12-18 01:18:38');
 
 -- --------------------------------------------------------
 
@@ -220,11 +223,18 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'octavia', 'octa@gmail.com', NULL, '$2y$10$uaVxyHgrFbVhLPeWyVuRqeS3nhlOuUwtSLk9iKuSeVMIkfExGGbAO', NULL, NULL, NULL, '2020-12-06 04:09:53', '2020-12-06 04:09:53'),
-(2, 'octavia', 'octav@gmail.com', NULL, '$2y$10$uxqtDsYJzTTAoazPVUaz.u.ObgnJaLO9qT/DKQixzihHsDa7VLfvG', NULL, NULL, NULL, '2020-12-09 16:38:26', '2020-12-09 16:38:26');
+(2, 'octavia', 'octav@gmail.com', NULL, '$2y$10$uxqtDsYJzTTAoazPVUaz.u.ObgnJaLO9qT/DKQixzihHsDa7VLfvG', NULL, NULL, NULL, '2020-12-09 16:38:26', '2020-12-09 16:38:26'),
+(3, 'admin', 'admin@gmail.com', '2020-12-18 06:34:50', '$2y$10$c2sgOJoCOvjJjbMOigmo4.vwUcCwgFqWtspTdeSVIa/EeAasqz1my', NULL, NULL, 'eEtxjOZ9XG', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `daftars`
+--
+ALTER TABLE `daftars`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `failed_jobs`
@@ -239,15 +249,9 @@ ALTER TABLE `kategoris`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `keranjang`
+-- Indeks untuk tabel `keranjangs`
 --
-ALTER TABLE `keranjang`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `list`
---
-ALTER TABLE `list`
+ALTER TABLE `keranjangs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -323,13 +327,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `produks`
 --
 ALTER TABLE `produks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
