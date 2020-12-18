@@ -8,19 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function Dashboard(){
-        return view('admin/dashboard/dashboard');
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    // user
-    public function User(){
-        return view('admin/user/tbl_user');
+    public function index(){
+        return view('admin/dashboard/dashboard');
     }
-    public function UserAdd(){
-        return view('admin/user/add_user');
-    }
-    public function UserEdit(){
-        return view('admin/user/edit_user');
-    }
-    // end
 }

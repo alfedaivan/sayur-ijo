@@ -9,9 +9,9 @@
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{{url('/assets/TemplateAdmin/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <div class="d-sm-none d-lg-inline-block">{{Auth::user()->name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item has-icon text-danger" data-toggle="modal" data-target="#logout">
+              <a href="{{route('auth.signout')}}" class="dropdown-item has-icon text-danger" data-toggle="modal" data-target="#logout">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -23,7 +23,8 @@
       <div class="modal fade" id="logout" role="dialog" aria-labelledby="logout" aria-hidden="true" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="#">
+                <form action="{{route('auth.signout')}}" method="POST">
+                    @csrf
                     <div class="modal-header">
                         <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Logut</h6>
                     </div>

@@ -13,15 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes([
+    'register' => false,
+    'logout' => false
+    ]);
+Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers\Auth\LoginController@signout']);
+
 // route change pages
 // user
 Route::get('/', 'App\Http\Controllers\UserController@Index');
 Route::get('/product', 'App\Http\Controllers\UserController@Product');
 Route::get('/checkout', 'App\Http\Controllers\UserController@Checkout');
-Route::get('/login', 'App\Http\Controllers\UserController@Login');
+// Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin
-Route::get('/dashboard', 'App\Http\Controllers\AdminController@Dashboard');
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
 
 // product
 Route::get('/dashboard/product', 'App\Http\Controllers\ProdukController@index');
@@ -46,3 +52,5 @@ Route::get('/dashboard/transaction', 'App\Http\Controllers\AdminController@Trans
 Route::get('/dashboard/user', 'App\Http\Controllers\AdminController@User');
 Route::get('/dashboard/user/add', 'App\Http\Controllers\AdminController@UserAdd');
 Route::get('/dashboard/user/edit', 'App\Http\Controllers\AdminController@UserEdit');
+
+

@@ -27,23 +27,29 @@
             <img src="{{url('/assets/TemplateAdmin/assets/img/stisla-fill.svg')}}" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
             <h4 class="text-dark font-weight-normal">Selamat datang di <span class="font-weight-bold">Toko Sayur</span></h4>
             <p class="text-muted">Sebelum memulai silahkan login terlebih dahulu.</p>
-            <form method="POST" action="#" class="needs-validation" novalidate="">
+            <form method="POST" action="{{route('login')}}" class="needs-validation" novalidate="">
+                @csrf
               <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" type="username" class="form-control" name="username" tabindex="1" required autofocus>
-                <div class="invalid-feedback">
-                  Username belum terisi !!
-                </div>
+                <label for="name">name</label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
 
               <div class="form-group">
                 <div class="d-block">
                   <label for="password" class="control-label">Password</label>
                 </div>
-                <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                <div class="invalid-feedback">
-                  Password belum terisi !!
-                </div>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
               </div>
 
               <div class="form-group">
@@ -55,7 +61,7 @@
 
               <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary btn-lg btn-icon icon-center" tabindex="5" style="width: 100%;">
-                  Login
+                    {{ __('Login') }}
                 </button>
               </div>
 

@@ -8,6 +8,11 @@ use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // category
     public function Category(Request $request){
         $kategori = Kategori::where([

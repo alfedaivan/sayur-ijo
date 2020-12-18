@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-
 // change pages controller
     //page home
     public function Index(){

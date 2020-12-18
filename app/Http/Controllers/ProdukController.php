@@ -9,11 +9,17 @@ use App\Models\Kategori;
 
 class ProdukController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request){
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
     ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.kategori as kategori','produks.harga','produks.stok'));
-   	
+
        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
 
@@ -32,9 +38,9 @@ class ProdukController extends Controller
         ]);
 
         $file = $request->file('foto');
-     
+
         $nama_file = time()."_".$file->getClientOriginalName();
-     
+
         $tujuan_upload = 'images';
         $file->move($tujuan_upload,$nama_file);
 
