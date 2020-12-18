@@ -13,13 +13,14 @@ class ProdukController extends Controller
     $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
-    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.kategori as kategori','produks.harga','produks.stok'));
+    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
    	
        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
 
     public function ProductAdd(){
-        return view('admin/product/add_product');
+        $kategori = Kategori::all();
+        return view('admin/product/add_product', compact('kategori'));
     }
 
     public function ProductAddValidation(Request $request)
@@ -51,7 +52,8 @@ class ProdukController extends Controller
     }
     public function ProductEdit($id){
         $produk=Produk::findOrFail($id);
-        return view('admin/product/edit_product',compact('produk'));
+        $kategori = Kategori::all();
+        return view('admin/product/edit_product',compact('produk','kategori'));
     }
 
     public function ProductEditValidation(Request $request, $id)

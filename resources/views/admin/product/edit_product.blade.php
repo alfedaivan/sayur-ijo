@@ -28,12 +28,11 @@
 
                     <div class="form-group">
                       <label>Kategori</label>
-                      <input name="id_kategori" type="text" class="form-control" required="" value="{{ $produk->id_kategori }}">
-                      <!-- <select class="form-control" required="">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                      </select> -->
+                      <select class="form-control" required="" name="id_kategori">
+                        @foreach($kategori as $k)
+                          <option value="{{$k->id}}">{{$k->kategori}}</option>
+                        @endforeach
+                      </select>
                     </div>
 
                     <div class="form-group">
