@@ -27,12 +27,11 @@
 
                     <div class="form-group">
                       <label>Kategori</label>
-                      <!-- <select class="form-control" required="">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                      </select> -->
-                      <input name="id_kategori"type="text" class="form-control" required="">
+                      <select class="form-control" required="" name="id_kategori">
+                        @foreach($kategori as $k)
+                          <option value="{{$k->id}}">{{$k->kategori}}</option>
+                        @endforeach
+                      </select>
                     </div>
 
                     <div class="form-group">
@@ -51,12 +50,7 @@
                       <label>Stok</label>
                       <input name="stok" type="text" class="form-control" required="">
                     </div>
-
-                    <!-- <div class="form-group">
-                      <label>Tanggal Update</label>
-                      <input type="date" class="form-control" required="">
-                    </div> -->
-
+                    
                     <div class="form-group">
                       <label>Foto</label>
                       <input name="foto" type="file" class="form-control" required="">

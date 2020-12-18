@@ -16,15 +16,22 @@ class ProdukController extends Controller
     }
 
     public function index(Request $request){
+    $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
+<<<<<<< HEAD
     ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.kategori as kategori','produks.harga','produks.stok'));
 
+=======
+    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
+   	
+>>>>>>> 252fa6947f128c2911aa4ed837caf8d175d91845
        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
 
     public function ProductAdd(){
-        return view('admin/product/add_product');
+        $kategori = Kategori::all();
+        return view('admin/product/add_product', compact('kategori'));
     }
 
     public function ProductAddValidation(Request $request)
@@ -56,7 +63,8 @@ class ProdukController extends Controller
     }
     public function ProductEdit($id){
         $produk=Produk::findOrFail($id);
-        return view('admin/product/edit_product',compact('produk'));
+        $kategori = Kategori::all();
+        return view('admin/product/edit_product',compact('produk','kategori'));
     }
 
     public function ProductEditValidation(Request $request, $id)
