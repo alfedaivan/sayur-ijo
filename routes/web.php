@@ -31,14 +31,14 @@ Route::get('/dashboard/product/edit/{id}', 'App\Http\Controllers\ProdukControlle
 Route::put('/dashboard/product/editvalidation/{id}', 'App\Http\Controllers\ProdukController@ProductEditValidation');
 Route::delete('/dashboard/product/hapus/{id}', 'App\Http\Controllers\ProdukController@ProductDelete')->name('product.delete');
 // category
-Route::get('/dashboard/category', 'App\Http\Controllers\AdminController@Category');
-Route::get('/dashboard/category/add', 'App\Http\Controllers\AdminController@CategoryAdd');
-Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\AdminController@CategoryAddValidation');
-Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\AdminController@CategoryEdit');
-Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\AdminController@CategoryEditValidation');
+Route::get('/dashboard/category', 'App\Http\Controllers\KategoriController@Category');
+Route::get('/dashboard/category/add', 'App\Http\Controllers\KategoriController@CategoryAdd');
+Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\KategoriController@CategoryAddValidation');
+Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\KategoriController@CategoryEdit');
+Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\KategoriController@CategoryEditValidation');
 // Route::get('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete');
 
-Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete')->name('category.delete');
+Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriController@CategoryDelete')->name('category.delete');
 
 // transaction
 Route::get('/dashboard/transaction', 'App\Http\Controllers\AdminController@Transaction');
