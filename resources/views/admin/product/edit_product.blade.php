@@ -13,7 +13,9 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                <form class="needs-validation" novalidate="">
+                <form method="post" action="/dashboard/product/editvalidation/{{$produk->id}}" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
                   <div class="card-header">
                     <h4>Informasi Produk</h4>
                   </div>
@@ -21,12 +23,12 @@
 
                     <div class="form-group">
                       <label>Nama</label>
-                      <input name="nama_produk" type="text" class="form-control" required="">
+                      <input name="nama_produk" type="text" class="form-control" required="" value="{{ $produk->nama_produk }}">
                     </div>
 
                     <div class="form-group">
                       <label>Kategori</label>
-                      <input name="id_kategori" type="text" class="form-control" required="">
+                      <input name="id_kategori" type="text" class="form-control" required="" value="{{ $produk->id_kategori }}">
                       <!-- <select class="form-control" required="">
                         <option>Option 1</option>
                         <option>Option 2</option>
@@ -42,13 +44,13 @@
                             Rp.
                           </div>
                         </div>
-                        <input name="harga" type="text" class="form-control currency" required="">
+                        <input name="harga" type="text" class="form-control currency" required="" value="{{ $produk->harga }}">
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label>Stok</label>
-                      <input name="stok" type="text" class="form-control" required="">
+                      <input name="stok" type="text" class="form-control" required="" value="{{ $produk->stok }}">
                     </div>
 
                     <!-- <div class="form-group">
@@ -58,11 +60,17 @@
 
                     <div class="form-group">
                       <label>Foto</label>
-                      <input name="foto" type="file" class="form-control" required="">
+                      <!-- <input name="foto" type="file" class="form-control" required=""> -->
+                      <input name="foto" type="file" class="dropify" value="{{ url('/images'.$produk->foto) }}" data-default-file="{{ url('/images'.$produk->foto) }}">
+                      <input name="hidden_image" type="hidden" class="form-control" value="{{$produk->foto}}">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="hidden" name="created_at" value="{{ $produk->created_at }}" class="form-control">
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" value="Simpan">Submit</button>
                   </div>
                 </form>
               </div>

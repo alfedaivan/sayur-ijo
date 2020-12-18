@@ -54,7 +54,7 @@
                             <td>{{$p -> harga}}</td>
                             <td>{{$p -> stok}}</td>
                             <td>
-                            <a href="/dashboard/category/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
+                            <a href="/dashboard/product/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$p->id}}"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
@@ -78,28 +78,33 @@
       </div>
 
       <!-- modal delete -->
-      <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form action="#">
-                    <div class="modal-header">
-                        <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
-                    </div>
-                    <hr>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <h6>
-                            <br>
-                                Yakin Ingin Menghapus <b>Apel</b> ?
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-danger">Hapus</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-      </div>
-@endsection()
+      <!-- modal delete -->
+      @foreach($produk as $p)
+          <div class="modal fade" id="deleteData{{$p->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                  <form action="{{ route('product.delete', $p->id) }}" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <div class="modal-header">
+                      <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
+                      </div>
+                      <hr>
+                      <div class="modal-body">
+                      <div class="form-group">
+                          <h6>
+                          <br>
+                              Yakin Ingin Menghapus <b>{{$p->nama_produk}}</b> ?
+                          </h6>
+                     </div>
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <button type="submit" class="btn btn-danger">Hapus</button>
+                      </div>
+                  </form>
+                  </div>
+              </div>
+          </div>
+      @endforeach
+  @endsection()

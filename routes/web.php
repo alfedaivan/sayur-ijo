@@ -27,9 +27,9 @@ Route::get('/dashboard', 'App\Http\Controllers\AdminController@Dashboard');
 Route::get('/dashboard/product', 'App\Http\Controllers\ProdukController@index');
 Route::get('/dashboard/product/add', 'App\Http\Controllers\ProdukController@ProductAdd');
 Route::post('/dashboard/product/addvalidation', 'App\Http\Controllers\ProdukController@ProductAddValidation');
-Route::get('/dashboard/product/edit', 'App\Http\Controllers\ProdukController@ProductEdit');
+Route::get('/dashboard/product/edit/{id}', 'App\Http\Controllers\ProdukController@ProductEdit');
 Route::put('/dashboard/product/editvalidation/{id}', 'App\Http\Controllers\ProdukController@ProductEditValidation');
-Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\ProdukController@ProductDelete')->name('produk.delete');
+Route::delete('/dashboard/product/hapus/{id}', 'App\Http\Controllers\ProdukController@ProductDelete')->name('product.delete');
 // category
 Route::get('/dashboard/category', 'App\Http\Controllers\AdminController@Category');
 Route::get('/dashboard/category/add', 'App\Http\Controllers\AdminController@CategoryAdd');
