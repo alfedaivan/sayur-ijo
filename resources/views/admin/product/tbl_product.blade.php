@@ -10,6 +10,17 @@
             <h1>Produk</h1>
           </div>
 
+          @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    {{ $message }}
+                </div>
+            </div>
+            @endif
+
           <div class="row">
             <div class="col-12">
               <div class="card">
@@ -48,7 +59,7 @@
                         @foreach($produk as $index => $p)
                         <tr>
                             <td>{{ $skipped + $i }}</td>
-                            <td><img src="{{ url('/images/'.$p->foto) }}" height="75" width="75" alt="" /></td>
+                            <td><img src="{{ url('/images/'.$p->foto) }}" height="75" width="75" alt="{{$p->nama_produk}}" /></td>
                             <td>{{$p -> nama_produk}}</td>
                             <td>{{$p -> kategori}}</td>
                             <td>{{$p -> harga}}</td>

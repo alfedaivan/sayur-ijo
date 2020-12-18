@@ -59,6 +59,7 @@
 
                     <div class="form-group">
                       <label>Foto</label>
+                      <br>
                       <!-- <input name="foto" type="file" class="form-control" required=""> -->
                       <input name="foto" type="file" class="dropify" value="{{ url('/images'.$produk->foto) }}" data-default-file="{{ url('/images'.$produk->foto) }}">
                       <input name="hidden_image" type="hidden" class="form-control" value="{{$produk->foto}}">
