@@ -21,9 +21,9 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 
 // route change pages
 // user
-Route::get('/', 'App\Http\Controllers\UserController@Index');
-Route::get('/product', 'App\Http\Controllers\UserController@Product');
-Route::get('/checkout', 'App\Http\Controllers\UserController@Checkout');
+Route::get('/', 'App\Http\Controllers\FrontController@Index');
+Route::get('/product', 'App\Http\Controllers\FrontController@Product');
+Route::get('/checkout', 'App\Http\Controllers\FrontController@Checkout');
 // Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin
@@ -47,7 +47,7 @@ Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\Kate
 Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriController@CategoryDelete')->name('category.delete');
 
 // transaction
-Route::get('/dashboard/transaction', 'App\Http\Controllers\AdminController@Transaction');
+Route::get('/dashboard/history', 'App\Http\Controllers\AdminController@History');
 // user
 Route::get('/dashboard/user', 'App\Http\Controllers\AdminController@User');
 Route::get('/dashboard/user/add', 'App\Http\Controllers\AdminController@UserAdd');
