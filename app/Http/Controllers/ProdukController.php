@@ -19,13 +19,8 @@ class ProdukController extends Controller
     $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
-<<<<<<< HEAD
-    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.kategori as kategori','produks.harga','produks.stok'));
-
-=======
     ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
-   	
->>>>>>> 252fa6947f128c2911aa4ed837caf8d175d91845
+
        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
 
