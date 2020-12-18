@@ -49,7 +49,7 @@
                             <h4>Transaksi</h4>
                         </div>
                         <div class="card-body">
-                            100
+                        {{$daftar->count()}}
                         </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <h4>Pendapatan</h4>
                         </div>
                         <div class="card-body">
-                            1.000.000
+                        {{$keranjang->sum('total_harga')}}
                         </div>
                         </div>
                     </div>
