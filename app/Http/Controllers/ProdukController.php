@@ -33,7 +33,7 @@ class ProdukController extends Controller
     {
         $this->validate($request, [
             'nama_produk' => 'required',
-            'foto' => 'required|image|max:2048',
+            'foto' => 'required|image',
             'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -70,7 +70,7 @@ class ProdukController extends Controller
         if ($file !='') {
             $this->validate($request, [
                 'nama_produk' => 'required',
-                'foto' => 'required|image|max:2048',
+                'foto' => 'required|image',
                 'id_kategori' => 'required',
                 'harga' => 'required',
                 'stok' => 'required',
