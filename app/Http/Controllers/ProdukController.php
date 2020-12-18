@@ -10,6 +10,7 @@ use App\Models\Kategori;
 class ProdukController extends Controller
 {
     public function index(Request $request){
+    $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
     ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.kategori as kategori','produks.harga','produks.stok'));
