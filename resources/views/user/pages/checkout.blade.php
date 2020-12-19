@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="col-md-8 address_form_agile">
                         <h4>Add Details</h4>
-                    <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+                    <form action="#" class="creditly-card-form agileinfo_form">
                         <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                             <div class="information-wrapper">
                                 <div class="first-row form-group">
@@ -79,31 +79,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <label class="control-label">Full name: </label>
                                         <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
                                     </div>
-                                    <div class="w3_agileits_card_number_grids">
-                                        <div class="w3_agileits_card_number_grid_left">
-                                            <div class="controls">
-                                                <label class="control-label">Mobile number:</label>
-                                                <input class="form-control" type="text" placeholder="Mobile number">
-                                            </div>
-                                        </div>
-                                        <div class="clear"> </div>
+                                    <br>
+                                    <div class="controls">
+                                        <label class="control-label">Address: </label>
+                                        <textarea class="billing-address-name form-control" type="text" name="name" placeholder="Address" cols="5" rows="2.9"></textarea>
                                     </div>
                                 </div>
-                                <button class="submit check_out">Checkout <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                                <button class="submit check_out" data-toggle="modal" data-target="#exampleModal">
+                                    Checkout
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                </button>
                             </div>
                         </section>
                     </form>
                     </div>
-
                     <div class="clearfix"> </div>
-
                 </div>
-
             </div>
         </div>
 		<div class="clearfix"></div>
     <!-- //content -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>
+                        Yakin ingin melanjutkan?
+                    </h4>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="submit check_out2">
+                        Checkout
+                        <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 <!-- footer -->
 @include('user.footer')
 <!-- //footer -->

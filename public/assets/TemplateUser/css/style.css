@@ -38,7 +38,21 @@ body a:hover{
 	width: 100%;
 	margin: 0 auto;
 	left:0;
-	z-index:9999;
+	z-index:9998;
+}
+.modal{
+    z-index: 9999 !important;
+}
+.modal .modal-header{
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+.modal .modal-body{
+    padding-bottom: 60px;
+    padding-top: 10px;
+}
+.modal .modal-header span{
+    font-size: 2rem;
 }
 span.glyphicon.glyphicon-shopping-cart
 	.my-cart-icon.my-cart-icon-affix {
@@ -570,6 +584,19 @@ button.submit.check_out{
 	border: none;
 }
 button.submit.check_out:hover{
+    background: #84c639;
+}
+
+button.submit.check_out2{
+    padding: 8px 10px 8px 10px;
+    color: #fff;
+    font-size: .9em;
+    background: #84c639;
+	text-decoration: none;
+	transition: .3s;
+	border: none;
+}
+button.submit.check_out2:hover{
     background: #84c639;
 }
 /*-- //Pay-page --*/
