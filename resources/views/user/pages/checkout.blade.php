@@ -19,11 +19,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h3>Checkout</h3>
 
             <div class="checkout-right">
-                        <h4>Your shopping cart contains: <span>3 Products</span></h4>
                     <table class="timetable_sub">
                         <thead>
                             <tr>
-                                <th>SL No.</th>
                                 <th>Product</th>
                                 <th>Quality</th>
                                 <th>Product Name</th>
@@ -34,7 +32,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </thead>
                         <tbody>
                         <tr class="rem1">
-                            <td class="invert">1</td>
                             <td class="invert-image"><a ><img src="{{url('/assets/TemplateUser/images/4.png')}}" alt=" " class="img-responsive"></a></td>
                             <td class="invert">
                                 <div class="quantity">
@@ -60,29 +57,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="checkout-left">
                     <div class="col-md-4 checkout-left-basket">
-                        <h4>Continue to basket</h4>
+                        <h4>Nota</h4>
                         <ul>
-                            <li>Product1 <i>-</i> <span>$15.00 </span></li>
-                            <li>Product2 <i>-</i> <span>$25.00 </span></li>
-                            <li>Product3 <i>-</i> <span>$29.00 </span></li>
-                            <li>Total Service Charges <i>-</i> <span>$15.00</span></li>
-                            <li>Total <i>-</i> <span>$84.00</span></li>
+                            <li>Product1 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
+                            <li>Product2 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
+                            <li>Product3 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
+                            <li></li>
+                            <li>Total <i>-</i> <span>Rp. 2000</span></li>
                         </ul>
                     </div>
                     <div class="col-md-8 address_form_agile">
-                        <h4>Add Details</h4>
+                        <h4>Detail</h4>
                     <form action="#" class="creditly-card-form agileinfo_form">
                         <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                             <div class="information-wrapper">
                                 <div class="first-row form-group">
                                     <div class="controls">
-                                        <label class="control-label">Full name: </label>
-                                        <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                                        <label class="control-label">Nama Lengkap : </label>
+                                        <input class="billing-address-name form-control" type="text" name="name" placeholder="Nama lengkap">
                                     </div>
                                     <br>
                                     <div class="controls">
-                                        <label class="control-label">Address: </label>
-                                        <textarea class="billing-address-name form-control" type="text" name="name" placeholder="Address" cols="5" rows="2.9"></textarea>
+                                        <label class="control-label">Alamat : </label>
+                                        <input class="billing-address-name form-control" type="text" name="alamat" placeholder="Alamat">
+                                    </div>
+                                    <br>
+                                    <div class="controls">
+                                        <label class="control-label">Catatan : </label>
+                                        <textarea class="billing-address-name form-control" type="text" name="catatan" placeholder="Catatan" cols="5" rows="1"></textarea>
                                     </div>
                                 </div>
                                 <button class="submit check_out" data-toggle="modal" data-target="#exampleModal">
@@ -101,17 +103,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //content -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h4 class="modal-title" id="exampleModalCenter">Konfirmasi Pembelian</h4>
                 </div>
                 <div class="modal-body">
-                    <h4>
-                        Yakin ingin melanjutkan?
-                    </h4>
+                    <div class="row head">
+                        <div class="col-sm-12">
+                            <h4 class="title">Apakah data pemesanan dan barang yang anda beli sudah benar?</h4>
+                        </div>
+                    </div>
+                    <div class="row body">
+                        <div class="col-md-6 left">
+                            <h4>Nama</h4>
+                            <p>Wahoyes</p>
+                            <h4>Alamat</h4>
+                            <p>Lumajang</p>
+                            <h4>Catatan</h4>
+                            <p>Hahahahah</p>
+                        </div>
+                        <div class="col-md-6 right">
+                            <h4>Produk</h4>
+                            <div class="row product">
+                                <div class="col-lg-12 list-product">
+                                    <ul>
+                                        <li><i class="product">Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row total">
+                                <div class="col-sm-6">
+                                    <H4>Total</H4>
+                                </div>
+                                <div class="col-sm-6 list-price">
+                                    <p>Rp. 1.000.000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
