@@ -776,6 +776,12 @@ button.submit.check_out2:hover{
 	color: #fff;
 	font-size: 14px;
 }
+.w3_footer_grid ul.contact a{
+	color: #999;
+}
+.w3_footer_grid ul.contact a:hover{
+	color: #84c639;
+}
 .w3_footer_grid ul.contact span{
 	margin-left: 1em;
 }
@@ -806,7 +812,7 @@ button.submit.check_out2:hover{
 }
 .agileits_social_icons li{
 	display:inline-block;
-	margin-top: 1.5em;
+	margin-top: 0.7em;
 	margin-right: .5em;
 }
 .agileits_social_icons li a{
@@ -1264,7 +1270,7 @@ table.timetable_sub {
 }
 .timetable_sub th, .timetable_sub td {
     text-align: center;
-    padding: 7px;
+    padding: 5px;
     font-size: 14px;
     color: #212121;
 }
@@ -2097,7 +2103,7 @@ td.invert-image a img {
 	}
 	.timetable_sub th, .timetable_sub td {
 		width: 50px;
-		    font-size: 12px;
+		font-size: 12px;
 	}
 	button.submit.check_out {
 		display: block;

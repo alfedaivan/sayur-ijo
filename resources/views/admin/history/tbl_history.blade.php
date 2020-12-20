@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('content')
-    @include('admin.transaction.sidebarTransaction')
+    @include('admin.history.sidebarHistory')
     <!-- Main Content -->
     <div class="main-content">
         <section class="section">

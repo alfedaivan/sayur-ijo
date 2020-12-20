@@ -42,15 +42,18 @@ Route::get('/dashboard/category/add', 'App\Http\Controllers\KategoriController@C
 Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\KategoriController@CategoryAddValidation');
 Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\KategoriController@CategoryEdit');
 Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\KategoriController@CategoryEditValidation');
-// Route::get('/dashboard/category/hapus/{id}', 'App\Http\Controllers\AdminController@CategoryDelete');
 
 Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriController@CategoryDelete')->name('category.delete');
 
 // transaction
-Route::get('/dashboard/history', 'App\Http\Controllers\AdminController@History');
+Route::get('/dashboard/history', 'App\Http\Controllers\HistoryController@History');
+
 // user
-Route::get('/dashboard/user', 'App\Http\Controllers\AdminController@User');
-Route::get('/dashboard/user/add', 'App\Http\Controllers\AdminController@UserAdd');
-Route::get('/dashboard/user/edit', 'App\Http\Controllers\AdminController@UserEdit');
+Route::get('/dashboard/user', 'App\Http\Controllers\UserController@User');
+Route::get('/dashboard/user/add', 'App\Http\Controllers\UserController@UserAdd');
+Route::get('/dashboard/user/edit', 'App\Http\Controllers\UserController@UserEdit');
+
+// dite settings
+Route::get('/dashboard/settings', 'App\Http\Controllers\SiteSettingsController@SiteSettings');
 
 

@@ -23,7 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="w3l_banner_nav_right_banner">
 							<h3>Make your <span>food</span> with Spicy.</h3>
 							<div class="more">
-								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Belanja Sekarang">Belanja Sekarang</a>
 							</div>
 						</div>
 					</li>
@@ -31,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="w3l_banner_nav_right_banner1">
 							<h3>Make your <span>food</span> with Spicy.</h3>
 							<div class="more">
-								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Belanja Sekarang">Belanja Sekarang</a>
 							</div>
 						</div>
 					</li>
@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="w3l_banner_nav_right_banner2">
 							<h3>upto <i>50%</i> off.</h3>
 							<div class="more">
-								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+								<a href="{{url('/product')}}" class="button--saqui button--round-l button--text-thick" data-text="Belanja Sekarang">Belanja Sekarang</a>
 							</div>
 						</div>
 					</li>
@@ -76,7 +76,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -118,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -139,7 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -160,7 +160,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -181,7 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -202,7 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
@@ -223,7 +223,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>$9.00 </h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href="{{url('/checkout')}}" class="btn-produk">Beli</a>
 										</div>
 									</div>
 								</figure>
