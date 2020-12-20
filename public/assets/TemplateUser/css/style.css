@@ -4,6 +4,20 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+/* Selection Text Background */
+    ::selection {
+    background: #84C639;
+    color: #FFFFFF;
+    }
+    ::-moz-selection {
+    background: #84C639;
+    color: #FFFFFF;
+    }
+    ::-webkit-selection {
+    background: #84C639;
+    color: #FFFFFF;
+    }
+
 html, body{
     font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
@@ -22,7 +36,8 @@ h1,h2,h3,h4,h5,h6,a{
 }
 ul,label{
 	margin:0;
-	padding:0;
+    padding:0;
+    margin-bottom: 5px;
 }
 body a:hover{
 	text-decoration:none;
@@ -135,23 +150,6 @@ body a:hover{
     }
 
 }
-@media (max-width: 414px){
-    .modal .modal-header h4{
-        font-size: 1.2rem;
-    }
-    .modal .modal-body .row.body .col-md-8 .total{
-        margin-right: 5% !important;
-    }
-    .modal .modal-body .row.body .col-md-8 .total h5{
-        font-size: 1.1rem;
-    }
-    .modal .modal-body .btn-checkout{
-        margin-top: 10% !important;
-        margin-bottom: -5% !important;
-    }
-}
-
-
 
 
 
@@ -398,7 +396,7 @@ ul.agileits_social_icons li a,
 .w3l_banner_nav_right{
 	margin-top: 4em;
 	width: 95%;
-	text-align: center;
+	text-align: left;
 }
 .w3l_banner_nav_right .checkout-page{
 	margin: 0 0 10% 5%;
@@ -961,6 +959,7 @@ button.submit.check_out2:hover{
     margin-bottom: 1.5em;
 }
 .address_form_agile h4{
+    text-align: center !important;
 	font-size: 1.2em;
 }
 .w3l_agile_top_brand_left_grid{
@@ -1363,38 +1362,42 @@ td.invert-image a img {
     color: #fff;
     text-transform: uppercase;
     text-align: center;
-    margin: 0 0 1em;
 }
 .checkout-left {
     width: 100%;
     margin: 2em 0 0;
 }
-.checkout-left-basket ul li{
-	list-style-type:none;
-	margin-bottom:1em;
-	font-size:14px;
-	color:#999;
-}
+
 .checkout-left-basket {
     float: left;
-    padding-left: 0;
 }
-.checkout-left-basket .kuantitas{
-    margin-left: 1rem;
-}
-
-.checkout-left-basket ul li span {
+.checkout-left-basket .table td.harga{
     float: right;
 }
-.checkout-left-basket ul li:nth-child(5) {
-    font-size: 1em;
-    color: #212121;
-    font-weight: 600;
-    padding: 1em 0;
-    border-top: 1px solid #DDD;
-	border-bottom: 1px solid #DDD;
-    margin: 2em 0 0;
+.checkout-left-basket .table td{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
+.checkout-left-basket .total{
+    display: flex;
+    justify-content: right !important;
+    border-top: 2px solid #DDD;
+    border-bottom: 2px solid #DDD;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+}
+.checkout-left-basket .total h5{
+    font-size: 1.2rem;
+}
+.checkout-left-basket .total .title{
+    margin-right: 15px;
+}
+.checkout-left-basket .total .content{
+    margin-right: 15px;
+}
+
+
 
 
 .checkout {
@@ -2346,6 +2349,25 @@ td.invert-image a img {
 	}
 }
 @media (max-width: 414px){
+    .checkout-left-basket .total .content{
+        margin-right: 10px !important;
+    }
+    .checkout-left-basket .total h5{
+        font-size: 1rem !important;
+    }
+    .modal .modal-header h4{
+        font-size: 1.2rem;
+    }
+    .modal .modal-body .row.body .col-md-8 .total{
+        margin-right: 5% !important;
+    }
+    .modal .modal-body .row.body .col-md-8 .total h5{
+        font-size: 1.1rem;
+    }
+    .modal .modal-body .btn-checkout{
+        margin-top: 10% !important;
+        margin-bottom: -5% !important;
+    }
 
     td.invert-image a img{
         width: 100%;

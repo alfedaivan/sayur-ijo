@@ -56,16 +56,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="checkout-left">
                     <div class="col-md-4 checkout-left-basket">
                         <h4>Nota</h4>
-                        <ul>
-                            <li>Product1 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
-                            <li>Product2 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
-                            <li>Product3 <i class="kuantitas">( 12 )</i> <span>Rp. 2000 </span></li>
-                            <li></li>
-                            <li>Total <i>-</i> <span>Rp. 2000</span></li>
-                        </ul>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Ayam kampus (5kg)</td>
+                                    <td>5</td>
+                                    <td class="harga">Rp. 200.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Ayam kampus (5kg)</td>
+                                    <td>5</td>
+                                    <td class="harga">Rp. 200.000</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Ayam kampus (5kg)</td>
+                                    <td>5</td>
+                                    <td class="harga">Rp. 200.000</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Ayam kampus (5kg)</td>
+                                    <td>5</td>
+                                    <td class="harga">Rp. 200.000</td>
+                                 </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="total">
+                            <h5 class="title">Total :</h5>
+                            <h5 class="content">Rp. 800.000</h5>
+                        </div>
+
                     </div>
                     <div class="col-md-8 address_form_agile">
-                        <h4>Detail</h4>
+                        <h4>Informasi Pelanggan</h4>
                     <form action="#" class="creditly-card-form agileinfo_form">
                         <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                             <div class="information-wrapper">
@@ -87,7 +110,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </div>
                                 <button class="submit check_out" data-toggle="modal" data-target="#exampleModal">
                                     Pesan Sekarang
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </section>
@@ -153,7 +175,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </table>
                                 <div class="total">
                                     <h5 class="title">Total :</h5>
-                                    <h5>Rp. 1.000.000</h5>
+                                    <h5>Rp. 800.000</h5>
                                 </div>
                             </div>
                         </div>
