@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
 		<div class="top-brands mt-5" id="offers">
 			<div class="container">
-				<h3>Our Products</h3>
+				<h3>Produk Kami</h3>
 				<div class="agile_top_brands_grids">
 
                 <div class="col-md-3 top_brand_left">

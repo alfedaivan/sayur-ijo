@@ -16,23 +16,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- content -->
     <div class="col-md-12 w3l_banner_nav_right ">
             <div class="checkout-page privacy about">
-                <h3>Checkout</h3>
+                <h3>Keranjang</h3>
 
             <div class="checkout-right">
                     <table class="timetable_sub">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Quality</th>
-                                <th>Product Name</th>
-
-                                <th>Price</th>
-                                <th>Remove</th>
+                                <th>Produk</th>
+                                <th>Nama Produk</th>
+                                <th>Kuantitas</th>
+                                <th>Harga</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr class="rem1">
                             <td class="invert-image"><a ><img src="{{url('/assets/TemplateUser/images/4.png')}}" alt=" " class="img-responsive"></a></td>
+                            <td class="invert">Fortune Sunflower Oil</td>
                             <td class="invert">
                                 <div class="quantity">
                                     <div class="quantity-select">
@@ -42,9 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </div>
                             </td>
-                            <td class="invert">Fortune Sunflower Oil</td>
-
-                            <td class="invert">$290.00</td>
+                            <td class="invert">Rp. 100.000</td>
                             <td class="invert">
                                 <div class="rem">
                                     <div class="close1"> </div>
@@ -88,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </div>
                                 <button class="submit check_out" data-toggle="modal" data-target="#exampleModal">
-                                    Checkout
+                                    Pesan Sekarang
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -161,7 +159,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="btn-checkout">
                             <button type="button" class="submit check_out2">
-                                Checkout
+                                Pesan
                             </button>
                         </div>
                     </div>

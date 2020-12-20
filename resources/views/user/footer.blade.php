@@ -1,7 +1,7 @@
 <div class="footer" id="footer">
 	<div class="container">
 		<div class="col-md-4 w3_footer_grid ">
-			<h3>ABOUT US</h3>
+			<h3>TENTANG KAMI</h3>
 			<h4>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Sit, earum officia, a ut minus nesciunt itaque ab deserunt pariatur
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 w3_footer_grid">
-			<h3>CONTACT</h3>
+			<h3>KONTAK</h3>
 			<ul class="contact" style='list-style-type: none;'>
 				<li><i class="fa fa-map-marker"></i> <span> Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</span> </li>
 				<li><i class="fa fa-phone"></i> <span> +6281-007-776-667</span></li>
@@ -25,11 +25,11 @@
 			</ul>
 		</div>
 		<div class="col-md-4 w3_footer_grid">
-			<h3>what in stores</h3>
+			<h3>MENU</h3>
 			<ul class="w3_footer_grid_list">
-                <li><a href="{{url('/')}}">Home</a></li>
-				<li><a href="{{url('/product')}}">Products</a></li>
-				<li><a href="#about">About</a></li>
+                <li><a href="{{url('/')}}">Beranda</a></li>
+				<li><a href="{{url('/product')}}">Produk</a></li>
+				<li><a href="#about">Tentang Kami</a></li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
