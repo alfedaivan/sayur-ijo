@@ -50,6 +50,9 @@ body a:hover{
 .modal .modal-header h4{
     font-size: 1.5rem;
 }
+.modal .modal-header .glyphicon{
+    font-size: 1.3rem;
+}
 .modal .modal-body{
     color:#999;
     padding-bottom: 60px;
@@ -112,6 +115,9 @@ body a:hover{
 
 }
 @media (max-width: 834px){
+    .modal .modal-header h4{
+        font-size: 1.3rem;
+    }
     .modal .modal-body .row.body .col-md-8 .total{
         margin-right: 70px;
     }
@@ -130,6 +136,9 @@ body a:hover{
 
 }
 @media (max-width: 414px){
+    .modal .modal-header h4{
+        font-size: 1.2rem;
+    }
     .modal .modal-body .row.body .col-md-8 .total{
         margin-right: 5% !important;
     }

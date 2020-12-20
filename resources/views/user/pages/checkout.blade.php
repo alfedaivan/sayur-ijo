@@ -106,7 +106,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalCenter">Konfirmasi Pembelian</h4>
+                        <h4 class="modal-title" id="exampleModalCenter">
+                            <i class="glyphicon glyphicon-info-sign"></i> Konfirmasi Pembelian
+                        </h4>
                     </div>
                     <div class="modal-body">
                         <div class="row body">
