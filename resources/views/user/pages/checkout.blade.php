@@ -102,61 +102,67 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="clearfix"></div>
     <!-- //content -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenter">Konfirmasi Pembelian</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row head">
-                        <div class="col-sm-12">
-                            <h4 class="title">Apakah data pemesanan dan barang yang anda beli sudah benar?</h4>
-                        </div>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalCenter">Konfirmasi Pembelian</h4>
                     </div>
-                    <div class="row body">
-                        <div class="col-md-6 left">
-                            <h4>Nama</h4>
-                            <p>Wahoyes</p>
-                            <h4>Alamat</h4>
-                            <p>Lumajang</p>
-                            <h4>Catatan</h4>
-                            <p>Hahahahah</p>
-                        </div>
-                        <div class="col-md-6 right">
-                            <h4>Produk</h4>
-                            <div class="row product">
-                                <div class="col-lg-12 list-product">
-                                    <ul>
-                                        <li><i class="product">Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                        <li><i>Ayam Kampus 2kg (12)</i><span>Rp. 200.000 </span></li>
-                                    </ul>
+                    <div class="modal-body">
+                        <div class="row body">
+                            <div class="col-md-4">
+                                <div class="data">
+                                    <h5>Informasi Pelanggan</h5>
+                                    <h6>Nama</h6> <p>Wahoyes</p>
+                                    <h6>Alamat</h6> <p>Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</p>
+                                    <h6>Catatan</h6> <p>-</p>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row total">
-                                <div class="col-sm-6">
-                                    <H4>Total</H4>
-                                </div>
-                                <div class="col-sm-6 list-price">
-                                    <p>Rp. 1.000.000</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="col-md-8">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Produk</th>
+                                        <th scope="col" class="kuantitas">Kuantitas</th>
+                                        <th scope="col">Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="submit check_out2">
-                        Checkout
-                        <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
-                    </button>
-                </div>
+                                    </tbody>
+                                </table>
+                                <div class="total">
+                                    <h5 class="title">Total :</h5>
+                                    <h5>Rp. 1.000.000</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-checkout">
+                            <button type="button" class="submit check_out2">
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

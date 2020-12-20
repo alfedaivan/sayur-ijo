@@ -42,13 +42,13 @@ body a:hover{
 }
 .modal{
     top: 10%;
-    z-index: 9999 !important;
+    z-index: 9999999 !important;
 }
 .modal h4{
     margin-bottom: 1px;
 }
 .modal .modal-header h4{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 .modal .modal-body{
     color:#999;
@@ -56,65 +56,93 @@ body a:hover{
     padding-top: 10px;
 }
 
-.modal .modal-body .title{
-    color:#999;
-    margin-bottom: 1rem;
-}
-.modal .modal-body .row.body{
-    margin-left: 0px;
-}
-.modal .modal-body .row.body .col-md-6.left p{
-    margin-left: 1rem;
-    font-size: 14px !important;
-}
-.modal .modal-body .row.body .col-md-6.right{
-    margin-left: -8%;
+.modal .modal-body .row.body .table{
+    margin-right: 30px;
 }
 
-.modal .modal-body .row.total{
+.modal .modal-body .row.body .table thead th{
+    font-size: 1rem;
+}
+
+.modal .modal-body .row.body .table tbody tr{
+    border-bottom: #999 solid 1px;
+}
+.modal .modal-body .row.body .col-md-8 .total{
+    float: right;
     display: flex;
+    margin-right: 12%;
 }
-.modal .modal-body .row.body p{
-    margin-bottom: .6rem;
+.modal .modal-body .row.body .col-md-8 .total h5{
+    font-size: 1.5rem;
+    font-weight: 900;
 }
-.modal .modal-body .row.body .row.product{
-    margin-left: 0px;
+
+.modal .modal-body .row.body .col-md-8 .total h5.title{
+    margin-right: 40px;
 }
-.modal .modal-body .row.body .row.product ul li{
-    list-style-type:none;
-	font-size:14px;
-    color:#999;
+.modal .modal-body .row.body .data{
+    margin-top: 5.5%;
+}
+.modal .modal-body .row.body .data h5{
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 900;
+}
+
+.modal .modal-body .row.body .data h6{
+    font-size: 1em;
+}
+.modal .modal-body .row.body .data p{
+    font-size: 0.9em;
     margin-bottom: 5px;
 }
 
-
-.modal .modal-body .row.body .row.product ul li span{
-    margin-left: 1em;
-}
-.modal .modal-body .row.body .row.product h4.total{
-    margin-left: 4em;
+.modal .modal-body .btn-checkout{
+    margin-top: 1%;
+    margin-bottom: -2%;
 }
 
+@media (max-width: 768px){
+    .modal .modal-body .row.body .col-md-8 .total{
+        margin-right: 15% !important;
+    }
+    .modal .modal-body .row.body .col-md-8 .total h5{
+        font-size: 1.3rem;
+    }
+
+}
 @media (max-width: 834px){
-    .modal .modal-body .row.body .row.product ul li span{
-        margin-left: 11em;
+    .modal .modal-body .row.body .col-md-8 .total{
+        margin-right: 70px;
     }
-    .modal .modal-body .row.body .col-md-6.right{
-        margin-left: 0px;
+    .modal .modal-body .row.body .data{
+        margin-top: 9% !important;
     }
-}
 
+    .modal .modal-body{
+        margin-top: -6% !important;
+    }
+
+    .modal .modal-body .btn-checkout{
+        margin-top: 3%;
+        margin-bottom: -4%;
+    }
+
+}
 @media (max-width: 414px){
-    .modal .modal-body .row.total p{
-        margin-left: 7rem;
+    .modal .modal-body .row.body .col-md-8 .total{
+        margin-right: 5% !important;
+    }
+    .modal .modal-body .row.body .col-md-8 .total h5{
+        font-size: 1.1rem;
+    }
+    .modal .modal-body .btn-checkout{
+        margin-top: 10% !important;
+        margin-bottom: -5% !important;
     }
 }
 
-@media (max-width: 375px){
-    .modal .modal-body .row.total p{
-        margin-left: 6rem;
-    }
-}
+
 
 
 
@@ -662,6 +690,7 @@ button.submit.check_out2{
 	transition: .3s;
     border: none;
     width: 100%;
+    margin-top: 5%;
 }
 button.submit.check_out2:hover{
     background: #84c639;
@@ -1870,18 +1899,11 @@ td.invert-image a img {
 		width: 46%;
 	}
 }
-@media (max-width: 1024px){
-    .modal .modal-body .row.body{
-        margin-left: 0;
-    }
-}
+
 @media (max-width: 768px){
-    .modal .modal-body .row.body{
-        margin-left: 0;
-    }
-    .modal .modal-body .row.body .row.product ul li span{
-        margin-left: 30%;
-    }
+
+
+
     td.invert-image a img{
         width: 60%;
     }
@@ -2315,12 +2337,7 @@ td.invert-image a img {
 	}
 }
 @media (max-width: 414px){
-    .modal .modal-body .row.body{
-        margin-left: -15px;
-    }
-    .modal .modal-body .row.body .row.product ul li span{
-        margin-left: 10%;
-    }
+
     td.invert-image a img{
         width: 100%;
     }
