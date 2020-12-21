@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -13,15 +14,12 @@ class FrontController extends Controller
     }
     //page product
     public function Product(){
-        return view('user/pages/product');
+        $product = Produk::orderBy('produks.nama_produk', 'asc')
+        ->paginate(16);
+        return view('user/pages/product', compact('product'));
     }
     // page checkout
     public function Checkout(){
         return view('user/pages/checkout');
     }
-    // page login
-    public function Login(){
-        return view('login/loginPage');
-    }
-// end
 }
