@@ -19,7 +19,7 @@ class KategoriController extends Controller
             ['kategori', '!=', NULL],
             [function ($query) use ($request){
                 if(($term = $request->term)){
-                    $query->orWhere('kategori', 'LIKE', '%' . $term . '%')->get();
+                    $query->Where('kategori', 'LIKE', '%' . $term . '%')->get();
                 }
             }]
         ]) -> paginate(10);
@@ -35,7 +35,7 @@ class KategoriController extends Controller
         Kategori::create([
             'kategori' => $request->kategori
         ]);
-        return redirect('dashboard/category');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil ditambahkan.');
     }
     public function CategoryEdit($id){
         $kategori = Kategori::find($id);
@@ -49,12 +49,12 @@ class KategoriController extends Controller
         $kategori= Kategori::find($id);
         $kategori->kategori = $request->kategori;
         $kategori->save();
-        return redirect('dashboard/category')->with('success', 'Kategori berhasil diupdate');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil diupdate.');
     }
     public function CategoryDelete($id){
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
-        return redirect('dashboard/category')->with('success', 'Kategori berhasil dihapus');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil dihapus.');
     }
 
     // end
