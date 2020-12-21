@@ -19,7 +19,7 @@ class ProdukController extends Controller
     $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
-    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
+    ->paginate(10, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
 
        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
@@ -33,7 +33,7 @@ class ProdukController extends Controller
     {
         $this->validate($request, [
             'nama_produk' => 'required',
-            'foto' => 'required|image',
+            'foto' => 'required | mimes:jpeg,jpg,png | max:2048',
             'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -70,7 +70,7 @@ class ProdukController extends Controller
         if ($file !='') {
             $this->validate($request, [
                 'nama_produk' => 'required',
-                'foto' => 'required|image',
+                'foto' => 'required | mimes:jpeg,jpg,png | max:2048',
                 'id_kategori' => 'required',
                 'harga' => 'required',
                 'stok' => 'required',

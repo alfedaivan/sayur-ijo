@@ -108,7 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <textarea class="billing-address-name form-control" type="text" name="catatan" placeholder="Catatan" cols="5" rows="1"></textarea>
                                     </div>
                                 </div>
-                                <button class="submit check_out" data-toggle="modal" data-target="#exampleModal">
+                                <button class="submit check_out" data-toggle="modal" data-target="#konfirmasiCheckout">
                                     Pesan Sekarang
                                 </button>
                             </div>
@@ -122,7 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="clearfix"></div>
     <!-- //content -->
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg" id="konfirmasiCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

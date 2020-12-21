@@ -22,7 +22,7 @@ class KategoriController extends Controller
                     $query->orWhere('kategori', 'LIKE', '%' . $term . '%')->get();
                 }
             }]
-        ]) -> paginate(5);
+        ]) -> paginate(10);
         return view('admin/category/tbl_category', ['kategori' => $kategori,]);
     }
     public function CategoryAdd(){
