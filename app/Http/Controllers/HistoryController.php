@@ -10,4 +10,9 @@ class HistoryController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function History(){
+        return view('admin/history/tbl_history');
+    }
+
 }

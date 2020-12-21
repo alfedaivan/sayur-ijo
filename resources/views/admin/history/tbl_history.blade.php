@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('content')
-    @include('admin.transaction.sidebarTransaction')
+    @include('admin.history.sidebarHistory')
     <!-- Main Content -->
     <div class="main-content">
         <section class="section">
@@ -13,23 +13,27 @@
             <div class="col-12">
               <div class="card">
 
-                <div class="card-header">
-                  <h4>
-                    <div class="buttons mt-1">
-                      <!-- <a href="FormKategori.html" class="btn btn-icon icon-left btn-success pt-1 pb-1"><i class="fas fa-plus"></i> Tambah Kategori</a> -->
-                    </div>
-                  </h4>
-                  <div class="card-header-form">
-                    <form>
-                      <div class="input-group ">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    <div class="card-header">
+                        <h4>
+                            <form action="#">
+                            <div class="input-group">
+                                <input type="text" name="term" id="term" class="form-control" placeholder="Search" >
+                                <div class="input-group-btn">
+                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                <button href="{{url('/dashboard/history')}}" class="btn btn-danger ml-1">
+                                    <i class="fa fa-sync-alt" style="font-size: 13px !important;"></i>
+                                </button>
+                                </div>
+                            </div>
+                            </form>
+                        </h4>
+                        <div class="card-header-form">
+                            <div class="buttons mt-1">
+                            <a href="{{url('/dashboard/product/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Produk</a>
+                            </div>
                         </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                    </div>
+
 
                 <div class="card-body p-0">
                   <div class="table-responsive">

@@ -11,7 +11,7 @@
 				<ul class="agileits_social_icons">
 					<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+					<li><a href="mailto: email@gmail.com" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 					<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
@@ -20,7 +20,7 @@
 			<h3>KONTAK</h3>
 			<ul class="contact" style='list-style-type: none;'>
 				<li><i class="fa fa-map-marker"></i> <span> Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</span> </li>
-				<li><i class="fa fa-phone"></i> <span> +6281-007-776-667</span></li>
+				<li><i class="fa fa-phone"></i> <span> <a href="https://api.whatsapp.com/send?phone=6281234567890">+6281-007-776-667</a></span></li>
 				<li><i class="fa fa-envelope"></i> <span> abc@gmail.com</span> </li>
 			</ul>
 		</div>

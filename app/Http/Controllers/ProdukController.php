@@ -19,9 +19,15 @@ class ProdukController extends Controller
     $kategori = Kategori::all();
     $produk = Produk::orderBy('produks.id', 'asc')
     ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
-    ->paginate(5, array('produks.id','produks.foto','produks.nama_produk','kategoris.id as idkategori','kategoris.kategori as kategori','produks.harga','produks.stok'));
+    ->where(function($query) use ($request){
+        $query->where('nama_produk', 'LIKE', '%' . $request->search . '%')
+              ->orWhere('kategori', 'LIKE', '%' . $request->search . '%');
+    })
+    ->paginate(10, array('produks.id','produks.foto','produks.nama_produk',
+                        'kategoris.id as idkategori','kategoris.kategori as kategori',
+                        'produks.harga','produks.stok'));
 
-       return view('admin/product/tbl_product',compact('produk','kategori'));
+        return view('admin/product/tbl_product',compact('produk','kategori'));
    }
 
     public function ProductAdd(){
@@ -33,7 +39,7 @@ class ProdukController extends Controller
     {
         $this->validate($request, [
             'nama_produk' => 'required',
-            'foto' => 'required|image',
+            'foto' => 'required | mimes:jpeg,jpg,png | max:5120',
             'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -54,7 +60,7 @@ class ProdukController extends Controller
             'stok'=>$request->stok,
         ]);
 
-        return redirect('/dashboard/product')->with('success', 'Product is succesfully Added.');
+        return redirect('/dashboard/product')->with('success', 'Produk berhasil ditambahkan.');
     }
     public function ProductEdit($id){
         $produk=Produk::findOrFail($id);
@@ -70,7 +76,7 @@ class ProdukController extends Controller
         if ($file !='') {
             $this->validate($request, [
                 'nama_produk' => 'required',
-                'foto' => 'required|image',
+                'foto' => 'required | mimes:jpeg,jpg,png | max:5120',
                 'id_kategori' => 'required',
                 'harga' => 'required',
                 'stok' => 'required',
@@ -98,12 +104,12 @@ class ProdukController extends Controller
             'created_at'=>$request->created_at,
         );
         Produk::where('id',$id)->update($form_data);
-        return redirect('/dashboard/product')->with('success', 'Product is successfully updated');
+        return redirect('/dashboard/product')->with('success', 'Produk berhasil diupdate.');
     }
 
     public function ProductDelete($id){
         $produk = Produk::findOrFail($id);
         $produk->delete();
-        return redirect('dashboard/product')->with('success', 'Product is deleted');
+        return redirect('dashboard/product')->with('success', 'Produk berhasil dihapus.');
     }
 }
