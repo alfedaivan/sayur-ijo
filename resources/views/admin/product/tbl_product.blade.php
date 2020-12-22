@@ -62,7 +62,7 @@
                         @foreach($produk as $index => $p)
                         <tr>
                             <td>{{ $skipped + $i }}</td>
-                            <td><img src="{{ url('/images/'.$p->foto) }}" height="75" width="75" alt="{{$p->nama_produk}}" /></td>
+                            <td><img src="{{ url('/images/'.$p->foto) }}" height="50" width="50" alt="{{$p->nama_produk}}" /></td>
                             <td>{{$p -> nama_produk}}</td>
                             <td>{{$p -> kategori}}</td>
                             <td>{{$p -> harga}}</td>

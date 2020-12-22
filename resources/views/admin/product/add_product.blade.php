@@ -50,11 +50,17 @@
                       <label>Stok</label>
                       <input name="stok" type="text" class="form-control" required="">
                     </div>
-                    
+
                     <div class="form-group">
                       <label>Foto</label>
                       <input name="foto" type="file" class="form-control" required="">
                     </div>
+                    <!-- <div class="form-group">
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input name="foto" type="file" class="form-control" required="" id="image-upload" />
+                        </div>
+                    </div> -->
                   </div>
                   <div class="card-footer text-center">
                     <button value="simpan" type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>

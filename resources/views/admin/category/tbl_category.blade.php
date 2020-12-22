@@ -40,7 +40,7 @@
                         </h4>
                         <div class="card-header-form">
                             <div class="buttons mt-1">
-                            <a href="{{url('/dashboard/product/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Produk</a>
+                            <a href="{{url('/dashboard/category/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Category</a>
                             </div>
                         </div>
                     </div>

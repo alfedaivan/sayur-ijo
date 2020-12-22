@@ -83,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <div class="total">
                             <h5 class="title">Total :</h5>
-                            <h5 class="content">Rp. 800.000</h5>
+                            <h5 class="content">Rp. 100000000</h5>
                         </div>
 
                     </div>
@@ -150,6 +150,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
                                         <tr>
                                             <td>Ayam kampus (5kg)</td>
                                             <td>5</td>

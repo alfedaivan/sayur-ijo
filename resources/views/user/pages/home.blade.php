@@ -50,6 +50,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <link rel="stylesheet" href="{{url('/assets/TemplateUser/css/flexslider.css')}}" type="text/css" media="screen" property="" />
                 <script defer src="{{url('/assets/TemplateUser/js/jquery.flexslider.js')}}"></script>
                 <script type="text/javascript"></script>
+                <script>
+                    // flex slidder
+                    $(window).load(function(){
+                        $('.flexslider').flexslider({
+                        animation: "slide",
+                        start: function(slider){
+                            $('body').removeClass('loading');
+                        }
+                        });
+                    });
+                    // end
+                </script>
             <!-- //flexSlider -->
         </div>
         <!-- end hero banner -->

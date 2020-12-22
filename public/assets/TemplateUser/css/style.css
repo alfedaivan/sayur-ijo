@@ -1386,15 +1386,17 @@ td.invert-image a img {
 }
 .checkout-left-basket .total{
     display: flex;
-    justify-content: right !important;
+    justify-content: flex-end;
     border-top: 2px solid #DDD;
     border-bottom: 2px solid #DDD;
     padding-top: 1em;
     padding-bottom: 1em;
     width: 100%;
+    position: relative;
 }
 .checkout-left-basket .total h5{
     font-size: 1.2rem;
+
 }
 .checkout-left-basket .total .title{
     margin-right: 15px;
@@ -1402,6 +1404,14 @@ td.invert-image a img {
 .checkout-left-basket .total .content{
     margin-right: 15px;
 }
+
+@media(max-width: 320){
+    .checkout-left-basket .total .content{
+        margin-right: 100px;
+    }
+}
+
+
 
 
 

@@ -39,7 +39,7 @@ class ProdukController extends Controller
     {
         $this->validate($request, [
             'nama_produk' => 'required',
-            'foto' => 'required | mimes:jpeg,jpg,png | max:5120',
+            'foto' => 'required | mimes:jpg,png,jpeg | max:5120',
             'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -76,7 +76,7 @@ class ProdukController extends Controller
         if ($file !='') {
             $this->validate($request, [
                 'nama_produk' => 'required',
-                'foto' => 'required | mimes:jpeg,jpg,png | max:5120',
+                'foto' => 'required | mimes:jpg,png,jpeg | max:5120',
                 'id_kategori' => 'required',
                 'harga' => 'required',
                 'stok' => 'required',
