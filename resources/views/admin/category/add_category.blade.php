@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                       <label>Nama Kategori</label>
-                      <input type="text" name="kategori" class="form-control" required="">
+                      <input type="text" name="category" class="form-control" required="">
                     </div>
 
                   </div>

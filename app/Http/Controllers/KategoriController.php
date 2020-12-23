@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Kategori;
+use App\Models\Category;
 
 class KategoriController extends Controller
 {
@@ -15,46 +15,46 @@ class KategoriController extends Controller
 
     // category
     public function Category(Request $request){
-        $kategori = Kategori::where([
-            ['kategori', '!=', NULL],
+        $category = Category::where([
+            ['category', '!=', NULL],
             [function ($query) use ($request){
                 if(($term = $request->term)){
-                    $query->Where('kategori', 'LIKE', '%' . $term . '%')->get();
+                    $query->Where('category', 'LIKE', '%' . $term . '%')->get();
                 }
             }]
         ]) -> paginate(10);
-        return view('admin/category/tbl_category', ['kategori' => $kategori,]);
+        return view('admin/category/tbl_category', ['category' => $category,]);
     }
     public function CategoryAdd(){
         return view('admin/category/add_category');
     }
     public function CategoryAddValidation(Request $request){
         $this->validate($request,[
-            'kategori' => 'required'
+            'category' => 'required'
         ]);
-        Kategori::create([
-            'kategori' => $request->kategori
+        Category::create([
+            'category' => $request->category
         ]);
-        return redirect('dashboard/category')->with('success', 'Kategori berhasil ditambahkan.');
+        return redirect('dashboard/category')->with('success', 'Category created succesfully.');
     }
     public function CategoryEdit($id){
-        $kategori = Kategori::find($id);
-        return view('admin/category/edit_category',['kategori' => $kategori]);
+        $category = Category::find($id);
+        return view('admin/category/edit_category',['category' => $category]);
     }
     public function CategoryEditValidation($id, Request $request){
         $this->validate($request,[
-            'kategori' => 'required'
+            'category' => 'required'
         ]);
 
-        $kategori= Kategori::find($id);
-        $kategori->kategori = $request->kategori;
-        $kategori->save();
-        return redirect('dashboard/category')->with('success', 'Kategori berhasil diupdate.');
+        $category= Category::find($id);
+        $category->category = $request->category;
+        $category->save();
+        return redirect('dashboard/category')->with('success', 'Category updated succesfully.');
     }
     public function CategoryDelete($id){
-        $kategori = Kategori::findOrFail($id);
-        $kategori->delete();
-        return redirect('dashboard/category')->with('success', 'Kategori berhasil dihapus.');
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect('dashboard/category')->with('success', 'Category deleted succesfully.');
     }
 
     // end
