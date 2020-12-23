@@ -54,11 +54,11 @@
                             <th>Action</th>
                         </tr>
                         <!-- looping number -->
-                        <?php $i = 1; $skipped = $kategori->currentPage() * $kategori->perPage()-$kategori->perPage(); ?>
-                        @foreach($kategori as $index => $k)
+                        <?php $i = 1; $skipped = $category->currentPage() * $category->perPage()-$category->perPage(); ?>
+                        @foreach($category as $index => $k)
                         <tr>
                             <td>{{ $skipped + $i }}</td>
-                            <td>{{$k -> kategori}}</td>
+                            <td>{{$k -> category}}</td>
                             <td>
                             <a href="/dashboard/category/edit/{{$k->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$k->id}}"><i class="fas fa-trash"></i></a>
@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- pagination -->
-                    {{ $kategori->links('admin.pagination') }}
+                    {{ $category->links('admin.pagination') }}
 
                 </div>
                 </div>
@@ -83,7 +83,7 @@
 
 
     <!-- modal delete -->
-    @foreach($kategori as $k)
+    @foreach($category as $k)
         <div class="modal fade" id="deleteData{{$k->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <h6>
                         <br>
-                            Yakin Ingin Menghapus <b>{{$k->kategori}}</b> ?
+                            Yakin Ingin Menghapus <b>{{$k->category}}</b> ?
                         </h6>
                     </div>
                     </div>
