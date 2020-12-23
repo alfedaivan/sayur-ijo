@@ -11,10 +11,10 @@
                 <a href="{{url('/dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
               </li>
               <li class="nav-item ">
-                <a href="{{url('/dashboard/product')}}" class="nav-link"><i class="fas fa-cube"></i><span>Produk </span></a>
-              </li>
-              <li class="nav-item ">
                 <a href="{{url('/dashboard/category')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Kategori</span></a>
+              </li>
+	      <li class="nav-item ">
+                <a href="{{url('/dashboard/product')}}" class="nav-link"><i class="fas fa-cube"></i><span>Produk </span></a>
               </li>
               <li class="nav-item active">
                 <a href="{{url('/dashboard/history')}}" class="nav-link"><i class="fas fa-history"></i><span>Riwayat Transaksi <i class="nav-arrow fas fa-chevron-right" style=""></i></span></a>

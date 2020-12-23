@@ -22,14 +22,14 @@
 
                     <div class="form-group">
                       <label>Nama</label>
-                      <input name="nama_produk"type="text" class="form-control" required="">
+                      <input name="product_name"type="text" class="form-control" required="">
                     </div>
 
                     <div class="form-group">
                       <label>Kategori</label>
-                      <select class="form-control" required="" name="id_kategori">
-                        @foreach($kategori as $k)
-                          <option value="{{$k->id}}">{{$k->kategori}}</option>
+                      <select class="form-control" required="" name="category_id">
+                        @foreach($category as $k)
+                          <option value="{{$k->id}}">{{$k->category}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -42,18 +42,18 @@
                             Rp.
                           </div>
                         </div>
-                        <input name="harga" type="text" class="form-control currency" required="">
+                        <input name="price" type="text" class="form-control currency" required="">
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label>Stok</label>
-                      <input name="stok" type="text" class="form-control" required="">
+                      <input name="stock" type="text" class="form-control" required="">
                     </div>
 
                     <div class="form-group">
                       <label>Foto</label>
-                      <input name="foto" type="file" class="form-control" required="">
+                      <input name="photo" type="file" class="form-control" required="">
                     </div>
                     <!-- <div class="form-group">
                         <div id="image-preview" class="image-preview">
