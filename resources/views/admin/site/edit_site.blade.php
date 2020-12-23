@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                       <label>Facebook </label>
-                      <input type="text" name="facebook" class="form-control" placeholder="https://www.facebook.com/namaFacebook">
+                      <input type="text" name="facebook" class="form-control" placeholder="">
                     </div>
 
                     <div class="form-group">
