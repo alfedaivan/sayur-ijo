@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Produk;
-use App\Models\Kategori;
+use App\Models\Product;
+use App\Models\Category;
 
 class ProdukController extends Controller
 {
@@ -16,70 +16,70 @@ class ProdukController extends Controller
     }
 
     public function index(Request $request){
-    $kategori = Kategori::all();
-    $produk = Produk::orderBy('produks.id', 'asc')
-    ->join('kategoris', 'produks.id_kategori', '=', 'kategoris.id')
+    $category = Category::all();
+    $product = Product::orderBy('products.id', 'asc')
+    ->join('categories', 'products.category_id', '=', 'categories.id')
     ->where(function($query) use ($request){
-        $query->where('nama_produk', 'LIKE', '%' . $request->search . '%')
-              ->orWhere('kategori', 'LIKE', '%' . $request->search . '%');
+        $query->where('product_name', 'LIKE', '%' . $request->search . '%')
+              ->orWhere('category', 'LIKE', '%' . $request->search . '%');
     })
-    ->paginate(10, array('produks.id','produks.foto','produks.nama_produk',
-                        'kategoris.id as idkategori','kategoris.kategori as kategori',
-                        'produks.harga','produks.stok'));
+    ->paginate(10, array('products.id','products.photo','products.product_name',
+                        'categories.id as categoryid','categories.category as category',
+                        'products.price','products.stock'));
 
-        return view('admin/product/tbl_product',compact('produk','kategori'));
+        return view('admin/product/tbl_product',compact('product','category'));
    }
 
     public function ProductAdd(){
-        $kategori = Kategori::all();
-        return view('admin/product/add_product', compact('kategori'));
+        $category = Category::all();
+        return view('admin/product/add_product', compact('category'));
     }
 
     public function ProductAddValidation(Request $request)
     {
         $this->validate($request, [
-            'nama_produk' => 'required',
-            'foto' => 'required | mimes:jpg,png,jpeg | max:5120',
-            'id_kategori' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
+            'product_name' => 'required',
+            'photo' => 'required | mimes:jpg,png,jpeg | max:5120',
+            'category_id' => 'required',
+            'price' => 'required',
+            'stock' => 'required',
         ]);
 
-        $file = $request->file('foto');
+        $file = $request->file('photo');
 
         $nama_file = time()."_".$file->getClientOriginalName();
 
         $tujuan_upload = 'images';
         $file->move($tujuan_upload,$nama_file);
 
-        Produk::create([
-            'nama_produk'=>$request->nama_produk,
-            'foto' => $nama_file,
-            'id_kategori'=>$request->id_kategori,
-            'harga'=>$request->harga,
-            'stok'=>$request->stok,
+        Product::create([
+            'product_name'=>$request->product_name,
+            'photo' => $nama_file,
+            'category_id'=>$request->category_id,
+            'price'=>$request->price,
+            'stock'=>$request->stock,
         ]);
 
-        return redirect('/dashboard/product')->with('success', 'Produk berhasil ditambahkan.');
+        return redirect('/dashboard/product')->with('success', 'Product created succesfully.');
     }
     public function ProductEdit($id){
-        $produk=Produk::findOrFail($id);
-        $kategori = Kategori::all();
-        return view('admin/product/edit_product',compact('produk','kategori'));
+        $product=Product::findOrFail($id);
+        $category = Category::all();
+        return view('admin/product/edit_product',compact('product','category'));
     }
 
     public function ProductEditValidation(Request $request, $id)
     {
         $nama_file = $request->hidden_image;
-        $file = $request->file('foto');
+        $file = $request->file('photo');
 
         if ($file !='') {
             $this->validate($request, [
-                'nama_produk' => 'required',
-                'foto' => 'required | mimes:jpg,png,jpeg | max:5120',
-                'id_kategori' => 'required',
-                'harga' => 'required',
-                'stok' => 'required',
+                'product_name' => 'required',
+                'photo' => 'required | mimes:jpg,png,jpeg | max:5120',
+                'category_id' => 'required',
+                'price' => 'required',
+                'stock' => 'required',
                 'created_at' => 'required',
             ]);
                 $nama_file = time()."_".$file->getClientOriginalName();
@@ -87,29 +87,29 @@ class ProdukController extends Controller
                 $file->move($tujuan_upload,$nama_file);
         }else{
             $request->validate([
-                'nama_produk' => 'required',
-                'id_kategori' => 'required',
-                'harga' => 'required',
-                'stok' => 'required',
+                'product_name' => 'required',
+                'category_id' => 'required',
+                'price' => 'required',
+                'stock' => 'required',
                 'created_at' => 'required',
             ]);
         }
 
         $form_data = array(
-            'nama_produk'=>$request->nama_produk,
-            'foto' => $nama_file,
-            'id_kategori'=>$request->id_kategori,
-            'harga'=>$request->harga,
-            'stok'=>$request->stok,
+            'product_name'=>$request->product_name,
+            'photo' => $nama_file,
+            'category_id'=>$request->category_id,
+            'price'=>$request->price,
+            'stock'=>$request->stock,
             'created_at'=>$request->created_at,
         );
-        Produk::where('id',$id)->update($form_data);
-        return redirect('/dashboard/product')->with('success', 'Produk berhasil diupdate.');
+        Product::where('id',$id)->update($form_data);
+        return redirect('/dashboard/product')->with('success', 'Product updated succesfully.');
     }
 
     public function ProductDelete($id){
-        $produk = Produk::findOrFail($id);
-        $produk->delete();
-        return redirect('dashboard/product')->with('success', 'Produk berhasil dihapus.');
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect('dashboard/product')->with('success', 'Product deleted succesfully.');
     }
 }
