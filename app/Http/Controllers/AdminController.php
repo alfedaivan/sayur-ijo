@@ -17,10 +17,10 @@ class AdminController extends Controller
     }
 
     public function index(){
-        $daftar = Daftar::all();
-        $keranjang = Keranjang::all();
+        // $daftar = Daftar::all();
+        // $keranjang = Keranjang::all();
         $category = Category::all();
         $product = Product::all();
-        return view('admin/dashboard/dashboard', compact('product','category','daftar','keranjang'));
+        return view('admin/dashboard/dashboard', compact('product','category'));
     }
 }

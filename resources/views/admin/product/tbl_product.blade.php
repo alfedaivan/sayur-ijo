@@ -65,7 +65,7 @@
                             <td><img src="{{ url('/images/'.$p->photo) }}" height="50" width="50" alt="{{$p->product_name}}" /></td>
                             <td>{{$p -> product_name}}</td>
                             <td>{{$p -> category}}</td>
-                            <td>{{$p -> price}}</td>
+                            <td>Rp. {{$p -> price}}</td>
                             <td>{{$p -> stock}}</td>
                             <td>
                             <a href="/dashboard/product/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
