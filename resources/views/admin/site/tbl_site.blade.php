@@ -6,7 +6,7 @@
         <div class="main-content">
             <section class="section">
             <div class="section-header">
-                <h1>Site</h1>
+                <h1>Pengaturan</h1>
             </div>
 
             @if ($message = Session::get('success'))
@@ -33,7 +33,7 @@
                             <th>Gmail</th>
                             <th>Instagram</th>
                             <th>Nomor WA</th>
-                            <th>About us</th>
+                            <th>Tentang kami</th>
                             <th>Alamat</th>
                             <th>Edit</th>
                         </tr>
@@ -46,7 +46,7 @@
                             <td>{{ \Illuminate\Support\Str::limit($s -> instagram, $limit = 10, $end = '...') }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($s -> nomor_wa, $limit = 10, $end = '...') }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($s -> about, $limit = 90, $end = '...') }}</td>
-                            <td>{{ \Illuminate\Support\Str::limit($s -> alamat, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> alamat, $limit = 30, $end = '...') }}</td>
                             <td>
                             <a href="/dashboard/settings/edit/{{$s->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                             </td>

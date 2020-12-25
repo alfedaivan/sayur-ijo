@@ -782,6 +782,12 @@ button.submit.check_out2:hover{
 .w3_footer_grid ul.contact a:hover{
 	color: #84c639;
 }
+.w3_footer_grid ul.contact a.email{
+	color: #999;
+}
+.w3_footer_grid ul.contact a.email:hover{
+	color: #dd4b39;;
+}
 .w3_footer_grid ul.contact span{
 	margin-left: 1em;
 }
@@ -839,10 +845,6 @@ button.submit.check_out2:hover{
 .agileits_social_icons li a.twitter:hover{
 	background:#55acee;
 	border-color:#55acee;
-}
-.agileits_social_icons li a.google:hover{
-	background:#dd4b39;
-	border-color:#dd4b39;
 }
 .agileits_social_icons li a.instagram:hover{
 	background:#ea4c89;
