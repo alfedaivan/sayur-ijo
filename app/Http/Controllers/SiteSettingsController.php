@@ -14,7 +14,7 @@ class SiteSettingsController extends Controller
 
     public function CategoryEditValidation($id, Request $request){
         $this->validate($request,[
-            'facebook' => 'required',
+        'facebook' => 'required',
 	    'twitter' => 'required',
 	    'email' => 'required',
 	    'instagram' => 'required',

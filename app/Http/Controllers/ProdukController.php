@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\File;
+
 use Illuminate\Http\Request;
+
 use App\Models\Product;
 use App\Models\Category;
+
+use Illuminate\Support\Facades\File;
 
 
 
@@ -114,5 +117,5 @@ class ProdukController extends Controller
         $product->delete();
         return redirect('dashboard/product')->with('success', 'Product deleted succesfully.');
     }
-}
 
+}

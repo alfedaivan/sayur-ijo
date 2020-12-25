@@ -43,7 +43,6 @@ Route::get('/dashboard/category/add', 'App\Http\Controllers\KategoriController@C
 Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\KategoriController@CategoryAddValidation');
 Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\KategoriController@CategoryEdit');
 Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\KategoriController@CategoryEditValidation');
-
 Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriController@CategoryDelete')->name('category.delete');
 
 // transaction
