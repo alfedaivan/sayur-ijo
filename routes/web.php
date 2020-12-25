@@ -21,10 +21,10 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 
 // route change pages
 // user
+
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
 Route::get('/checkout', 'App\Http\Controllers\FrontController@Checkout');
-// Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');

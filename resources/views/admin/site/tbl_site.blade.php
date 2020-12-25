@@ -40,13 +40,13 @@
                         <!-- looping number -->
                         @foreach($site as $s)
                         <tr>
-                            <td>{{$s -> facebook}}</td>
-                            <td>{{$s -> twitter}}</td>
-                            <td>{{$s -> email}}</td>
-                            <td>{{$s -> instagram}}</td>
-                            <td>{{$s -> nomor_wa}}</td>
-                            <td>{{$s -> about}}</td>
-                            <td>{{$s -> alamat}}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> facebook, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> twitter, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> email, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> instagram, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> nomor_wa, $limit = 10, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> about, $limit = 90, $end = '...') }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($s -> alamat, $limit = 10, $end = '...') }}</td>
                             <td>
                             <a href="/dashboard/settings/edit/{{$s->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                             </td>
@@ -63,3 +63,4 @@
         </div>
         </section>
       </div>
+@endsection()

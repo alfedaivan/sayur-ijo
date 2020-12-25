@@ -1,29 +1,29 @@
 <div class="footer" id="footer">
 	<div class="container">
+    @foreach($site as $s)
 		<div class="col-md-4 w3_footer_grid ">
 			<h3>TENTANG KAMI</h3>
 			<h4>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Sit, earum officia, a ut minus nesciunt itaque ab deserunt pariatur
-				ipsam culpa sunt vitae vero temporibus minima quasi iusto maxime quam?
+                {{$s->about}}
 			</h4>
 			<div class="w3_footer_grid_bottom">
 				<ul class="agileits_social_icons">
-					<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="mailto: email@gmail.com" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="{{$s->facebook}}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="{{$s->twitter}}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="mailto: {{$s->email}}" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+					<li><a href="{{$s->instagram}}" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-4 w3_footer_grid">
 			<h3>KONTAK</h3>
 			<ul class="contact" style='list-style-type: none;'>
-				<li><i class="fa fa-map-marker"></i> <span> Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</span> </li>
-				<li><i class="fa fa-phone"></i> <span> <a href="https://api.whatsapp.com/send?phone=6281234567890">+6281-007-776-667</a></span></li>
-				<li><i class="fa fa-envelope"></i> <span> abc@gmail.com</span> </li>
+				<li><i class="fa fa-map-marker"></i> <span>{{$s->alamat}}3</span> </li>
+				<li><i class="fa fa-phone"></i> <span> <a href="https://api.whatsapp.com/send?phone={{$s->nomor_wa}}">+6281-007-776-667</a></span></li>
+				<li><i class="fa fa-envelope"></i> <span> {{$s->email}}</span> </li>
 			</ul>
 		</div>
+    @endforeach
 		<div class="col-md-4 w3_footer_grid">
 			<h3>MENU</h3>
 			<ul class="w3_footer_grid_list">

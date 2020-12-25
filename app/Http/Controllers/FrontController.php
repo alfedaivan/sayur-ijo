@@ -3,25 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Site;
 
 class FrontController extends Controller
 {
     // change pages controller
     //page home
     public function Index(){
-        return view('user/pages/home');
+        $site = Site::all();
+        return view('user/pages/home',compact('site'));
     }
     //page product
     public function Product(){
-        return view('user/pages/product');
+        $site = Site::all();
+        return view('user/pages/product',compact('site'));
     }
     // page checkout
     public function Checkout(){
-        return view('user/pages/checkout');
+        $site = Site::all();
+        return view('user/pages/checkout',compact('site'));
     }
     // page login
     public function Login(){
         return view('login/loginPage');
     }
+
 // end
 }
