@@ -7,12 +7,17 @@ use App\Models\Site;
 
 class SiteSettingsController extends Controller
 {
-    public function SiteSettings(){
-	$site = Site::all();
-        return view('admin/site/edit_site',['site' => $site]);
+	public function index(){
+		$site = Site::all();
+		return view('admin/site/tbl_site',compact('site'));
+	}
+
+    public function SiteSettings($id){
+		$site=Site::findOrFail($id);
+        return view('admin/site/edit_site',compact('site'));
     }
 
-    public function CategoryEditValidation($id, Request $request){
+    public function SiteEditValidation($id, Request $request){
         $this->validate($request,[
         'facebook' => 'required',
 	    'twitter' => 'required',
@@ -33,7 +38,7 @@ class SiteSettingsController extends Controller
 	    'about' => $request->about,
 	);
 
-	Site::where($id)->update($form_data);
+	Site::where('id',$id)->update($form_data);
         return redirect('dashboard/settings')->with('success', 'Site updated succesfully.');
     }
 }

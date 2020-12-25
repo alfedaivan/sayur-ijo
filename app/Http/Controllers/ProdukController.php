@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Support\Facades\File;
+
 
 use Illuminate\Support\Facades\File;
 
@@ -114,6 +116,10 @@ class ProdukController extends Controller
 
     public function ProductDelete($id){
         $product = Product::findOrFail($id);
+        $image_path = public_path("images/{$product->photo}"); 
+        if (File::exists($image_path)) { 
+            File::delete($image_path); 
+        }
         $product->delete();
         return redirect('dashboard/product')->with('success', 'Product deleted succesfully.');
     }

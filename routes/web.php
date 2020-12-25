@@ -54,6 +54,8 @@ Route::get('/dashboard/user/add', 'App\Http\Controllers\UserController@UserAdd')
 Route::get('/dashboard/user/edit', 'App\Http\Controllers\UserController@UserEdit');
 
 // dite settings
-Route::get('/dashboard/settings', 'App\Http\Controllers\SiteSettingsController@SiteSettings');
+Route::get('/dashboard/settings', 'App\Http\Controllers\SiteSettingsController@index');
+Route::get('/dashboard/settings/edit/{id}', 'App\Http\Controllers\SiteSettingsController@SiteSettings');
+Route::put('/dashboard/settings/editvalidation/{id}', 'App\Http\Controllers\SiteSettingsController@SiteEditValidation');
 
 
