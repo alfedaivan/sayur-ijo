@@ -19,7 +19,7 @@
 			<h3>KONTAK</h3>
 			<ul class="contact" style='list-style-type: none;'>
 				<li><i class="fa fa-map-marker"></i> <span>{{$s->alamat}}3</span> </li>
-				<li><i class="fa fa-phone"></i> <span> <a href="https://api.whatsapp.com/send?phone={{$s->nomor_wa}}">+6281-007-776-667</a></span></li>
+				<li><i class="fa fa-phone"></i> <span> <a href="https://api.whatsapp.com/send?phone={{$s->nomor_wa}}">+{{$s->nomor_wa}}</a></span></li>
 				<li><i class="fa fa-envelope"></i> <span> {{$s->email}}</span> </li>
 			</ul>
 		</div>
