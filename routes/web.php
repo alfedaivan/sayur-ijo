@@ -23,7 +23,12 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 // user
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
-Route::get('/checkout', 'App\Http\Controllers\FrontController@Checkout');
+Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
+// Route::get('/checkout/{id}', 'App\Http\Controllers\FrontController@cart')
+Route::get('/checkout/plus', 'App\Http\Controllers\FrontController@plus');
+Route::get('/checkout/minus', 'App\Http\Controllers\FrontController@minus');
+Route::get('/checkout/delete', 'App\Http\Controllers\FrontController@delete');
+Route::post('/order', 'App\Http\Controllers\FrontController@checkout');
 // Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin
@@ -36,7 +41,6 @@ Route::post('/dashboard/product/addvalidation', 'App\Http\Controllers\ProdukCont
 Route::get('/dashboard/product/edit/{id}', 'App\Http\Controllers\ProdukController@ProductEdit');
 Route::put('/dashboard/product/editvalidation/{id}', 'App\Http\Controllers\ProdukController@ProductEditValidation');
 Route::delete('/dashboard/product/hapus/{id}', 'App\Http\Controllers\ProdukController@ProductDelete')->name('product.delete');
-
 // category
 Route::get('/dashboard/category', 'App\Http\Controllers\KategoriController@Category');
 Route::get('/dashboard/category/add', 'App\Http\Controllers\KategoriController@CategoryAdd');

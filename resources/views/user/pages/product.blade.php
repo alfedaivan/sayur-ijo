@@ -31,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>Rp. {{$p -> harga}}</h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href="{{url('/checkout')}}" class="btn-produk">ADD TO CART</a>
+											<a href={{url("/checkout?id=".$p -> id)}} class="btn-produk">ADD TO CART</a>
 										</div>
 									</div>
 								</figure>
@@ -44,17 +44,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
 
-			{{ $product->links('user.pagination') }}
-
-
+            {{ $product->links('user.pagination') }}
         <div class="clearfix"></div>
     <!-- //content -->
     </div>
-
-
-
-
-
 
 <!-- footer -->
 @include('user.footer')

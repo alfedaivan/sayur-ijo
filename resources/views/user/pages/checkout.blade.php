@@ -30,26 +30,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($keranjang as $c)
                         <tr class="rem1">
-                            <td class="invert-image"><a ><img src="{{url('/assets/TemplateUser/images/4.png')}}" alt=" " class="img-responsive"></a></td>
-                            <td class="invert">Fortune Sunflower Oil</td>
+                            <td class="invert-image"><a ><img src="{{ url('/images/'.$c -> foto) }}" alt=" " class="img-responsive"></a></td>
+                            <td class="invert">{{$c -> nama_produk}}</td>
                             <td class="invert">
                                 <div class="quantity">
                                     <div class="quantity-select">
-                                        <div class="entry value-minus">&nbsp;</div>
-                                        <div class="entry value"><span>1</span></div>
-                                        <div class="entry value-plus active">&nbsp;</div>
+                                        <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
+                                        <div class="entry value"><span>{{$c -> kuantitas}}</span></div>
+                                        <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
                                     </div>
                                 </div>
                             </td>
-                            <td class="invert">Rp. 100.000</td>
+                            <td class="invert">Rp. {{$c -> harga}}</td>
                             <td class="invert">
                                 <div class="rem">
-                                    <div class="close1"> </div>
+                                    <a class="close1" href="{{url('/checkout/delete/?id=' . $c -> product_id)}}"></a>
                                 </div>
 
                             </td>
                         </tr>
+                            @endforeach
 
                     </tbody></table>
                 </div>
@@ -58,44 +60,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h4>Nota</h4>
                         <table class="table">
                             <tbody>
+                                @foreach ($keranjang as $c)
                                 <tr>
-                                    <td>Ayam kampus (5kg)</td>
-                                    <td>5</td>
-                                    <td class="harga">Rp. 200.000</td>
+                                    <td>{{$c -> nama_produk}}</td>
+                                    <td>{{$c -> kuantitas}}</td>
+                                    <td class="harga">Rp. {{$c -> total_harga}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Ayam kampus (5kg)</td>
-                                    <td>5</td>
-                                    <td class="harga">Rp. 200.000</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Ayam kampus (5kg)</td>
-                                    <td>5</td>
-                                    <td class="harga">Rp. 200.000</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Ayam kampus (5kg)</td>
-                                    <td>5</td>
-                                    <td class="harga">Rp. 200.000</td>
-                                 </tr>
+                                 @endforeach
                             </tbody>
                         </table>
 
                         <div class="total">
                             <h5 class="title">Total :</h5>
-                            <h5 class="content">Rp. 800.000</h5>
+                            <h5 class="content">Rp. {{$sum}}</h5>
                         </div>
 
                     </div>
                     <div class="col-md-8 address_form_agile">
                         <h4>Informasi Pelanggan</h4>
-                    <form action="#" class="creditly-card-form agileinfo_form">
+                    <form method="POST" enctype="multipart/form-data" action="/order" class="creditly-card-form agileinfo_form">
+                        {{csrf_field()}}
                         <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                             <div class="information-wrapper">
                                 <div class="first-row form-group">
                                     <div class="controls">
                                         <label class="control-label">Nama Lengkap : </label>
-                                        <input class="billing-address-name form-control" type="text" name="name" placeholder="Nama lengkap">
+                                        <input class="billing-address-name form-control" type="text" name="nama" placeholder="Nama lengkap">
                                     </div>
                                     <br>
                                     <div class="controls">
@@ -150,32 +140,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($keranjang as $c)
                                         <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
+                                            <td>{{$c -> nama_produk}}</td>
+                                            <td>{{$c -> kuantitas}}</td>
+                                            <td>Rp. {{$c -> harga}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-
                                     </tbody>
+                                        @endforeach
                                 </table>
                                 <div class="total">
                                     <h5 class="title">Total :</h5>
-                                    <h5>Rp. 800.000</h5>
+                                    <h5>Rp. {{$sum}}</h5>
                                 </div>
                             </div>
                         </div>
