@@ -19,7 +19,7 @@
                             <h4>Produk</h4>
                         </div>
                         <div class="card-body">
-                            {{$produk->count()}}
+                            {{$product->count()}}
                         </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <h4>Kategori</h4>
                         </div>
                         <div class="card-body">
-                        {{$kategori->count()}}
+                        {{$category->count()}}
                         </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <h4>Transaksi</h4>
                         </div>
                         <div class="card-body">
-                        {{$daftar->count()}}
+                        1000
                         </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <h4>Pendapatan</h4>
                         </div>
                         <div class="card-body">
-                        {{$keranjang->sum('total_harga')}}
+                        1000
                         </div>
                         </div>
                     </div>

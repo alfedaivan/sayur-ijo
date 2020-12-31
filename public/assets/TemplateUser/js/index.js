@@ -1,5 +1,5 @@
     jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){		
+        $(".scroll").click(function(event){
             event.preventDefault();
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
@@ -9,27 +9,18 @@
     $(document).ready(function() {
         var navoffeset=$(".agileits_header").offset().top;
         $(window).scroll(function(){
-        var scrollpos=$(window).scrollTop(); 
+        var scrollpos=$(window).scrollTop();
         if(scrollpos >=navoffeset){
             $(".agileits_header").addClass("fixed");
         }else{
             $(".agileits_header").removeClass("fixed");
         }
         });
-        
+
     });
     // end
 
-    // flex slidder
-    $(window).load(function(){
-        $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-            $('body').removeClass('loading');
-        }
-        });
-    });
-    // end
+
 
   $(document).ready(function() {
     /*
@@ -37,12 +28,12 @@
         containerID: 'toTop', // fading element id
         containerHoverID: 'toTopHover', // fading element hover id
         scrollSpeed: 1200,
-        easingType: 'linear' 
+        easingType: 'linear'
         };
     */
-                        
+
     $().UItoTop({ easingType: 'easeOutQuart' });
-                        
+
     });
 
     // quantity
@@ -62,5 +53,5 @@
             $('.rem1').fadeOut('slow', function(c){
                 $('.rem1').remove();
             });
-            });	  
+            });
         });

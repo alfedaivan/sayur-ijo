@@ -7,6 +7,7 @@ use App\Models\History;
 use App\Models\Keranjang;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use App\Models\Site;
 
 class FrontController extends Controller
 {
@@ -14,7 +15,8 @@ class FrontController extends Controller
     //page home
 
     public function Index(){
-        return view('user/pages/home');
+        $site = Site::all();
+        return view('user/pages/home',compact('site'));
     }
     //page product
     public function Product(Request $request){
@@ -150,4 +152,9 @@ class FrontController extends Controller
 
         return redirect('https://wa.me/6281259183075?text='.$order);
     }
+<<<<<<< HEAD
+=======
+
+// end
+>>>>>>> 4686355aa8dcf8c667d48bd37742b1b52658a6dd
 }

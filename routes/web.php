@@ -21,6 +21,7 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 
 // route change pages
 // user
+
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
 Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
@@ -47,7 +48,6 @@ Route::get('/dashboard/category/add', 'App\Http\Controllers\KategoriController@C
 Route::post('/dashboard/category/addvalidation', 'App\Http\Controllers\KategoriController@CategoryAddValidation');
 Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\KategoriController@CategoryEdit');
 Route::put('/dashboard/category/editvalidation/{id}', 'App\Http\Controllers\KategoriController@CategoryEditValidation');
-
 Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriController@CategoryDelete')->name('category.delete');
 
 // transaction
@@ -59,6 +59,8 @@ Route::get('/dashboard/user/add', 'App\Http\Controllers\UserController@UserAdd')
 Route::get('/dashboard/user/edit', 'App\Http\Controllers\UserController@UserEdit');
 
 // dite settings
-Route::get('/dashboard/settings', 'App\Http\Controllers\SiteSettingsController@SiteSettings');
+Route::get('/dashboard/settings', 'App\Http\Controllers\SiteSettingsController@index');
+Route::get('/dashboard/settings/edit/{id}', 'App\Http\Controllers\SiteSettingsController@SiteSettings');
+Route::put('/dashboard/settings/editvalidation/{id}', 'App\Http\Controllers\SiteSettingsController@SiteEditValidation');
 
 

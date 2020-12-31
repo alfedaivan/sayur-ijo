@@ -58,15 +58,15 @@
                         <th>Stok</th>
                         <th>Action</th>
                       </tr>
-                      <?php $i = 1; $skipped = $produk->currentPage() * $produk->perPage()-$produk->perPage(); ?>
-                        @foreach($produk as $index => $p)
+                      <?php $i = 1; $skipped = $product->currentPage() * $product->perPage()-$product->perPage(); ?>
+                        @foreach($product as $index => $p)
                         <tr>
                             <td>{{ $skipped + $i }}</td>
-                            <td><img src="{{ url('/images/'.$p->foto) }}" height="75" width="75" alt="{{$p->nama_produk}}" /></td>
-                            <td>{{$p -> nama_produk}}</td>
-                            <td>{{$p -> kategori}}</td>
-                            <td>{{$p -> harga}}</td>
-                            <td>{{$p -> stok}}</td>
+                            <td><img src="{{ url('/images/'.$p->photo) }}" height="50" width="50" alt="{{$p->product_name}}" /></td>
+                            <td>{{$p -> product_name}}</td>
+                            <td>{{$p -> category}}</td>
+                            <td>Rp. {{$p -> price}}</td>
+                            <td>{{$p -> stock}}</td>
                             <td>
                             <a href="/dashboard/product/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$p->id}}"><i class="fas fa-trash"></i></a>
@@ -81,7 +81,7 @@
                 <div class="card-footer text-right">
                   <nav class="d-inline-block">
                     <ul class="pagination mb-0">
-                    {{ $produk->links('admin.pagination') }}
+                    {{ $product->links('admin.pagination') }}
                     </ul>
                   </nav>
                 </div>
@@ -93,7 +93,7 @@
 
       <!-- modal delete -->
       <!-- modal delete -->
-      @foreach($produk as $p)
+      @foreach($product as $p)
           <div class="modal fade" id="deleteData{{$p->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
               <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -108,13 +108,13 @@
                       <div class="form-group">
                           <h6>
                           <br>
-                              Yakin Ingin Menghapus <b>{{$p->nama_produk}}</b> ?
+                              Yakin Ingin Menghapus <b>{{$p->product_name}}</b> ?
                           </h6>
                      </div>
                       </div>
                       <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                      <button type="submit" class="btn btn-danger">Hapus</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
                       </div>
                   </form>
                   </div>

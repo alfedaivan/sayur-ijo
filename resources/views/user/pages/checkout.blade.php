@@ -146,6 +146,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <td>{{$c -> kuantitas}}</td>
                                             <td>Rp. {{$c -> harga}}</td>
                                         </tr>
+<<<<<<< HEAD
+=======
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayam kampus (5kg)</td>
+                                            <td>5</td>
+                                            <td>Rp. 200.000</td>
+                                        </tr>
+
+>>>>>>> 4686355aa8dcf8c667d48bd37742b1b52658a6dd
                                     </tbody>
                                         @endforeach
                                 </table>

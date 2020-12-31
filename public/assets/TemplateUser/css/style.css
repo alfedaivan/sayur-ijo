@@ -782,6 +782,12 @@ button.submit.check_out2:hover{
 .w3_footer_grid ul.contact a:hover{
 	color: #84c639;
 }
+.w3_footer_grid ul.contact a.email{
+	color: #999;
+}
+.w3_footer_grid ul.contact a.email:hover{
+	color: #dd4b39;;
+}
 .w3_footer_grid ul.contact span{
 	margin-left: 1em;
 }
@@ -839,10 +845,6 @@ button.submit.check_out2:hover{
 .agileits_social_icons li a.twitter:hover{
 	background:#55acee;
 	border-color:#55acee;
-}
-.agileits_social_icons li a.google:hover{
-	background:#dd4b39;
-	border-color:#dd4b39;
 }
 .agileits_social_icons li a.instagram:hover{
 	background:#ea4c89;
@@ -1188,6 +1190,12 @@ h2.typoh2{
 	}
 }
 @media (max-width: 320px){
+    .checkout-left-basket .total .content{
+        margin-right: 100px;
+    }
+    .checkout-left-basket .total .content{
+        width: 100%  ;
+    }
 	.grid_4 {
 		margin-top: 18px;
 	}
@@ -1258,6 +1266,16 @@ table.timetable_sub {
 	width:100%;
 	margin:0 auto;
 }
+@media(max-width:414px){
+    table.timetable_sub{
+        transform: translateX(1%) !important;
+    }
+}
+@media(max-width:360px){
+    table.timetable_sub{
+        transform: translateX(-3%) !important;
+    }
+}
 .timetable_sub thead {
     background: #004284;
 }
@@ -1266,7 +1284,7 @@ table.timetable_sub {
     color: #fff !important;
     text-transform: capitalize;
     font-size: 13px;
-    border-right: 1px solid #ded2d2;
+    border-right: 1px solid #fff;
 }
 .timetable_sub th, .timetable_sub td {
     text-align: center;
@@ -1280,6 +1298,7 @@ table.timetable_sub {
 td.invert-image a img {
     width:40%;
     margin: 0 auto;
+    padding: -1000px;
 }
 .rem{
 	position:relative;
@@ -1377,6 +1396,12 @@ td.invert-image a img {
 .checkout-left-basket {
     float: left;
 }
+
+@media(max-width: 360px){
+    .checkout-left-basket table {
+        width: calc(100% + 200px) !important;
+    }
+}
 .checkout-left-basket .table td.harga{
     float: right;
 }
@@ -1386,15 +1411,17 @@ td.invert-image a img {
 }
 .checkout-left-basket .total{
     display: flex;
-    justify-content: right !important;
+    justify-content: flex-end;
     border-top: 2px solid #DDD;
     border-bottom: 2px solid #DDD;
     padding-top: 1em;
     padding-bottom: 1em;
     width: 100%;
+    position: relative;
 }
 .checkout-left-basket .total h5{
     font-size: 1.2rem;
+
 }
 .checkout-left-basket .total .title{
     margin-right: 15px;
@@ -1402,8 +1429,6 @@ td.invert-image a img {
 .checkout-left-basket .total .content{
     margin-right: 15px;
 }
-
-
 
 
 .checkout {
@@ -2099,12 +2124,15 @@ td.invert-image a img {
 		line-height: 0px;
 	}
 	.timetable_sub th, .timetable_sub td {
-		padding: 7px 0px;
+		padding: 5px 0px;
 	}
 	.timetable_sub th, .timetable_sub td {
-		width: 50px;
-		font-size: 12px;
-	}
+		width: 100%;
+		font-size: 14px;
+    }
+    table.timetable_sub{
+        transform: translateX(-9%);
+    }
 	button.submit.check_out {
 		display: block;
 		position: relative;
@@ -2379,7 +2407,7 @@ td.invert-image a img {
         width: 100%;
     }
 	.close1{
-		right: 10px;
+		right: 7px;
 	}
 	.checkout-page{
 		transform: translateY(-7%);
@@ -2587,6 +2615,15 @@ td.invert-image a img {
 	}
 }
 @media (max-width: 320px){
+    table.timetable_sub{
+        transform: translateX(-9%) !important;
+    }
+    .checkout-left-basket .total h5{
+        font-size: 0.8rem !important;
+    }
+    .checkout-left-basket .total h5.title{
+        margin-left: 50px;
+    }
 	.agileits_social_icons li a i {
 		padding: .9em 0 0;
 	}
