@@ -3,8 +3,8 @@
 		<a href="{{url('/')}}">Produk Terpopuler !!</a>
 	</div>
 	<div class="w3l_search">
-		<form action="#" method="post">
-			<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+		<form action="/product" method="GET">
+			<input type="text" name="search" id="search" placeholder="Cari Produk...">
 			<input type="submit" value=" ">
 		</form>
 	</div>

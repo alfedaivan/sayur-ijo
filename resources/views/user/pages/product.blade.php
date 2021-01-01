@@ -26,12 +26,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-                                            <a ><img src="{{ url('/images/'.$p->foto) }}" alt=" " class="img-responsive" /></a>
-											<p>{{$p -> nama_produk}} <br> Stok: {{$p -> stok}}</p>
-											<h4>Rp. {{$p -> harga}}</h4>
+                                            <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
+											<p>{{$p -> product_name}}</p>
+											<h4>Rp. {{$p -> price}}</h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
-											<a href={{url("/checkout?id=".$p -> id)}} class="btn-produk">ADD TO CART</a>
+											<a href={{url("/checkout?id=".$p -> id)}} class="btn-produk">Pesan</a>
 										</div>
 									</div>
 								</figure>

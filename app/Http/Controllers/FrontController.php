@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\histories;
 use App\Models\History;
 use App\Models\Keranjang;
-use App\Models\Produk;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Site;
 
@@ -20,9 +20,13 @@ class FrontController extends Controller
     }
     //page product
     public function Product(Request $request){
-        $product = Produk::orderBy('produks.nama_produk', 'asc')
-        ->paginate(16);
-        return view('user/pages/product', compact('product'));
+        $site = Site::all();
+        $product = Product::orderBy('product_name', 'asc')
+        ->where(function($query) use ($request){
+            $query->where('product_name', 'LIKE', '%' . $request->search . '%');
+        })
+        ->paginate(12);
+        return view('user/pages/product', compact('product', 'site'));
     }
     // page checkout
 
@@ -60,8 +64,8 @@ class FrontController extends Controller
 
     public function cart(Request $request)
     {
+        $site = Site::all();
         $id = $request->get('id');
-
         $token = $request->session()->token();
         $token = csrf_token();
         if($id){
@@ -103,7 +107,7 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $sum = Keranjang::where('session_id', $token)->sum('total_harga');
-        return view('user/pages/checkout', compact('keranjang', 'sum'));
+        return view('user/pages/checkout', compact('keranjang', 'sum', 'site'));
     }
 
     public function delete(Request $request)
@@ -152,9 +156,6 @@ class FrontController extends Controller
 
         return redirect('https://wa.me/6281259183075?text='.$order);
     }
-<<<<<<< HEAD
-=======
 
 // end
->>>>>>> 4686355aa8dcf8c667d48bd37742b1b52658a6dd
 }

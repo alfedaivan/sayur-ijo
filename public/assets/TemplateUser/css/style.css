@@ -370,20 +370,39 @@ ul.agileits_social_icons li a,
 	text-align: center !important;
 
 }
-.pagination ul{
-	justify-content: center;
-}
 .pagination > li > a{
 	font-size: 1.2rem;
 	background-color: #212121;
 	color: #fff;
 	border-radius: 5px;
-	transition: .3s;
+    transition: .3s;
 }
-.pagination > li > a:hover, .pagination > li > a.active{
-	transition: .5;
-	background-color: #84C639 ;
-	color: #fff;
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #777;
+    cursor: not-allowed;
+    background-color:#212121;
+    border-color: #212121;
+}
+
+.pagination > li > a:hover,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    cursor: pointer;
+    transition: .5;
+    background-color: #84C639 ;
+    border-color: #84C639 ;
 }
 /* -- //pagination */
 
@@ -567,6 +586,9 @@ h3.title:after, .w3_login h3:after, .checkout-page h3:after{
 	border:1px solid #D7D7D7;
 }
 .agile_top_brand_left_grid1 img{
+    width: 120px;
+    height: 130px;
+    object-fit: cover;
 	margin:0 auto;
 }
 .agile_top_brands_grids{
