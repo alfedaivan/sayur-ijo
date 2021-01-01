@@ -13,7 +13,8 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                <form class="needs-validation" novalidate="">
+                <form method="post" action="/dashboard/user/addvalidation">
+                {{csrf_field()}}
                   <div class="card-header">
                     <h4>Informasi Pengguna</h4>
                   </div>
@@ -21,17 +22,17 @@
 
                     <div class="form-group">
                       <label>Nama</label>
-                      <input type="text" class="form-control" required="">
+                      <input name="name" type="text" class="form-control" required="">
                     </div>
 
                     <div class="form-group">
-                      <label>Username</label>
-                      <input type="text" class="form-control" required="">
+                      <label>Email</label>
+                      <input name="email" type="text" class="form-control" required="">
                     </div>
 
                     <div class="form-group">
                       <label>Password</label>
-                      <input type="password" class="form-control" required="">
+                      <input name="password" type="password" class="form-control" required="">
                     </div>
 
                     <!-- <div class="form-group">
@@ -46,7 +47,7 @@
 
                   </div>
                   <div class="card-footer text-center">
-                    <button class="btn btn-primary" style="width: 100%;">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" value="Simpan">Submit</button>
                   </div>
                 </form>
               </div>

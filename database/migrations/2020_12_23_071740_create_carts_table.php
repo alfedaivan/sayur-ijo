@@ -20,7 +20,7 @@ class CreateCartsTable extends Migration
             $table->integer('total_harga');
             $table->integer('product_id')->unsigned();
             $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('produks')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

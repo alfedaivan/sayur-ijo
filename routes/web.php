@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes([
-    'register' => false,
+    'register' => true,
     'logout' => false
     ]);
 Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers\Auth\LoginController@signout']);
@@ -56,6 +56,7 @@ Route::get('/dashboard/history', 'App\Http\Controllers\HistoryController@History
 // user
 Route::get('/dashboard/user', 'App\Http\Controllers\UserController@User');
 Route::get('/dashboard/user/add', 'App\Http\Controllers\UserController@UserAdd');
+Route::post('/dashboard/user/addvalidation', 'App\Http\Controllers\UserController@UserAddValidation');
 Route::get('/dashboard/user/edit', 'App\Http\Controllers\UserController@UserEdit');
 
 // dite settings
