@@ -15,14 +15,11 @@ class KategoriController extends Controller
 
     // category
     public function Category(Request $request){
-        $category = Category::where([
-            ['category', '!=', NULL],
-            [function ($query) use ($request){
-                if(($term = $request->term)){
-                    $query->Where('category', 'LIKE', '%' . $term . '%')->get();
-                }
-            }]
-        ]) -> paginate(10);
+        $category = Category::orderBy('category', 'asc')
+        ->where(function($query) use ($request){
+            $query->where('category', 'LIKE', '%' . $request->search . '%');
+            })
+        -> paginate(10);
         return view('admin/category/tbl_category', ['category' => $category,]);
     }
     public function CategoryAdd(){

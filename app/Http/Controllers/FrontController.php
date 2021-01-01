@@ -24,7 +24,7 @@ class FrontController extends Controller
         $product = Product::orderBy('product_name', 'asc')
         ->where(function($query) use ($request){
             $query->where('product_name', 'LIKE', '%' . $request->search . '%');
-        })
+            })
         ->paginate(12);
         return view('user/pages/product', compact('product', 'site'));
     }

@@ -28,7 +28,7 @@
                         <h4>
                             <form action="/dashboard/category" method="GET">
                             <div class="input-group">
-                                <input type="text" name="term" id="term" class="form-control" placeholder="Search" >
+                                <input type="text" name="search" id="search" class="form-control" placeholder="Search" >
                                 <div class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                 <button href="{{url('/dashboard/category')}}" class="btn btn-danger ml-1">

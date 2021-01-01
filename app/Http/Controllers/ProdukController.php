@@ -27,7 +27,7 @@ class ProdukController extends Controller
     ->where(function($query) use ($request){
         $query->where('product_name', 'LIKE', '%' . $request->search . '%')
               ->orWhere('category', 'LIKE', '%' . $request->search . '%');
-    })
+        })
     ->paginate(10, array('products.id','products.photo','products.product_name',
                         'categories.id as categoryid','categories.category as category',
                         'products.price','products.stock'));
