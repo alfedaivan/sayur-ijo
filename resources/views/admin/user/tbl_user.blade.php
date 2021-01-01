@@ -31,7 +31,7 @@
                         </h4>
                         <div class="card-header-form">
                             <div class="buttons mt-1">
-                            <a href="{{url('/dashboard/product/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Produk</a>
+                            <a href="{{url('/dashboard/user/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah User</a>
                             </div>
                         </div>
                     </div>
@@ -44,21 +44,21 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Username</th>
-                        <th>Dibuat</th>
-                        <th>Diubah</th>
                         <th>Action</th>
                       </tr>
+                      <?php $i = 1?>
+                      @foreach($user as $u)
                       <tr>
-                        <td>1</td>
-                        <td>Alfeda</td>
-                        <td>alfedaivan</td>
-                        <td>01-01-2021</td>
-                        <td>01-01-2021</td>
+                        <td>{{$i}}</td>
+                        <td>{{$u->name}}</td>
+                        <td>{{$u->email}}</td>
                         <td>
                           <a href="{{url('/dashboard/user/edit')}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
                           <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
+                      <?php $i++; ?>
+                        @endforeach
 
                     </table>
                   </div>
