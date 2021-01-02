@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </table>
 
                         <div class="total">
-                            <h5 class="title">Total :</h5>
+                            <h5 class="title">Total:</h5>
                             <h5 class="content">Rp. {{$sum}}</h5>
                         </div>
 
