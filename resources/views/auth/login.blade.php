@@ -27,6 +27,7 @@
             <img src="{{url('/assets/TemplateAdmin/assets/img/stisla-fill.svg')}}" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
             <h4 class="text-dark font-weight-normal">Selamat datang di <span class="font-weight-bold">Toko Sayur</span></h4>
             <p class="text-muted">Sebelum memulai silahkan login terlebih dahulu.</p>
+            <br>
             <form method="POST" action="{{route('login')}}" class="needs-validation" novalidate="">
                 @csrf
               <div class="form-group">
@@ -52,12 +53,7 @@
                     @enderror
               </div>
 
-              <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                  <label class="custom-control-label" for="remember-me">Remember Me</label>
-                </div>
-              </div>
+<br><br>
 
               <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary btn-lg btn-icon icon-center" tabindex="5" style="width: 100%;">
