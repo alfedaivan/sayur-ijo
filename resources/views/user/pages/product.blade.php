@@ -10,13 +10,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
     <!-- nav -->
-    @include('user.navSearch')
+    @include('user.nav')
     <!-- //nav -->
     <div class="banner">
     <!-- banner -->
 		<div class="top-brands mt-5" id="offers">
 			<div class="container">
-				<h3>Produk Kami</h3>
+                <h3>Produk Kami</h3>
+
+                <div class="w3l_search">
+                    <form action="/product" method="GET">
+                        <input type="text" name="search" id="search" placeholder="Cari Produk...">
+                        <input type="submit" value=" ">
+                    </form>
+                </div>
+
 				<div class="agile_top_brands_grids">
                 @foreach ($product as $p)
                 <div class="col-md-3 top_brand_left">
