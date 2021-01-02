@@ -153,7 +153,9 @@ class FrontController extends Controller
         $next = '%0D%0A';
         // $stringProduct = implode("%0D%0A", $orderProduct);
 
-        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli : '.$orderProduct.$next.'dikirim ke '.$request->alamat.$next.'dengan catatan '.$request->catatan.$next.'total yang harus dibayar '.$sum;
+        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :
+                '.$orderProduct.$next.
+                'dikirim ke '.$request->alamat.$next.'dengan catatan '.$request->catatan.$next.'total yang harus dibayar '.$sum;
 
         return redirect('https://wa.me/6281259183075?text='.$order);
     }
