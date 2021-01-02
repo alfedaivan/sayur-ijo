@@ -32,18 +32,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <tbody>
                             @foreach ($keranjang as $c)
                         <tr class="rem1">
-                            <td class="invert-image"><a ><img src="{{ url('/images/'.$c -> foto) }}" alt=" " class="img-responsive"></a></td>
-                            <td class="invert">{{$c -> nama_produk}}</td>
+                            <td class="invert-image"><a ><img src="{{ url('/images/'.$c -> photo) }}" alt=" " class="img-responsive"></a></td>
+                            <td class="invert">{{$c -> product_name}}</td>
                             <td class="invert">
                                 <div class="quantity">
                                     <div class="quantity-select">
                                         <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
-                                        <div class="entry value"><span>{{$c -> kuantitas}}</span></div>
+                                        <div class="entry value"><span>{{$c -> quantity}}</span></div>
                                         <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
                                     </div>
                                 </div>
                             </td>
-                            <td class="invert">Rp. {{$c -> harga}}</td>
+                            <td class="invert">Rp. {{$c -> price}}</td>
                             <td class="invert">
                                 <div class="rem">
                                     <a class="close1" href="{{url('/checkout/delete/?id=' . $c -> product_id)}}"></a>
@@ -62,9 +62,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <tbody>
                                 @foreach ($keranjang as $c)
                                 <tr>
-                                    <td>{{$c -> nama_produk}}</td>
-                                    <td>{{$c -> kuantitas}}</td>
-                                    <td class="harga">Rp. {{$c -> total_harga}}</td>
+                                    <td>{{$c -> product_name}}</td>
+                                    <td>{{$c -> quantity}}</td>
+                                    <td class="harga">Rp. {{$c -> total_price}}</td>
                                 </tr>
                                  @endforeach
                             </tbody>
@@ -146,30 +146,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <td>{{$c -> kuantitas}}</td>
                                             <td>Rp. {{$c -> harga}}</td>
                                         </tr>
-<<<<<<< HEAD
-=======
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ayam kampus (5kg)</td>
-                                            <td>5</td>
-                                            <td>Rp. 200.000</td>
-                                        </tr>
-
->>>>>>> 4686355aa8dcf8c667d48bd37742b1b52658a6dd
                                     </tbody>
                                         @endforeach
                                 </table>

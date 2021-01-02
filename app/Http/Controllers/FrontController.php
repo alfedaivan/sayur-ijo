@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\histories;
 use App\Models\History;
-use App\Models\Keranjang;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Site;
@@ -13,13 +13,14 @@ class FrontController extends Controller
 {
     // change pages controller
     //page home
-
     public function Index(){
         $site = Site::all();
         return view('user/pages/home',compact('site'));
     }
     //page product
     public function Product(Request $request){
+        $product = Product::orderBy('products.product_name', 'asc')
+        ->paginate(16);
         $site = Site::all();
         $product = Product::orderBy('product_name', 'asc')
         ->where(function($query) use ($request){
@@ -35,14 +36,14 @@ class FrontController extends Controller
         $id = $request->get('id');
         $token = $request->session()->token();
         $token = csrf_token();
-        $product = Produk::where('id', $id)->get();
-        $cart = Keranjang::where(['session_id' => $token, 'product_id' => $id])->get();
+        $product = Product::where('id', $id)->get();
+        $cart = Cart::where(['session_id' => $token, 'product_id' => $id])->get();
 
-        Keranjang::where(['session_id' => $token, 'product_id' => $id])->update([
-            'total_harga' => $cart[0]->total_harga + $product[0]->harga,
-            'kuantitas' => $cart[0]->kuantitas + 1
+        Cart::where(['session_id' => $token, 'product_id' => $id])->update([
+            'total_price' => $cart[0]->total_price + $product[0]->price,
+            'quantity' => $cart[0]->quantity + 1
         ]);
-        Produk::where('id', $id)->decrement('stok', 1);
+        Product::where('id', $id)->decrement('stock', 1);
         return redirect('/checkout');
     }
 
@@ -51,14 +52,14 @@ class FrontController extends Controller
         $id = $request->get('id');
         $token = $request->session()->token();
         $token = csrf_token();
-        $product = Produk::where('id', $id)->get();
-        $cart = Keranjang::where(['session_id' => $token, 'product_id' => $id])->get();
+        $product = Product::where('id', $id)->get();
+        $cart = Cart::where(['session_id' => $token, 'product_id' => $id])->get();
 
-        Keranjang::where(['session_id' => $token, 'product_id' => $id])->update([
-            'total_harga' => $cart[0]->total_harga - $product[0]->harga,
-            'kuantitas' => $cart[0]->kuantitas - 1
+        Cart::where(['session_id' => $token, 'product_id' => $id])->update([
+            'total_price' => $cart[0]->total_price - $product[0]->price,
+            'quantity' => $cart[0]->quantity - 1
         ]);
-        Produk::where('id', $id)->increment('stok', 1);
+        Product::where('id', $id)->increment('stock', 1);
         return redirect('/checkout');
     }
 
@@ -66,47 +67,48 @@ class FrontController extends Controller
     {
         $site = Site::all();
         $id = $request->get('id');
+
         $token = $request->session()->token();
         $token = csrf_token();
         if($id){
-            $cart = Keranjang::where(['session_id' => $token])->get();
-            $product = Produk::where('id', $id)->get();
+            $cart = Cart::where(['session_id' => $token])->get();
+            $product = Product::where('id', $id)->get();
             if($product == null){
                 return abort(404);
             }
-            if(Keranjang::where('session_id', $token)->first()){
-                $entryCart = Keranjang::where(['session_id' => $token, 'product_id' => $id])->update([
-                    'total_harga' => $cart[0]->total_harga + $product[0]->harga,
-                    'kuantitas' => $cart[0]->kuantitas + 1
+            if(Cart::where('session_id', $token)->first()){
+                $entryCart = Cart::where(['session_id' => $token, 'product_id' => $id])->update([
+                    'total_price' => $cart[0]->total_price + $product[0]->price,
+                    'quantity' => $cart[0]->quantity + 1
                 ]);
                 if (! $entryCart ) {
-                    Keranjang::create([
+                    Cart::create([
                         'session_id' => $token,
                         'product_id' => $id,
-                        'kuantitas' => 1,
-                        'total_harga' => $product[0]->harga,
-                        'product_name' => $product[0]->nama_produk
+                        'quantity' => 1,
+                        'total_price' => $product[0]->price,
+                        'product_name' => $product[0]->product_name
                     ]);
-                    Produk::where('id', $id)->decrement('stok', 1);
+                    Product::where('id', $id)->decrement('stock', 1);
                 } else {
                     $entryCart;
-                    Produk::where(['id' => $id])->decrement('stok', 1);
+                    Product::where(['id' => $id])->decrement('stock', 1);
                 }
             } else {
-                Keranjang::create([
+                Cart::create([
                     'session_id' => $token,
                     'product_id' => $id,
-                    'kuantitas' => 1,
-                    'total_harga' => $product[0]->harga,
-                    'product_name' => $product[0]->nama_produk
+                    'quantity' => 1,
+                    'total_price' => $product[0]->price,
+                    'product_name' => $product[0]->product_name
                 ]);
-                Produk::where('id', $id)->decrement('stok', 1);
+                Product::where('id', $id)->decrement('stock', 1);
             }
         }
-        $keranjang = Keranjang::join('produks', 'carts.product_id', '=', 'produks.id')
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
         ->where(['session_id' => $token])
         ->get();
-        $sum = Keranjang::where('session_id', $token)->sum('total_harga');
+        $sum = Cart::where('session_id', $token)->sum('total_price');
         return view('user/pages/checkout', compact('keranjang', 'sum', 'site'));
     }
 
@@ -117,10 +119,10 @@ class FrontController extends Controller
         $token = $request->session()->token();
         $token = csrf_token();
 
-        $cart = Keranjang::where(['session_id' => $token, 'product_id' => $id])->get();
-        Produk::where('id', $id)->increment('stok', $cart[0]->kuantitas);
+        $cart = Cart::where(['session_id' => $token, 'product_id' => $id])->get();
+        Product::where('id', $id)->increment('stock', $cart[0]->quantity);
 
-        Keranjang::where(['session_id' =>  $token, 'product_id' => $id])->delete();
+        Cart::where(['session_id' =>  $token, 'product_id' => $id])->delete();
 
         return redirect('/checkout');
     }
@@ -129,10 +131,10 @@ class FrontController extends Controller
         // $id = $request->get('id');
         $token = $request->session()->token();
         $token = csrf_token();
-        $sum = Keranjang::where('session_id', $token)->sum('total_harga');
-        $keranjang = Keranjang::join('produks', 'carts.product_id', '=', 'produks.id')
+        $sum = Cart::where('session_id', $token)->sum('total_price');
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
         ->where(['session_id' => $token])
-        ->select('produks.nama_produk', 'carts.kuantitas')
+        ->select('products.product_name', 'carts.quantity')
         ->get();
 
         $this->validate($request, [
@@ -156,6 +158,4 @@ class FrontController extends Controller
 
         return redirect('https://wa.me/6281259183075?text='.$order);
     }
-
-// end
 }
