@@ -14,103 +14,90 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //nav -->
     <div class="banner">
     <!-- content -->
-    <div class="col-md-12 w3l_banner_nav_right ">
+        <div class="col-md-12 w3l_banner_nav_right ">
+
             <div class="checkout-page privacy about">
                 <h3>Keranjang</h3>
 
-            <div class="checkout-right">
-                    <table class="timetable_sub">
-                        <thead>
-                            <tr>
-                                <th>Produk</th>
-                                <th>Nama Produk</th>
-                                <th>Kuantitas</th>
-                                <th>Harga</th>
-                                <th>Hapus</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($keranjang as $c)
-                        <tr class="rem1">
-                            <td class="invert-image"><a ><img src="{{ url('/images/'.$c -> photo) }}" alt=" " class="img-responsive"></a></td>
-                            <td class="invert">{{$c -> product_name}}</td>
-                            <td class="invert">
-                                <div class="quantity">
-                                    <div class="quantity-select">
-                                        <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
-                                        <div class="entry value"><span>{{$c -> quantity}}</span></div>
-                                        <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="invert">Rp. {{$c -> price}}</td>
-                            <td class="invert">
-                                <div class="rem">
-                                    <a class="close1" href="{{url('/checkout/delete/?id=' . $c -> product_id)}}"></a>
-                                </div>
+                <div class="container">
 
-                            </td>
-                        </tr>
-                            @endforeach
+                    <div class="col-md-8">
+                        <div class="checkout-right">
+                            <table class="timetable_sub">
+                                <thead>
+                                    <tr>
+                                        <th>Produk</th>
+                                        <th>Nama Produk</th>
+                                        <th>Kuantitas</th>
+                                        <th>Harga</th>
+                                        <th>Hapus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($keranjang as $c)
+                                    <tr class="rem1">
+                                        <td class="invert-image"><a ><img src="{{ url('/images/'.$c -> photo) }}" alt=" " class="img-responsive"></a></td>
+                                        <td class="invert">{{$c -> product_name}}</td>
+                                        <td class="invert">
+                                            <div class="quantity">
+                                                <div class="quantity-select">
+                                                    <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
+                                                    <div class="entry value"><span>{{$c -> quantity}}</span></div>
+                                                    <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="invert">Rp. {{$c -> price}}</td>
+                                        <td class="invert">
+                                            <div class="rem">
+                                                <a class="close1" href="{{url('/checkout/delete/?id=' . $c -> product_id)}}"></a>
+                                            </div>
 
-                    </tbody></table>
-                </div>
-                <div class="checkout-left">
-                    <div class="col-md-4 checkout-left-basket">
-                        <h4>Nota</h4>
-                        <table class="table">
-                            <tbody>
-                                @foreach ($keranjang as $c)
-                                <tr>
-                                    <td>{{$c -> product_name}}</td>
-                                    <td>{{$c -> quantity}}</td>
-                                    <td class="harga">Rp. {{$c -> total_price}}</td>
-                                </tr>
-                                 @endforeach
-                            </tbody>
-                        </table>
-
-                        <div class="total">
-                            <h5 class="title">Total:</h5>
-                            <h5 class="content">Rp. {{$sum}}</h5>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
-                    <div class="col-md-8 address_form_agile">
-                        <h4>Informasi Pelanggan</h4>
-                    <form method="POST" enctype="multipart/form-data" action="/order" class="creditly-card-form agileinfo_form">
-                        {{csrf_field()}}
-                        <section class="creditly-wrapper wthree, w3_agileits_wrapper">
-                            <div class="information-wrapper">
-                                <div class="first-row form-group">
-                                    <div class="controls">
-                                        <label class="control-label">Nama Lengkap : </label>
-                                        <input class="billing-address-name form-control" type="text" name="nama" placeholder="Nama lengkap">
-                                    </div>
-                                    <br>
-                                    <div class="controls">
-                                        <label class="control-label">Alamat : </label>
-                                        <input class="billing-address-name form-control" type="text" name="alamat" placeholder="Alamat">
-                                    </div>
-                                    <br>
-                                    <div class="controls">
-                                        <label class="control-label">Catatan : </label>
-                                        <textarea class="billing-address-name form-control" type="text" name="catatan" placeholder="Catatan" cols="5" rows="1"></textarea>
-                                    </div>
+
+                    <div class="col-md-4">
+                        <div class="checkout-left">
+                            <div class="col-md-4 checkout-left-basket">
+                                <h4>Nota</h4>
+                                <table class="table">
+                                    <tbody>
+                                        @foreach ($keranjang as $c)
+                                        <tr>
+                                            <td>{{$c -> product_name}}</td>
+                                            <td>{{$c -> quantity}}</td>
+                                            <td class="harga">Rp. {{$c -> total_price}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                                <div class="total">
+                                    <h5 class="title">Total:</h5>
+                                    <h5 class="content">Rp. {{$sum}}</h5>
                                 </div>
+
                                 <button class="submit check_out" data-toggle="modal" data-target="#konfirmasiCheckout">
                                     Pesan Sekarang
                                 </button>
+
                             </div>
-                        </section>
-                    </form>
+                        </div>
                     </div>
-                    <div class="clearfix"> </div>
+
                 </div>
             </div>
         </div>
 		<div class="clearfix"></div>
     <!-- //content -->
+
+
+
         <!-- Modal -->
         <div class="modal fade bd-example-modal-lg" id="konfirmasiCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -124,10 +111,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="row body">
                             <div class="col-md-4">
                                 <div class="data">
-                                    <h5>Informasi Pelanggan</h5>
-                                    <h6>Nama</h6> <p>Wahoyes</p>
-                                    <h6>Alamat</h6> <p>Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</p>
-                                    <h6>Catatan</h6> <p>-</p>
+                                    <h5>Informasi Order</h5>
+                                    <form  class="creditly-card-form agileinfo_form">
+                                        {{csrf_field()}}
+                                        <section class="creditly-wrapper wthree, w3_agileits_wrapper">
+                                            <div class="information-wrapper">
+                                                <div class="first-row form-group">
+                                                    <div class="controls">
+                                                        <label class="control-label">Nama Lengkap : </label>
+                                                        <input class="billing-address-name form-control" type="text" name="nama" placeholder="Nama lengkap">
+                                                    </div>
+                                                    <br>
+                                                    <div class="controls">
+                                                        <label class="control-label">Alamat : </label>
+                                                        <input class="billing-address-name form-control" type="text" name="alamat" placeholder="Alamat">
+                                                    </div>
+                                                    <br>
+                                                    <div class="controls">
+                                                        <label class="control-label">Catatan : </label>
+                                                        <textarea class="billing-address-name form-control" type="text" name="catatan" placeholder="Catatan" cols="5" rows="1"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-md-8">
