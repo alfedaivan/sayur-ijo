@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <div class="container">
 
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="checkout-right">
                             <table class="timetable_sub">
                                 <thead>
@@ -41,9 +41,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <td class="invert">
                                             <div class="quantity">
                                                 <div class="quantity-select">
+                                                    @if ($c -> quantity > 1)
                                                     <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
+                                                    @else
+                                                    <button disabled="disabled" class="entry value-minus"></button>
+                                                    @endif
                                                     <div class="entry value"><span>{{$c -> quantity}}</span></div>
+                                                    @if ($c -> quantity == $c -> stock)
                                                     <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
+                                                    @else
+                                                    <button disabled="disabled" class="entry value-plus active"></button>
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </td>
@@ -59,7 +68,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </table>
                         </div>
                     </div>
+                    <div class="col-md-1">
 
+                    </div>
                     <div class="col-md-4">
                         <div class="checkout-left">
                             <div class="col-md-4 checkout-left-basket">

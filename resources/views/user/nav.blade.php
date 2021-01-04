@@ -3,7 +3,7 @@
 			<a href="{{url('/')}}#offers">Produk Terpopuler !!!</a>
 		</div>
 		<div class="product_list_header">
-            <span class="badge badge-danger">2</span>
+            <span class="badge badge-danger">{{count($keranjang)}}</span>
             <a href="{{url('/checkout')}}" class="button-cart">
 				<span>keranjangku</span>
 			</a>

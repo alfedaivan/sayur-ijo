@@ -13,20 +13,30 @@ class FrontController extends Controller
 {
     // change pages controller
     //page home
-    public function Index(){
+    public function Index(Request $request){
         $site = Site::all();
-        return view('user/pages/home',compact('site'));
+        $token = $request->session()->token();
+        $token = csrf_token();
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
+        ->where(['session_id' => $token])
+        ->get();
+        return view('user/pages/home',compact('site', 'keranjang'));
     }
     //page product
     public function Product(Request $request){
         $site = Site::all();
+        $token = $request->session()->token();
+        $token = csrf_token();
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
+        ->where(['session_id' => $token])
+        ->get();
         $product = Product::orderBy('product_name', 'asc')
         // ->where(function($query) use ($request){
         //     $query->where('product_name', 'LIKE', '%' . $request->search . '%');
         //     })
         ->paginate(12);
 
-        return view('user/pages/product', compact('product', 'site'));
+        return view('user/pages/product', compact('product', 'site', 'keranjang'));
     }
     // page checkout
 
