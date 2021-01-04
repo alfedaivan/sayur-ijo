@@ -145,9 +145,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 </div>
                                             </div>
                                             <div class="btn-checkout">
+                                                <p>{{$keranjang->count()}}</p>
+                                                @if ($keranjang->count() == 0)
+                                                <button type="submit" disabled class="submit check_out2">
+                                                    Pesan
+                                                </button>
+                                                @else
                                                 <button type="submit" class="submit check_out2">
                                                     Pesan
                                                 </button>
+                                                @endif
+
                                             </div>
                                         </section>
                                     </form>
