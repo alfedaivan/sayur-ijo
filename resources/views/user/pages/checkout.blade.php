@@ -120,6 +120,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="modal-body">
                         <div class="row body">
+                            <div class="col-md-8">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Produk</th>
+                                        <th scope="col" class="kuantitas">Kuantitas</th>
+                                        <th scope="col">Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($keranjang as $c)
+                                        <tr>
+                                            <td>{{$c -> product_name}}</td>
+                                            <td>{{$c -> quantity}}</td>
+                                            <td>Rp. {{$c -> total_price}}</td>
+                                        </tr>
+                                    </tbody>
+                                        @endforeach
+                                </table>
+                                <div class="total">
+                                    <h5 class="title">Total :</h5>
+                                    <h5>Rp. {{$sum}}</h5>
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="data">
                                     <h5>Informasi Order</h5>
@@ -145,7 +169,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 </div>
                                             </div>
                                             <div class="btn-checkout">
-                                                <p>{{$keranjang->count()}}</p>
                                                 @if ($keranjang->count() == 0)
                                                 <button type="submit" disabled class="submit check_out2">
                                                     Pesan
@@ -155,36 +178,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     Pesan
                                                 </button>
                                                 @endif
-
                                             </div>
                                         </section>
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                        <th scope="col">Produk</th>
-                                        <th scope="col" class="kuantitas">Kuantitas</th>
-                                        <th scope="col">Subtotal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($keranjang as $c)
-                                        <tr>
-                                            <td>{{$c -> product_name}}</td>
-                                            <td>{{$c -> quantity}}</td>
-                                            <td>Rp. {{$c -> total_price}}</td>
-                                        </tr>
-                                    </tbody>
-                                        @endforeach
-                                </table>
-                                <div class="total">
-                                    <h5 class="title">Total :</h5>
-                                    <h5>Rp. {{$sum}}</h5>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>
