@@ -34,6 +34,8 @@ class KategoriController extends Controller
         ]);
         return redirect('dashboard/category')->with('success', 'Kategori berhasil ditambahkan.');
     }
+
+
     public function CategoryEdit($id){
         $category = Category::find($id);
         return view('admin/category/edit_category',['category' => $category]);
