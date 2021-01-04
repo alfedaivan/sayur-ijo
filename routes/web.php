@@ -25,6 +25,8 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
 Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
+
+Route::get('/live_search/action', 'App\Http\Controllers\LiveSearchController@action')->name('live_search.action');
 // Route::get('/checkout/{id}', 'App\Http\Controllers\FrontController@cart')
 Route::get('/checkout/plus', 'App\Http\Controllers\FrontController@plus');
 Route::get('/checkout/minus', 'App\Http\Controllers\FrontController@minus');

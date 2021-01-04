@@ -21,9 +21,9 @@ class FrontController extends Controller
     public function Product(Request $request){
         $site = Site::all();
         $product = Product::orderBy('product_name', 'asc')
-        ->where(function($query) use ($request){
-            $query->where('product_name', 'LIKE', '%' . $request->search . '%');
-            })
+        // ->where(function($query) use ($request){
+        //     $query->where('product_name', 'LIKE', '%' . $request->search . '%');
+        //     })
         ->paginate(12);
 
         return view('user/pages/product', compact('product', 'site'));

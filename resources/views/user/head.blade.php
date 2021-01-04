@@ -22,5 +22,6 @@
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/move-top.js')}}"></script>
 
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
+
 <!-- start-smoth-scrolling -->
 </head>

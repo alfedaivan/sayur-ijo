@@ -52,7 +52,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="rem">
                                                 <a class="close1" href="{{url('/checkout/delete/?id=' . $c -> product_id)}}"></a>
                                             </div>
-
                                         </td>
                                     </tr>
                                     @endforeach
