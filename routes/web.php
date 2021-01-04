@@ -30,7 +30,7 @@ Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
 Route::get('/checkout/plus', 'App\Http\Controllers\FrontController@plus');
 Route::get('/checkout/minus', 'App\Http\Controllers\FrontController@minus');
 Route::get('/checkout/delete', 'App\Http\Controllers\FrontController@delete');
-Route::post('/order', 'App\Http\Controllers\FrontController@checkout');
+Route::post('/order', 'App\Http\Controllers\FrontController@checkout')->name('order');
 // Route::get('/login', 'App\Http\Controllers\UserController@Login');
 
 // admin

@@ -47,7 +47,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     <button disabled="disabled" class="entry value-minus"></button>
                                                     @endif
                                                     <div class="entry value"><span>{{$c -> quantity}}</span></div>
-                                                    @if ($c -> quantity == $c -> stock)
+                                                    @if ($c -> stock == 0)
+                                                    {{-- <p>{{$c-> quantity}}{{$c -> stock}}</p> --}}
                                                     <button disabled="disabled" class="entry value-plus active"></button>
                                                     @else
                                                     <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
@@ -122,7 +123,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="col-md-4">
                                 <div class="data">
                                     <h5>Informasi Order</h5>
-                                    <form  class="creditly-card-form agileinfo_form">
+                                    <form  class="creditly-card-form agileinfo_form" action="{{ route('order')}}" method="POST">
                                         {{csrf_field()}}
                                         <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                                             <div class="information-wrapper">
@@ -143,6 +144,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="btn-checkout">
+                                                <button type="submit" class="submit check_out2">
+                                                    Pesan
+                                                </button>
+                                            </div>
                                         </section>
                                     </form>
                                 </div>
@@ -159,9 +165,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <tbody>
                                         @foreach ($keranjang as $c)
                                         <tr>
-                                            <td>{{$c -> nama_produk}}</td>
-                                            <td>{{$c -> kuantitas}}</td>
-                                            <td>Rp. {{$c -> harga}}</td>
+                                            <td>{{$c -> product_name}}</td>
+                                            <td>{{$c -> quantity}}</td>
+                                            <td>Rp. {{$c -> total_price}}</td>
                                         </tr>
                                     </tbody>
                                         @endforeach
@@ -172,11 +178,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-checkout">
-                            <button type="button" class="submit check_out2">
-                                Pesan
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>

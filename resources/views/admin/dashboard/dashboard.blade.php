@@ -49,7 +49,7 @@
                             <h4>Transaksi</h4>
                         </div>
                         <div class="card-body">
-                        1000
+                        {{$histories->count()}}
                         </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <h4>Pendapatan</h4>
                         </div>
                         <div class="card-body">
-                        1000
+                        {{$total}}
                         </div>
                         </div>
                     </div>

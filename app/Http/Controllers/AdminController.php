@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Daftar;
+use App\Models\History;
 use App\Models\Keranjang;
 
 class AdminController extends Controller
@@ -19,8 +20,10 @@ class AdminController extends Controller
     public function index(){
         // $daftar = Daftar::all();
         // $keranjang = Keranjang::all();
+        $total = History::sum('total');
+        $histories = History::groupBy('session_id');
         $category = Category::all();
         $product = Product::all();
-        return view('admin/dashboard/dashboard', compact('product','category'));
+        return view('admin/dashboard/dashboard', compact('product','category', 'histories', 'total'));
     }
 }
