@@ -11,29 +11,25 @@
             <h1>Pengguna</h1>
           </div>
 
+          @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    {{ $message }}
+                </div>
+            </div>
+            @endif
+
           <div class="row">
             <div class="col-12">
               <div class="card">
 
                     <div class="card-header">
                         <h4>
-                            <form action="#" method="GET">
-                            <div class="input-group">
-                                <input type="text" name="term" id="term" class="form-control" placeholder="Search" >
-                                <div class="input-group-btn">
-                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                                <button href="#" class="btn btn-danger ml-1">
-                                    <i class="fa fa-sync-alt" style="font-size: 13px !important;"></i>
-                                </button>
-                                </div>
-                            </div>
-                            </form>
+                            Daftar Pengguna
                         </h4>
-                        <div class="card-header-form">
-                            <div class="buttons mt-1">
-                            <a href="{{url('/dashboard/user/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah User</a>
-                            </div>
-                        </div>
                     </div>
 
 
@@ -43,7 +39,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
+                        <th>Email</th>
                         <th>Action</th>
                       </tr>
                       <?php $i = 1?>
@@ -53,8 +49,7 @@
                         <td>{{$u->name}}</td>
                         <td>{{$u->email}}</td>
                         <td>
-                          <a href="{{url('/dashboard/user/edit')}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData"><i class="fas fa-trash"></i></a>
+                          <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$u->id}}"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                       <?php $i++; ?>
@@ -63,23 +58,6 @@
                     </table>
                   </div>
                 </div>
-                <div class="card-footer text-right">
-                  <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
               </div>
             </div>
           </div>
@@ -87,10 +65,13 @@
       </div>
 
     <!-- modal delete -->
-      <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+    @foreach($user as $u)
+      <div class="modal fade" id="deleteData{{$u->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <form action="#">
+            <form action="{{ route('user.delete', $u->id) }}" method="post">
+                @csrf
+                @method('DELETE')
                 <div class="modal-header">
                 <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
                 </div>
@@ -99,7 +80,7 @@
                 <div class="form-group">
                     <h6>
                     <br>
-                        Yakin Ingin Menghapus <b>Apel</b> ?
+                        Yakin Ingin Menghapus <b>{{$u->name}}</b> ?
                     </h6>
                 </div>
                 </div>
@@ -111,7 +92,7 @@
             </div>
         </div>
       </div>
-
+    @endforeach
 @endsection()
 
 

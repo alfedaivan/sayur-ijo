@@ -65,7 +65,7 @@ class ProdukController extends Controller
             'stock'=>$request->stock,
         ]);
 
-        return redirect('/dashboard/product')->with('success', 'Product created succesfully.');
+        return redirect('/dashboard/product')->with('success', 'Produk berhasil ditambahkan.');
     }
     public function ProductEdit($id){
         $product=Product::findOrFail($id);
@@ -109,7 +109,7 @@ class ProdukController extends Controller
             'created_at'=>$request->created_at,
         );
         Product::where('id',$id)->update($form_data);
-        return redirect('/dashboard/product')->with('success', 'Product updated succesfully.');
+        return redirect('/dashboard/product')->with('success', 'Product berhasil diedit.');
     }
 
     public function ProductDelete($id){
@@ -119,7 +119,7 @@ class ProdukController extends Controller
             File::delete($image_path);
         }
         $product->delete();
-        return redirect('dashboard/product')->with('success', 'Product deleted succesfully.');
+        return redirect('dashboard/product')->with('success', 'Produk berhasil dihapus.');
     }
 
 }
