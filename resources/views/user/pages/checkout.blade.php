@@ -48,9 +48,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     @endif
                                                     <div class="entry value"><span>{{$c -> quantity}}</span></div>
                                                     @if ($c -> quantity == $c -> stock)
-                                                    <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
-                                                    @else
                                                     <button disabled="disabled" class="entry value-plus active"></button>
+                                                    @else
+                                                    <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
                                                     @endif
 
                                                 </div>
