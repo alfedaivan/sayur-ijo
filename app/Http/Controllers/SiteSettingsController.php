@@ -39,6 +39,6 @@ class SiteSettingsController extends Controller
 	);
 
 	Site::where('id',$id)->update($form_data);
-        return redirect('dashboard/settings')->with('success', 'Site updated succesfully.');
+        return redirect('dashboard/settings')->with('success', 'Pengaturan berhasil diedit.');
     }
 }

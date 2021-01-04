@@ -61,6 +61,10 @@
                 </button>
               </div>
 
+              <div class="mt-5 text-center">
+                Belum punya akun? <a href="{{url('/register')}}"> Register sekarang</a>
+              </div>
+
             </form>
 
             <div class="text-center mt-5 text-small">

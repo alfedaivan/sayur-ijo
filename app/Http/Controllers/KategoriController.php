@@ -32,7 +32,7 @@ class KategoriController extends Controller
         Category::create([
             'category' => $request->category
         ]);
-        return redirect('dashboard/category')->with('success', 'Category created succesfully.');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil ditambahkan.');
     }
     public function CategoryEdit($id){
         $category = Category::find($id);
@@ -46,12 +46,12 @@ class KategoriController extends Controller
         $category= Category::find($id);
         $category->category = $request->category;
         $category->save();
-        return redirect('dashboard/category')->with('success', 'Category updated succesfully.');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil diedit.');
     }
     public function CategoryDelete($id){
         $category = Category::findOrFail($id);
         $category->delete();
-        return redirect('dashboard/category')->with('success', 'Category deleted succesfully.');
+        return redirect('dashboard/category')->with('success', 'Kategori berhasil dihapus.');
     }
 
     // end
