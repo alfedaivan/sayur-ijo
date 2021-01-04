@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h3>Produk Kami</h3>
 
                 <div class="w3l_search">
-                    <form action="#">
+                    <form action="/product" method="GET">
                         <input type="text" name="search" id="search" placeholder="Cari Produk...">
                         <input type="submit" value=" ">
                     </form>
@@ -59,29 +59,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- footer -->
 @include('user.footer')
-
-<script>
-    $(document).ready(function(){
-        fetch_product_data();
-
-        function fetch_product_data(query = ''){
-            $.ajax({
-                url:"{{ route('live_search.action') }}",
-                method:'GET',
-                data:{query:query},
-                dataType:'json',
-                success:function(data){
-                    $('#list-product').html(data.product_data);
-                }
-            })
-        }
-
-        $(document).on('keyup', '#search', function(){
-            var query = $(this).val();
-            fetch_product_data(query);
-        });
-    });
-</script>
 <!-- //footer -->
 
 </body>

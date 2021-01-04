@@ -31,9 +31,9 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $product = Product::orderBy('product_name', 'asc')
-        // ->where(function($query) use ($request){
-        //     $query->where('product_name', 'LIKE', '%' . $request->search . '%');
-        //     })
+        ->where(function($query) use ($request){
+            $query->where('product_name', 'LIKE', '%' . $request->search . '%');
+            })
         ->paginate(12);
 
         return view('user/pages/product', compact('product', 'site', 'keranjang'));

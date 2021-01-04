@@ -53,5 +53,5 @@
             $('.rem1').fadeOut('slow', function(c){
                 $('.rem1').remove();
             });
-            });
         });
+    });

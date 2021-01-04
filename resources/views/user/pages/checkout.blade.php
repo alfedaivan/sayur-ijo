@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <div class="container">
 
-                    <div class="col-md-7">
+                    <div class="col-md-8" style="z-index: 2 !important;">
                         <div class="checkout-right">
                             <table class="timetable_sub">
                                 <thead>
@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="col-md-1">
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="z-index: 1 !important;">
                         <div class="checkout-left">
                             <div class="col-md-4 checkout-left-basket">
                                 <h4>Nota</h4>
