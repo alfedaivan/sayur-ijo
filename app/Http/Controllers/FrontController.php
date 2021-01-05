@@ -53,7 +53,7 @@ class FrontController extends Controller
                 $output .= '</ul>';
             }
             else {
-                $output .= '<li class="list-group-item">'.'No results'.'</li>';
+                $output .= '<li class="list-group-item" style="width:94% !important;">'.'No results'.'</li>';
                 $output .= '</ul>';
             }
             return $output;

@@ -19,8 +19,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h3>Produk Kami</h3>
 
                 <div class="w3l_search">
-                    <form action="/product" method="GET">
-                        <input type="text" name="search" id="search" placeholder="Cari Produk...">
+                    <form action="/product" method="GET" autocomplete="off">
+                        <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="false">
                         <input type="submit" value=" ">
                         <div id="product_list"></div>
                     </form>
@@ -63,34 +63,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @include('user.footer')
 <!-- //footer -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#search').on('keyup',function() {
-                    var query = $(this).val();
-                    $.ajax({
-                        url:'/search',
-                        type:"GET",
-                        data:{'search':query},
-                        success:function (data) {
-                            $('#product_list').html(data);
-                        }
-                    })
-                });
-
-                $(document).on('click', 'li', function(){
-                    var value = $(this).text();
-                    $('#search').val(value);
-                    $('#product_list').html("");
-                });
-
-                $(document).on('click', 'body', function(){
-                    var value = $(this).text();
-                    $('#search').val();
-                    $('#product_list').html("");
-                });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#search').on('keyup',function() {
+                var query = $(this).val();
+                $.ajax({
+                    url:'/search',
+                    type:"GET",
+                    data:{'search':query},
+                    success:function (data) {
+                        $('#product_list').html(data);
+                    }
+                })
             });
-        </script>
+            $(document).on('click', 'li', function(){
+                var value = $(this).text();
+                $('#search').val(value);
+                $('#product_list').html("");
+            });
+
+            $(document).on('click', 'body', function(){
+                var value = $(this).text();
+                $('#search').val();
+                $('#product_list').html("");
+            });
+        });
+    </script>
 </body>
 </html>

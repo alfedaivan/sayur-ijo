@@ -174,8 +174,6 @@ body a:hover{
 
 }
 
-
-
 span.glyphicon.glyphicon-shopping-cart
 	.my-cart-icon.my-cart-icon-affix {
 	position: relative !important;
@@ -264,10 +262,10 @@ ul.agileits_social_icons li a,
 @media(max-width:834px){
     .w3l_search{
         margin-top: 40px;
-        margin-left: 60px;
+        margin-left: 50px;
     }
     .w3l_search input[type="text"]{
-        width: 84%;
+        width: 86%;
     }
     .w3l_search input[type="submit"]{
         padding: 8.5px 0;
@@ -276,10 +274,10 @@ ul.agileits_social_icons li a,
 }
 @media(max-width:414px){
     .w3l_search{
-        margin-left: 55px;
+        margin-left: 20px;
     }
     .w3l_search input[type="text"]{
-        width: 68%;
+        width: 78%;
     }
     .w3l_search input[type="submit"]{
         padding: 8.5px 0;
@@ -1521,7 +1519,7 @@ td.invert-image a img {
         margin-top: 20px;
     }
     .checkout-page{
-        margin-top: -30px !important;
+        margin-top: -90px !important;
     }
 }
 @media(max-width: 768px){
@@ -1826,7 +1824,7 @@ td.invert-image a img {
 		margin-bottom: 50px;
 	}
 	.top-brands h3, .mail h3, .testimonials h3, .w3_login h3,  h3.title, .faq h3, .services h3, .about h3, .team h3, .events h3 {
-		font-size: 2.3em;
+		font-size: 2em;
 	}
 	.banner_bottom, .top-brands, .w3l_banner_nav_right_banner3_btm, .testimonials, .team {
 		padding: 4em 0 !important;
@@ -2569,11 +2567,12 @@ td.invert-image a img {
 		right: 7px;
 	}
 	.checkout-page{
-		transform: translateY(-7%);
+        transform: translateY(-60px) !important;
 		margin-right: 15px !important;
 	}
 	.checkout-page h3{
-		font-size: 1.6em;
+        font-size: 1.8em;
+        margin-right: 15px !important;
 	}
 	.contact{
 		margin-left: 0;
