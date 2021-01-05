@@ -23,18 +23,7 @@
 
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
 
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <style type="text/css">
-            body{
-                font-family: 'Roboto', sans-serif;
-            }
-        </style>
+    <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script>
 
 <!-- start-smoth-scrolling -->
 </head>

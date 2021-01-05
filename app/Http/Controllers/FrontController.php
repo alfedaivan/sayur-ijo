@@ -46,7 +46,7 @@ class FrontController extends Controller
                 ->get();
             $output = '';
             if (count($data)>0) {
-                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+                $output .= '<ul class="list-group" style="display: block; position: relative; z-index: 1; width:94% !important; cursor: pointer;">';
                 foreach ($data as $row){
                     $output .= '<li class="list-group-item">'.$row->product_name.'</li>';
                 }
