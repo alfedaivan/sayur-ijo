@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="snipcart-thumb">
                                                 <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
                                                 <p>{{$p -> product_name}}</p>
-                                                <h4>Rp. {{$p -> price}}</h4>
+                                                <h4>Rp. {{$p -> price}} / {{$p -> unit}}</h4>
                                             </div>
                                             <div class="snipcart-details top_brand_home_details">
                                                 <a href={{url("/checkout?id=".$p -> id)}} class="btn-produk">Pesan</a>
