@@ -86,6 +86,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     $('#search').val(value);
                     $('#product_list').html("");
                 });
+
+                $(document).on('click', 'body', function(){
+                    var value = $(this).text();
+                    $('#search').val();
+                    $('#product_list').html("");
+                });
             });
         </script>
 </body>
