@@ -54,6 +54,7 @@ Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriCo
 
 // transaction
 Route::get('/dashboard/history', 'App\Http\Controllers\HistoryController@History');
+Route::delete('/dashboard/history/hapus/{id}', 'App\Http\Controllers\HistoryController@HistoryDelete')->name('history.delete');
 
 // user
 Route::get('/dashboard/user', 'App\Http\Controllers\UserController@User');

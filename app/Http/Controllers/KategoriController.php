@@ -17,7 +17,8 @@ class KategoriController extends Controller
     public function Category(Request $request){
         $category = Category::orderBy('category', 'asc')
         ->where(function($query) use ($request){
-            $query->where('category', 'LIKE', '%' . $request->search . '%');
+            $query->where('category', 'LIKE', '%' . $request->search . '%')
+                  ->get();
             })
         -> paginate(10);
         return view('admin/category/tbl_category', ['category' => $category,]);
