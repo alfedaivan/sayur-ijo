@@ -46,7 +46,7 @@ class FrontController extends Controller
                 ->get();
             $output = '';
             if (count($data)>0) {
-                $output .= '<ul class="list-group" style="display: block; position: relative; z-index: 1; width:94% !important; cursor: pointer;">';
+                $output .= '<ul class="list-group" style="display: block; position: relative; z-index: 100; width:94% !important; cursor: pointer;">';
                 foreach ($data as $row){
                     $output .= '<li class="list-group-item">'.$row->product_name.'</li>';
                 }
@@ -183,7 +183,10 @@ class FrontController extends Controller
         $orderProduct = $keranjang;
         $next = '%0D%0A';
 
-        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :'.$orderProduct.$next.'dikirim ke: '.$request->alamat.$next.'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
+        $order = 'Hi Admin, Saya '.$request->nama.
+                 'ingin membeli :'.$orderProduct.$next.
+                 'dikirim ke: '.$request->alamat.$next.
+                 'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
 
         $cart = Cart::where('session_id', $token);
         $cart->delete();

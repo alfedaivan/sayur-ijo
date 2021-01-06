@@ -64,7 +64,7 @@
                             <h4>Pendapatan</h4>
                         </div>
                         <div class="card-body">
-                        {{$total}}
+                        Rp. {{$total}}
                         </div>
                         </div>
                     </div>

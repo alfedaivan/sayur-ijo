@@ -45,6 +45,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>Konfirmasi</th>
                         <th>Action</th>
                       </tr>
                       <?php $i = 1?>
@@ -53,6 +54,7 @@
                         <td>{{$i}}</td>
                         <td>{{$u->name}}</td>
                         <td>{{$u->email}}</td>
+                        <td>{{$u->created_at}}</td>
                         <td>
                             <!-- <a href="/dashboard/user/edit/{{$u->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a> -->
                             <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$u->id}}"><i class="fas fa-trash"></i></a>

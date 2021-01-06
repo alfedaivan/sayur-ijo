@@ -826,7 +826,7 @@ button.submit.check_out2:hover{
 /*-- //cart --*/
 .column div.agile_top_brand_left_grid {
 	position: relative;
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .agile_top_brand_left_grid figure {
 	margin: 0;
@@ -1373,7 +1373,7 @@ h2.typoh2{
     border-radius: 0;
     width: 100%;
     text-transform: uppercase;
-    padding: .5em 1.5em;
+    padding: .5em 2em;
     outline: none;
 }
 

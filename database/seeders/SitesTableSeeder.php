@@ -20,12 +20,9 @@ class SitesTableSeeder extends Seeder
             'twitter' => 'https://www.twitter.com/namaTwitter',
             'email' => 'abc@gmail.com',
             'instagram' => 'https://www.instagram.com/namaInstagram',
-            'nomor_wa' => '628886666',
+            'nomor_wa' => '6281234567890',
             'alamat' => 'Jl. Akordion, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143', // password
-            'about' => 'Hallo this is us grocery store
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Sit, earum officia, a ut minus nesciunt itaque ab deserunt pariatur
-                            ipsam culpa sunt vitae vero temporibus minima quasi iusto maxime quam?',
+            'about' => 'Hallo this is us grocery store Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, earum officia, a ut minus nesciunt itaque ab deserunt pariatur ipsam culpa sunt vitae vero temporibus minima quasi iusto maxime quam?',
             'created_at' => now(),
         ]);
     }

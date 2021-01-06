@@ -170,7 +170,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             </div>
                                             <div class="btn-checkout">
                                                 @if ($keranjang->count() == 0)
-                                                <button type="submit" disabled class="submit check_out2">
+                                                <button type="submit" disabled class="submit check_out2" style="cursor: not-allowed;">
                                                     Pesan
                                                 </button>
                                                 @else
