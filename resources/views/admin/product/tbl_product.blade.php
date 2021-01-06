@@ -55,6 +55,7 @@
                         <th>Nama</th>
                         <th>Kategori</th>
                         <th>Harga</th>
+                        <th>Satuan</th>
                         <th>Stok</th>
                         <th>Action</th>
                       </tr>
@@ -66,6 +67,7 @@
                             <td>{{$p -> product_name}}</td>
                             <td>{{$p -> category}}</td>
                             <td>Rp. {{$p -> price}}</td>
+                            <td>{{$p -> unit}}</td>
                             <td>{{$p -> stock}}</td>
                             <td>
                             <a href="/dashboard/product/edit/{{$p->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a>
