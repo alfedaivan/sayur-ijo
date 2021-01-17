@@ -57,7 +57,7 @@
                         <th>Harga</th>
                         <th>Satuan</th>
                         <th>Stok</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php $i = 1; $skipped = $product->currentPage() * $product->perPage()-$product->perPage(); ?>
                         @foreach($product as $index => $p)

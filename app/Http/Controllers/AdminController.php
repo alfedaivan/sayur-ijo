@@ -21,7 +21,8 @@ class AdminController extends Controller
         // $daftar = Daftar::all();
         // $keranjang = Keranjang::all();
         $total = History::sum('total');
-        $histories = History::groupBy('session_id');
+        // $histories = History::groupBy('session_id');
+        $histories = History::all();
         $category = Category::all();
         $product = Product::all();
         return view('admin/dashboard/dashboard', compact('product','category', 'histories', 'total'));

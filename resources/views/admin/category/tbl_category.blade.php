@@ -51,7 +51,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                         <!-- looping number -->
                         <?php $i = 1; $skipped = $category->currentPage() * $category->perPage()-$category->perPage(); ?>

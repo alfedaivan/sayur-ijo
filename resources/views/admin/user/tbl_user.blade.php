@@ -46,7 +46,7 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Konfirmasi</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php $i = 1?>
                       @foreach($user as $u)

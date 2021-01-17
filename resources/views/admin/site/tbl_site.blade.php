@@ -35,7 +35,7 @@
                             <th>Nomor WA</th>
                             <th>Tentang kami</th>
                             <th>Alamat</th>
-                            <th>Edit</th>
+                            <th>Aksi</th>
                         </tr>
                         <!-- looping number -->
                         @foreach($site as $s)
