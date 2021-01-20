@@ -7,6 +7,7 @@ use App\Models\History;
 use App\Models\Cart;
 use App\Models\Keranjang;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Site;
 
@@ -16,16 +17,19 @@ class FrontController extends Controller
     //page home
     public function Index(Request $request){
         $site = Site::all();
+        $category = Category::all();
         $token = $request->session()->token();
         $token = csrf_token();
         $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
         ->where(['session_id' => $token])
         ->get();
-        return view('user/pages/home',compact('site', 'keranjang'));
+        $product = Product::orderBy('created_at', 'desc')->paginate(8);
+        return view('user/pages/home',compact('product', 'site', 'keranjang', 'category'));
     }
     //page product
     public function Product(Request $request){
         $site = Site::all();
+        $category = Category::all();
         $token = $request->session()->token();
         $token = csrf_token();
         $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
@@ -37,7 +41,7 @@ class FrontController extends Controller
             })
         ->paginate(12);
 
-        return view('user/pages/product', compact('product', 'site', 'keranjang'));
+        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category'));
     }
     //searchproduct
     public function Search(Request $request){
@@ -46,7 +50,7 @@ class FrontController extends Controller
                 ->get();
             $output = '';
             if (count($data)>0) {
-                $output .= '<ul class="list-group" style="display: block; position: relative; z-index: 100; width:94% !important; cursor: pointer;">';
+                $output .= '<ul class="list-group" style="display: block; position: absolute; z-index: 100 !important; width: 80.5%; cursor: pointer;">';
                 foreach ($data as $row){
                     $output .= '<li class="list-group-item">'.$row->product_name.'</li>';
                 }
@@ -59,8 +63,8 @@ class FrontController extends Controller
             return $output;
         }
     }
-    // page checkout
 
+    // page checkout
     public function plus(Request $request)
     {
         $id = $request->get('id');
@@ -95,9 +99,9 @@ class FrontController extends Controller
 
     public function cart(Request $request)
     {
+        $category = Category::all();
         $site = Site::all();
         $id = $request->get('id');
-
         $token = $request->session()->token();
         $token = csrf_token();
         if($id){
@@ -139,7 +143,7 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $sum = Cart::where('session_id', $token)->sum('total_price');
-        return view('user/pages/checkout', compact('keranjang', 'sum', 'site'));
+        return view('user/pages/checkout', compact('keranjang', 'sum', 'site', 'category'));
     }
 
     public function delete(Request $request)
