@@ -119,6 +119,7 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $sum = Cart::where('session_id', $token)->sum('total_price');
+        // echo "<script>window.location.href = 'http://localhost:8000/checkout';</script>";
         return view('user/pages/checkout', compact('keranjang', 'sum', 'site'));
     }
 
@@ -160,10 +161,13 @@ class FrontController extends Controller
             'session_id' => $token
         ]);
 
-        $orderProduct = $keranjang;
+        $orderProduct = '';
+        foreach ($keranjang as $data) {
+            $orderProduct .= $data->product_name . ' : ' . $data->quantity;
+        }
         $next = '%0D%0A';
 
-        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :'.$orderProduct.$next.'dikirim ke: '.$request->alamat.$next.'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
+        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :'.$next.$orderProduct.$next.'dikirim ke: '.$request->alamat.$next.'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
 
         $cart = Cart::where('session_id', $token);
         $cart->delete();
