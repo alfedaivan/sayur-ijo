@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes([
+    'register' => false,
     'logout' => false
     ]);
 Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers\Auth\LoginController@signout']);
@@ -23,6 +24,7 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
+Route::get('/search', 'App\Http\Controllers\FrontController@Search');
 Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
 
 // Route::get('/checkout/{id}', 'App\Http\Controllers\FrontController@cart')
@@ -52,9 +54,14 @@ Route::delete('/dashboard/category/hapus/{id}', 'App\Http\Controllers\KategoriCo
 
 // transaction
 Route::get('/dashboard/history', 'App\Http\Controllers\HistoryController@History');
+Route::delete('/dashboard/history/hapus/{id}', 'App\Http\Controllers\HistoryController@HistoryDelete')->name('history.delete');
 
 // user
 Route::get('/dashboard/user', 'App\Http\Controllers\UserController@User');
+Route::get('/dashboard/user/add', 'App\Http\Controllers\UserController@UserAdd');
+Route::post('/dashboard/user/addvalidation', 'App\Http\Controllers\UserController@UserAddValidation');
+// Route::get('/dashboard/user/edit/{id}', 'App\Http\Controllers\UserController@UserEdit');
+// Route::put('/dashboard/user/editvalidation/{id}', 'App\Http\Controllers\UserController@UserEditValidation');
 Route::delete('/dashboard/user/hapus/{id}', 'App\Http\Controllers\UserController@UserDelete')->name('user.delete');
 
 // dite settings

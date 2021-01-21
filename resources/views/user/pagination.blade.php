@@ -35,26 +35,6 @@
 
             {{-- Pagination Elements --}}
 
-            <!-- @foreach ($elements as $element)
-                {{-- Array Of Links --}}
-                @if (is_array($element))
-                    @foreach ($element as $page => $url)
-                        @if ($page == $paginator->currentPage())
-                            <li class="page-item active">
-                                <a class="page-link" href="#">
-                                    {{ $page }}
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                        @else
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $url }}">{{$page}}</a>
-                            </li>
-                        @endif
-                    @endforeach
-                @endif
-            @endforeach -->
-
             @foreach(range(1, $paginator->lastPage()) as $i)
                 @if($i >= $paginator->currentPage() - 2 && $i <= $paginator->currentPage() + 2)
                     @if ($i == $paginator->currentPage())

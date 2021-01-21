@@ -23,5 +23,7 @@
 
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
 
+    <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script>
+
 <!-- start-smoth-scrolling -->
 </head>

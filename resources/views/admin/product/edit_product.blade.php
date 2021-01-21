@@ -48,6 +48,11 @@
                     </div>
 
                     <div class="form-group">
+                      <label>Satuan</label>
+                      <input name="unit" type="text" class="form-control" required="" value="{{ $product->unit }}">
+                    </div>
+
+                    <div class="form-group">
                       <label>Stok</label>
                       <input name="stock" type="text" class="form-control" required="" value="{{ $product->stock }}">
                     </div>

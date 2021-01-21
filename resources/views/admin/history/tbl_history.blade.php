@@ -9,6 +9,17 @@
             <h1>Riwayat Transaksi</h1>
           </div>
 
+          @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    {{ $message }}
+                </div>
+            </div>
+          @endif
+
           <div class="row">
             <div class="col-12">
               <div class="card">
@@ -17,7 +28,7 @@
                         <h4>
                             <form action="#">
                             <div class="input-group">
-                                <input type="text" name="term" id="term" class="form-control" placeholder="Search" >
+                                <input type="text" name="search" id="search" class="form-control" placeholder="Search" >
                                 <div class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                 <button href="{{url('/dashboard/history')}}" class="btn btn-danger ml-1">
@@ -27,11 +38,6 @@
                             </div>
                             </form>
                         </h4>
-                        <div class="card-header-form">
-                            <div class="buttons mt-1">
-                            <a href="{{url('/dashboard/product/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Produk</a>
-                            </div>
-                        </div>
                     </div>
 
 
@@ -39,42 +45,35 @@
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>No</th>
+                        <th>Pelanggan</th>
+                        <th>Alamat</th>
+                        <th>Catatan</th>
+                        <th>Total</th>
+                        <th>Waktu Pemesanan</th>
+                        <th>Aksi</th>
                       </tr>
+                      <?php $i = 1; $skipped = $histories->currentPage() * $histories->perPage()-$histories->perPage(); ?>
+                      @foreach($histories as $index => $h)
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $skipped + $i }}</td>
+                        <td>{{ $h->nama }}</td>
+                        <td>{{ $h->alamat }}</td>
+                        <td>{{ $h->catatan }}</td>
+                        <td>Rp. {{ $h->total }}</td>
+                        <td>{{ $h->created_at }}</td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData"><i class="fas fa-trash"></i></a>
+                            <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$h->id}}"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
-
+                      <?php $i++; ?>
+                      @endforeach
                     </table>
                   </div>
                 </div>
-                <div class="card-footer text-right">
-                  <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+
+                <!-- pagination -->
+                {{ $histories->links('admin.pagination') }}
               </div>
             </div>
           </div>
@@ -82,10 +81,13 @@
     </div>
 
     <!-- modal delete -->
-    <div class="modal fade" id="deleteData" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
+    @foreach($histories as $h)
+    <div class="modal fade" id="deleteData{{$h->id}}" role="dialog" aria-labelledby="deleteData" aria-hidden="true" >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form action="#">
+          <form action="{{ route('history.delete', $h->id) }}" method="post">
+            @csrf
+            @method('DELETE')
             <div class="modal-header">
               <h6 class="modal-title" id="DataLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> &nbsp; Konfirmasi Hapus</h6>
             </div>
@@ -94,7 +96,7 @@
               <div class="form-group">
                 <h6>
                   <br>
-                    Yakin Ingin Menghapus <b>Apel</b> ?
+                    Yakin Ingin Menghapus <b>{{$h->nama}}</b> ?
                 </h6>
               </div>
             </div>
@@ -106,6 +108,7 @@
         </div>
       </div>
     </div>
+    @endforeach
 
 @endsection()
 

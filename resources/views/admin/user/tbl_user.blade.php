@@ -30,6 +30,11 @@
                         <h4>
                             Daftar Pengguna
                         </h4>
+                        <div class="card-header-form">
+                            <div class="buttons mt-1">
+                            <a href="{{url('/dashboard/user/add')}}" class="btn btn-icon icon-left btn-success"><i class="fas fa-plus"></i> Tambah Pengguna</a>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -40,7 +45,8 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th>Konfirmasi</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php $i = 1?>
                       @foreach($user as $u)
@@ -48,8 +54,10 @@
                         <td>{{$i}}</td>
                         <td>{{$u->name}}</td>
                         <td>{{$u->email}}</td>
+                        <td>{{$u->created_at}}</td>
                         <td>
-                          <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$u->id}}"><i class="fas fa-trash"></i></a>
+                            <!-- <a href="/dashboard/user/edit/{{$u->id}}" class="btn btn-icon btn-warning mr-1"><i class="fas fa-edit"></i></a> -->
+                            <a href="#" class="btn btn-icon btn-danger" data-toggle="modal" data-target="#deleteData{{$u->id}}"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                       <?php $i++; ?>

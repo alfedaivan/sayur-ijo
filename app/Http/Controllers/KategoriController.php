@@ -17,7 +17,8 @@ class KategoriController extends Controller
     public function Category(Request $request){
         $category = Category::orderBy('category', 'asc')
         ->where(function($query) use ($request){
-            $query->where('category', 'LIKE', '%' . $request->search . '%');
+            $query->where('category', 'LIKE', '%' . $request->search . '%')
+                  ->get();
             })
         -> paginate(10);
         return view('admin/category/tbl_category', ['category' => $category,]);
@@ -34,6 +35,8 @@ class KategoriController extends Controller
         ]);
         return redirect('dashboard/category')->with('success', 'Kategori berhasil ditambahkan.');
     }
+
+
     public function CategoryEdit($id){
         $category = Category::find($id);
         return view('admin/category/edit_category',['category' => $category]);

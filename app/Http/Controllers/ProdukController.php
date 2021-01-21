@@ -28,9 +28,9 @@ class ProdukController extends Controller
         $query->where('product_name', 'LIKE', '%' . $request->search . '%')
               ->orWhere('category', 'LIKE', '%' . $request->search . '%');
         })
-    ->paginate(10, array('products.id','products.photo','products.product_name',
+    ->paginate(20, array('products.id','products.photo','products.product_name',
                         'categories.id as categoryid','categories.category as category',
-                        'products.price','products.stock'));
+                        'products.price','products.unit','products.stock'));
 
         return view('admin/product/tbl_product',compact('product','category'));
    }
@@ -47,6 +47,7 @@ class ProdukController extends Controller
             'photo' => 'required | mimes:jpg,png,jpeg | max:5120',
             'category_id' => 'required',
             'price' => 'required',
+            'unit' => 'required',
             'stock' => 'required',
         ]);
 
@@ -62,6 +63,7 @@ class ProdukController extends Controller
             'photo' => $nama_file,
             'category_id'=>$request->category_id,
             'price'=>$request->price,
+            'unit'=>$request->unit,
             'stock'=>$request->stock,
         ]);
 
@@ -84,6 +86,7 @@ class ProdukController extends Controller
                 'photo' => 'required | mimes:jpg,png,jpeg | max:5120',
                 'category_id' => 'required',
                 'price' => 'required',
+                'unit' => 'required',
                 'stock' => 'required',
                 'created_at' => 'required',
             ]);
@@ -95,6 +98,7 @@ class ProdukController extends Controller
                 'product_name' => 'required',
                 'category_id' => 'required',
                 'price' => 'required',
+                'unit' => 'required',
                 'stock' => 'required',
                 'created_at' => 'required',
             ]);
@@ -105,6 +109,7 @@ class ProdukController extends Controller
             'photo' => $nama_file,
             'category_id'=>$request->category_id,
             'price'=>$request->price,
+            'unit'=>$request->unit,
             'stock'=>$request->stock,
             'created_at'=>$request->created_at,
         );
