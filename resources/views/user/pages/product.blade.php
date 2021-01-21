@@ -22,6 +22,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="w3l_search">
                         <form action="/product" method="GET" autocomplete="off">
                             <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="false">
+                            <select class="form-control; col-md-4" required="" name="kategori">
+                        <option value=" ">Semua</option>
+                        @foreach($category as $k)
+                          <option value="{{$k->id}}">{{$k->category}}</option>
+                        @endforeach
+                      </select>
                             <input type="submit" value=" ">
                             <div id="product_list"></div>
                         </form>
