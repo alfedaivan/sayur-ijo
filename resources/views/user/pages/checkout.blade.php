@@ -9,6 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @include('user.head')
 
 <body>
+
     <!-- nav -->
     @include('user.nav')
     <!-- //nav -->
@@ -44,12 +45,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     @if ($c -> quantity > 1)
                                                     <a class="entry value-minus" href="{{url('/checkout/minus/?id=' . $c -> product_id)}}"></a>
                                                     @else
-                                                    <button disabled="disabled" class="entry value-minus"></button>
+                                                    <button disabled="disabled" style="cursor: not-allowed;" class="entry value-minus"></button>
                                                     @endif
                                                     <div class="entry value"><span>{{$c -> quantity}}</span></div>
                                                     @if ($c -> stock == 0)
                                                     {{-- <p>{{$c-> quantity}}{{$c -> stock}}</p> --}}
-                                                    <button disabled="disabled" class="entry value-plus active"></button>
+                                                    <button disabled="disabled" style="cursor: not-allowed;" class="entry value-plus active"></button>
                                                     @else
                                                     <a class="entry value-plus active" href="{{url('/checkout/plus/?id=' . $c -> product_id)}}"></a>
                                                     @endif

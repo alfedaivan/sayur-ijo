@@ -52,6 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                         </div>
                         @endforeach
+                        <div class="clearfix"></div>
                     </div>
                 </div>
 
@@ -59,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
 
             {{ $product->links('user.pagination') }}
-        <div class="clearfix"></div>
+
     <!-- //content -->
     </div>
 

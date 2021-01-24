@@ -9,6 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @include('user.head')
 
 <body>
+
     <!-- nav -->
     @include('user.nav')
     <!-- //nav -->
@@ -64,9 +65,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- top-brands -->
 	<div class="top-brands mt-5" id="offers">
 		<div class="container">
-			<h3>Produk Terpopuler</h3>
-			<div class="agile_top_brands_grids">
+            <h3>Produk Terpopuler</h3>
 
+			<div class="agile_top_brands_grids">
                 @foreach ($product as $p)
                     <div class="col-md-3 top_brand_left" id="list-product">
                         <div class="hover14 column">
