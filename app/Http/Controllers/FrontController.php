@@ -36,8 +36,10 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $product = Product::orderBy('product_name', 'asc')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
         ->where(function($query) use ($request){
-            $query->where('product_name', 'LIKE', '%' . $request->search . '%');
+            $query->where('product_name', 'LIKE', '%' . $request->search . '%')
+                  ->where('category_id', 'LIKE', '%' . $request->kategori . '%');
             })
         ->paginate(12);
 
