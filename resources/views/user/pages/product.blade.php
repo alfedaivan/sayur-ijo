@@ -19,20 +19,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h3>Produk Kami</h3>
 
                 <div class="row">
-                    <div class="w3l_search">
-                        <form action="/product" method="GET" autocomplete="off">
-                            <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="false">
-                            <select class="form-control; col-md-4" required="" name="kategori">
-                        <option value=" ">Semua</option>
-                        @foreach($category as $k)
-                          <option value="{{$k->id}}">{{$k->category}}</option>
-                        @endforeach
-                      </select>
-                            <input type="submit" value=" ">
-                            <div id="product_list"></div>
-                        </form>
+                    <div class="col-md-6 total-data">
+                        <h4>Menampilkan {{ $product->perPage() }} dari {{ $productCount }} produk</h4>
+                    </div>
+                    <div class="col-md-6 select">
+                        <select class="form-control; col-md-4" required="" name="kategori">
+                            <option value=" ">Kategori</option>
+                            @foreach($category as $k)
+                            <option value="{{$k->id}}">{{$k->category}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="w3l_search">
+                            <form action="/product" method="GET">
+                                <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="off">
+                                <input type="submit" value=" ">
+                                <div id="product_list"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="row">
                     <div class="agile_top_brands_grids" >

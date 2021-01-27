@@ -309,18 +309,49 @@ ul.agileits_social_icons li a,
     background-color: rgba(0, 0, 0, 0.1);
   }
 
+.col-md-6.select select{
+    margin-top: 38px;
+    height: 35px;
+    width: 45%;
+    font-size: 14px;
+    justify-content: right;
+    right: 0;
+    transform: translateX(10px);
+    position: absolute;
+}
+.col-md-6.total-data{
+    margin-top: 50px;
+    /* height: 30px; */
+    width: 48%;
+    font-size: 10px;
+    color: #9c9c9c;
+}
 
-
+.list-group.autocomplete{
+    display: block;
+    position: absolute;
+    z-index: 100 !important;
+    width: 92.5%;
+    cursor: pointer;
+}
+.list-group-item.autocomplete{
+    display: block;
+    position: absolute;
+    z-index: 100 !important;
+    width: 92.5%;
+    cursor: pointer;
+}
 .w3l_search{
     margin-top: 40px;
-    margin-left: 13px;
+    /* margin-left: 13px; */
+    text-align: center ;
 }
 .w3l_search input[type="text"]{
 	outline: none;
     padding: 10px;
     color: #212121;
     font-size: 14px;
-    width: 94%;
+    width: 95%;
     background: #fff;
     border: 1px solid #999;
     margin-right: -5px;
@@ -330,7 +361,6 @@ ul.agileits_social_icons li a,
     padding: 8.5px 0;
     width: 5%;
     border: 1px solid;
-    position: relative;
     background: url(../images/img-sp.png) no-repeat 14px 5px #FA1818;
 }
 .w3l_search input[type="submit"]:hover{
@@ -340,63 +370,177 @@ ul.agileits_social_icons li a,
 @media(max-width:1024px){
     .w3l_search{
         margin-top: 40px;
-        margin-left: -4px;
     }
     .w3l_search input[type="text"]{
-        width: 93%;
+        width: 94%;
     }
     .w3l_search input[type="submit"]{
-        padding: 8.5px 0;
         width: 6%;
+    }
+    .col-md-6.total-data{
+        font-size: 8px;
+    }
+    .list-group.autocomplete{
+        width: 91%;
+    }
+    .list-group-item.autocomplete{
+        width: 91%;
     }
 }
 @media(max-width:834px){
-    .w3l_search{
-        margin-top: 40px;
-        margin-left: 50px;
-    }
     .w3l_search input[type="text"]{
-        width: 86%;
+        width: 86.5%;
     }
     .w3l_search input[type="submit"]{
-        padding: 8.5px 0;
-        width: 8%;
+        width: 7%;
+    }
+    .col-md-6.select select{
+        top: -73px;
+        right: 50px;
+        width: 220px;
+    }
+    .col-md-6.total-data{
+        font-size: 6px;
+        margin-left: 28px;
+    }
+    .list-group.autocomplete{
+        margin-left: 26px;
+        width: 83% !important;
+    }
+    .list-group-item.autocomplete{
+        margin-left: 26px;
+        width: 83% !important;
+    }
+}
+@media(max-width:600px){
+    .w3l_search{
+        margin-top: 90px;
+    }
+    .w3l_search input[type="text"]{
+        width: 85.5%;
+        margin-left: 5px !important;
+    }
+    .w3l_search input[type="submit"]{
+        width: 10%;
+    }
+    .col-md-6.select select{
+        top: -10px;
+        right: 33px;
+        width: 91%;
+    }
+    .col-md-6.total-data{
+        margin-left: 29%;
+        margin-top: 4%;
+    }
+    .col-md-6.total-data h4{
+        font-size: 17px !important;
+        margin-left: -4%;
+        margin-bottom: 10px;
+    }
+    .list-group.autocomplete{
+        margin-left: 16px;
+        width: 81% !important;
+    }
+    .list-group-item.autocomplete{
+        margin-left: 16px;
+        width: 81% !important;
     }
 }
 @media(max-width:414px){
     .w3l_search{
-        margin-left: 20px;
+        margin-top: 90px;
     }
     .w3l_search input[type="text"]{
-        width: 78%;
+        width: 52%;
     }
     .w3l_search input[type="submit"]{
-        padding: 8.5px 0;
-        width: 16%;
+        width: 14%;
+    }
+    .col-md-6.select select{
+        right: 86px !important;
+        width: 61.5%;
+    }
+    .col-md-6.total-data{
+        width: 100%;
+        margin-top: 8%;
+    }
+    .col-md-6.total-data h4{
+        font-size: 15px !important;
+        margin-bottom: 10px;
+        margin-left: -9% !important;
+    }
+    .list-group.autocomplete{
+        margin-left: 68px !important;
+        width: 48% !important;
+    }
+    .list-group-item.autocomplete{
+        margin-left: 68px !important;
+        width: 48% !important;
     }
 }
 @media(max-width:375px){
     .w3l_search{
-        margin-left: 33px;
+        margin-top: 90px;
     }
     .w3l_search input[type="text"]{
-        width: 72%;
+        width: 58%;
     }
     .w3l_search input[type="submit"]{
-        padding: 8.5px 0;
-        width: 18%;
+        width: 15%;
+    }
+    .col-md-6.select select{
+        right: 70px !important;
+        width: 67%;
+    }
+    .col-md-6.total-data{
+        width: 100%;
+        margin-top: 8%;
+    }
+    .col-md-6.total-data h4{
+        font-size: 15px !important;
+        margin-bottom: 10px;
+        margin-left: -12% !important;
+    }
+    .list-group.autocomplete{
+        margin-left: 50px !important;
+        width: 53% !important;
+    }
+    .list-group-item.autocomplete{
+        margin-left: 50px !important;
+        width: 53% !important;
     }
 }
 @media(max-width:320px){
     .w3l_search{
-        margin-left: 16px;
+        margin-top: 90px;
     }
     .w3l_search input[type="text"]{
-        width: 76%;
+        margin-left: 10px !important;
+        width: 70%;
     }
     .w3l_search input[type="submit"]{
-        padding: 8.5px 0;
-        width: 18%;
+        width: 17%;
+    }
+    .col-md-6.select select{
+        right: 40px !important;
+        width: 78%;
+    }
+    .col-md-6.total-data{
+        width: 100%;
+        margin-top: 8%;
+    }
+    .col-md-6.total-data h4{
+        font-size: 15px !important;
+        margin-bottom: 10px;
+        margin-left: -17% !important;
+    }
+    .list-group.autocomplete{
+        margin-left: 25px !important;
+        width: 63% !important;
+    }
+    .list-group-item.autocomplete{
+        margin-left: 50px !important;
+        width: 53% !important;
     }
 }
 

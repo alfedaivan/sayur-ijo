@@ -42,8 +42,9 @@ class FrontController extends Controller
                   ->where('category_id', 'LIKE', '%' . $request->kategori . '%');
             })
         ->paginate(12);
+        $productCount = Product::count();
 
-        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category'));
+        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category', 'productCount'));
     }
     //searchproduct
     public function Search(Request $request){
@@ -52,14 +53,14 @@ class FrontController extends Controller
                 ->get();
             $output = '';
             if (count($data)>0) {
-                $output .= '<ul class="list-group" style="display: block; position: absolute; z-index: 100 !important; width: 80.5%; cursor: pointer;">';
+                $output .= '<ul class="list-group autocomplete">';
                 foreach ($data as $row){
                     $output .= '<li class="list-group-item">'.$row->product_name.'</li>';
                 }
                 $output .= '</ul>';
             }
             else {
-                $output .= '<li class="list-group-item" style="width:94% !important;">'.'No results'.'</li>';
+                $output .= '<li class="list-group-item autocomplete">'.'No results'.'</li>';
                 $output .= '</ul>';
             }
             return $output;
