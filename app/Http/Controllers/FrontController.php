@@ -187,13 +187,13 @@ class FrontController extends Controller
             'session_id' => $token
         ]);
 
-        $orderProduct = $keranjang;
+        $orderProduct = '';
+        foreach ($keranjang as $data) {
+            $orderProduct .= $data->product_name . ' : ' . $data->quantity;
+        }
         $next = '%0D%0A';
 
-        $order = 'Hi Admin, Saya '.$request->nama.
-                 'ingin membeli :'.$orderProduct.$next.
-                 'dikirim ke: '.$request->alamat.$next.
-                 'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
+        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :'.$next.$orderProduct.$next.'dikirim ke: '.$request->alamat.$next.'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
 
         $cart = Cart::where('session_id', $token);
         $cart->delete();
