@@ -20,7 +20,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <div class="row">
                     <div class="col-md-6 total-data">
-                        <h4>Menampilkan {{ $product->perPage() }} dari {{ $productCount }} produk</h4>
+                        <!-- <h4>Menampilkan {{($product->currentPage()-1)*$product->perPage()}}
+                            dari {{ $product->total() }} produk</h4> -->
+                            <h4>Menampilkan {{($product->currentPage()-1)* $product->perPage()+($product->total() ? 1:0)}}
+                                - {{($product->currentPage()-1)*$product->perPage()+count($product)}}
+                                dari  {{$product->total()}}  Produk</h4>
                     </div>
                     <div class="col-md-6 select">
                         <select class="form-control; col-md-4" required="" name="kategori">
@@ -58,8 +62,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="snipcart-item block">
                                                 <div class="snipcart-thumb">
                                                     <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
-                                                    <p>{{$p -> product_name}}</p>
-                                                    <h4>Rp. {{$p -> price}} / {{$p -> unit}}</h4>
+
+                                                    <h4>{{$p -> product_name}}</h4>
+                                                    <p>Rp. {{$p -> price}} / {{$p -> unit}}</p>
                                                 </div>
                                                 <div class="snipcart-details top_brand_home_details">
                                                     <a href="{{url("/checkout?id=".$p -> id)}}" class="btn-produk">Pesan</a>

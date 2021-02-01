@@ -1,6 +1,6 @@
     <div class="agileits_header">
 		<div class="w3l_offers">
-			<a href="{{url('/')}}#offers">Produk Terpopuler !!!</a>
+			<a href="{{url('/')}}#offers">Produk Terbaru !!!</a>
 		</div>
         @if($keranjang->count()==0)
         <div class="product_list_header">

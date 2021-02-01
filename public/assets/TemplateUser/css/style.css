@@ -321,7 +321,6 @@ ul.agileits_social_icons li a,
 }
 .col-md-6.total-data{
     margin-top: 50px;
-    /* height: 30px; */
     width: 48%;
     font-size: 10px;
     color: #9c9c9c;
@@ -378,7 +377,10 @@ ul.agileits_social_icons li a,
         width: 6%;
     }
     .col-md-6.total-data{
-        font-size: 8px;
+        margin-top: 54px !important;
+    }
+    .col-md-6.total-data h4{
+        font-size: 16px;
     }
     .list-group.autocomplete{
         width: 91%;
@@ -429,8 +431,9 @@ ul.agileits_social_icons li a,
         width: 91%;
     }
     .col-md-6.total-data{
-        margin-left: 29%;
+        margin-left: 28%;
         margin-top: 4%;
+        width: 100%;
     }
     .col-md-6.total-data h4{
         font-size: 17px !important;
@@ -463,6 +466,7 @@ ul.agileits_social_icons li a,
     .col-md-6.total-data{
         width: 100%;
         margin-top: 8%;
+        margin-left: 26%;
     }
     .col-md-6.total-data h4{
         font-size: 15px !important;
@@ -530,9 +534,9 @@ ul.agileits_social_icons li a,
         margin-top: 8%;
     }
     .col-md-6.total-data h4{
-        font-size: 15px !important;
+        font-size: 14px !important;
         margin-bottom: 10px;
-        margin-left: -17% !important;
+        margin-left: -16% !important;
     }
     .list-group.autocomplete{
         margin-left: 25px !important;
@@ -852,12 +856,13 @@ h3.title:after, .w3_login h3:after, .checkout-page h3:after{
 } */
 .agile_top_brand_left_grid1 p{
 	color:#212121;
-	margin:1.5em 0 1em;
+
 	line-height:1.5em;
 	text-transform:capitalize;
 	font-size:14px;
 }
 .agile_top_brand_left_grid1 h4{
+    margin:1.5em 0 1em;
 	font-weight:600;
 	font-size:1em;
 	color:#212121;

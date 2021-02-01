@@ -38,8 +38,7 @@ class FrontController extends Controller
         $product = Product::orderBy('product_name', 'asc')
         ->join('categories', 'products.category_id', '=', 'categories.id')
         ->where(function($query) use ($request){
-            $query->where('product_name', 'LIKE', '%' . $request->search . '%')
-                  ->where('category_id', 'LIKE', '%' . $request->kategori . '%');
+                $query->where('product_name', 'LIKE', '%' . $request->search . '%');
             })
         ->paginate(12);
         $productCount = Product::count();
@@ -193,7 +192,11 @@ class FrontController extends Controller
         }
         $next = '%0D%0A';
 
-        $order = 'Hi Admin, Saya '.$request->nama.' ingin membeli :'.$next.$orderProduct.$next.'dikirim ke: '.$request->alamat.$next.'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
+        $order = 'Hi Admin, Saya '.$request->nama.
+                 ' ingin membeli :'.$next.$orderProduct.$next.
+                 'dikirim ke: '.$request->alamat.$next.
+                 'dengan catatan: '.$request->catatan.$next.
+                 'total yang harus dibayar: '.$sum;
 
         $cart = Cart::where('session_id', $token);
         $cart->delete();
