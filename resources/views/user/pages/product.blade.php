@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 dari  {{$product->total()}}  Produk</h4>
                     </div>
                     <div class="col-md-6 select">
-                        <form action="#">
+                        <form action="/productcategory">
                             <select class="form-control; col-md-4" required="" name="kategori">
                                 <option value=" ">Kategori</option>
                                 @foreach($category as $k)
@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <form action="/product" method="GET">
                                 <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="off">
                                 <input type="submit" value=" ">
-                                <div id="product_list"></div>
+                                <div align="left" id="product_list"></div>
                             </form>
                         </div>
                     </div>

@@ -44,6 +44,26 @@ class FrontController extends Controller
 
         return view('user/pages/product', compact('product', 'site', 'keranjang', 'category', 'productCount'));
     }
+
+    public function ProductByCategory(Request $request){
+        $site = Site::all();
+        $category = Category::all();
+        $token = $request->session()->token();
+        $token = csrf_token();
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
+        ->where(['session_id' => $token])
+        ->get();
+        $product = Product::orderBy('product_name', 'asc')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->where(function($query) use ($request){
+                $query->where('category_id', 'LIKE', '%' . $request->kategori . '%');
+            })
+        ->paginate(12);
+        $productCount = Product::count();
+
+        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category', 'productCount'));
+    }
+
     //searchproduct
     public function Search(Request $request){
         if($request->ajax()) {
