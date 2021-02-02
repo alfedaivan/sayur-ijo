@@ -1,6 +1,7 @@
 <head>
-    <title>Toko Sayur</title>
+    <title>Kebon Ijo</title>
     <!-- for-mobile-apps -->
+    <link rel="icon" type="image/png" sizes="144x144" href="{{url('/assets/favicon.ico')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -24,6 +25,12 @@
     <script type="text/javascript" src="{{url('/assets/TemplateUser/js/easing.js')}}"></script>
 
     <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script>
-
-<!-- start-smoth-scrolling -->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
 </head>

@@ -37,12 +37,12 @@ class FrontController extends Controller
         ->get();
         $product = Product::orderBy('product_name', 'asc')
         ->where(function($query) use ($request){
-            $query->where('product_name', 'LIKE', '%' . $request->search . '%')
-                  ->where('category_id', 'LIKE', '%' . $request->kategori . '%');
+                $query->where('product_name', 'LIKE', '%' . $request->search . '%');
             })
         ->paginate(12);
+        $productCount = Product::count();
 
-        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category'));
+        return view('user/pages/product', compact('product', 'site', 'keranjang', 'category', 'productCount'));
     }
     //searchproduct
     public function Search(Request $request){
@@ -51,14 +51,14 @@ class FrontController extends Controller
                 ->get();
             $output = '';
             if (count($data)>0) {
-                $output .= '<ul class="list-group" style="display: block; position: absolute; z-index: 100 !important; width: 80.5%; cursor: pointer;">';
+                $output .= '<ul class="list-group autocomplete">';
                 foreach ($data as $row){
                     $output .= '<li class="list-group-item">'.$row->product_name.'</li>';
                 }
                 $output .= '</ul>';
             }
             else {
-                $output .= '<li class="list-group-item" style="width:94% !important;">'.'No results'.'</li>';
+                $output .= '<li class="list-group-item autocomplete">'.'No results'.'</li>';
                 $output .= '</ul>';
             }
             return $output;
@@ -185,13 +185,17 @@ class FrontController extends Controller
             'session_id' => $token
         ]);
 
-        $orderProduct = $keranjang;
+        $orderProduct = '';
+        foreach ($keranjang as $data) {
+            $orderProduct .= $data->product_name . ' : ' . $data->quantity;
+        }
         $next = '%0D%0A';
 
         $order = 'Hi Admin, Saya '.$request->nama.
-                 'ingin membeli :'.$orderProduct.$next.
+                 ' ingin membeli :'.$next.$orderProduct.$next.
                  'dikirim ke: '.$request->alamat.$next.
-                 'dengan catatan: '.$request->catatan.$next.'total yang harus dibayar: '.$sum;
+                 'dengan catatan: '.$request->catatan.$next.
+                 'total yang harus dibayar: '.$sum;
 
         $cart = Cart::where('session_id', $token);
         $cart->delete();

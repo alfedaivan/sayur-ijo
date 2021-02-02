@@ -1,3 +1,7 @@
+<!-- scrool on top -->
+<a onclick="topFunction()" id="toTop" title="Go to top">
+</a>
+
 <div class="footer" id="footer">
 	<div class="container">
     @foreach($site as $s)
@@ -40,4 +44,24 @@
 
 <script src="{{url('/assets/TemplateUser/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{url('/assets/TemplateUser/js/index.js')}}"> </script>
+<script type="text/javascript">
+    var mybutton = document.getElementById("toTop");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction(){
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 

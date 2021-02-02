@@ -19,20 +19,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h3>Produk Kami</h3>
 
                 <div class="row">
-                    <div class="w3l_search">
-                        <form action="/product" method="GET" autocomplete="off">
-                            <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="false">
+                    <div class="col-md-6 total-data">
+                        <!-- <h4>Menampilkan {{($product->currentPage()-1)*$product->perPage()}}
+                            dari {{ $product->total() }} produk</h4> -->
+                            <h4>Menampilkan {{($product->currentPage()-1)* $product->perPage()+($product->total() ? 1:0)}}-{{($product->currentPage()-1)*$product->perPage()+count($product)}}
+                                dari  {{$product->total()}}  Produk</h4>
+                    </div>
+                    <div class="col-md-6 select">
+                        <form action="#">
                             <select class="form-control; col-md-4" required="" name="kategori">
-                        <option value=" ">Semua</option>
-                        @foreach($category as $k)
-                          <option value="{{$k->id}}">{{$k->category}}</option>
-                        @endforeach
-                      </select>
+                                <option value=" ">Kategori</option>
+                                @foreach($category as $k)
+                                <option value="{{$k->id}}">{{$k->category}}</option>
+                                @endforeach
+                            </select>
                             <input type="submit" value=" ">
-                            <div id="product_list"></div>
                         </form>
                     </div>
                 </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="w3l_search">
+                            <form action="/product" method="GET">
+                                <input type="text" name="search" id="search" placeholder="Cari Produk..." autocomplete="off">
+                                <input type="submit" value=" ">
+                                <div id="product_list"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="row">
                     <div class="agile_top_brands_grids" >
@@ -45,8 +64,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="snipcart-item block">
                                                 <div class="snipcart-thumb">
                                                     <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
-                                                    <p>{{$p -> product_name}}</p>
-                                                    <h4>Rp. {{$p -> price}} / {{$p -> unit}}</h4>
+
+                                                    <h4>{{$p -> product_name}}</h4>
+                                                    <p>Rp. {{$p -> price}} / {{$p -> unit}}</p>
                                                 </div>
                                                 <div class="snipcart-details top_brand_home_details">
                                                     <a href="{{url("/checkout?id=".$p -> id)}}" class="btn-produk">Pesan</a>
@@ -58,6 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                         </div>
                         @endforeach
+                        <div class="clearfix"></div>
                     </div>
                 </div>
 
@@ -65,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
 
             {{ $product->links('user.pagination') }}
-        <div class="clearfix"></div>
+
     <!-- //content -->
     </div>
 

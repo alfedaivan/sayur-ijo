@@ -24,8 +24,8 @@
       <div class="d-flex flex-wrap align-items-stretch">
         <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
           <div class="p-4 m-3">
-            <img src="{{url('/assets/TemplateAdmin/assets/img/stisla-fill.svg')}}" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
-            <h4 class="text-dark font-weight-normal">Selamat datang di <span class="font-weight-bold">Toko Sayur</span></h4>
+            <img src="{{url('/assets/TemplateUser/images/Logo.png')}}" alt="logo" width="80" class=" mb-5 mt-2" style="width: 110px;">
+            <h4 class="text-dark font-weight-normal">Selamat datang di <span class="font-weight-bold">Kebon Ijo</span></h4>
             <p class="text-muted">Sebelum memulai silahkan login terlebih dahulu.</p>
             <br>
             <form method="POST" action="{{route('login')}}" class="needs-validation" novalidate="">
