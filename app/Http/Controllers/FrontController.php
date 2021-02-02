@@ -36,7 +36,6 @@ class FrontController extends Controller
         ->where(['session_id' => $token])
         ->get();
         $product = Product::orderBy('product_name', 'asc')
-        ->join('categories', 'products.category_id', '=', 'categories.id')
         ->where(function($query) use ($request){
             $query->where('product_name', 'LIKE', '%' . $request->search . '%')
                   ->where('category_id', 'LIKE', '%' . $request->kategori . '%');
@@ -198,5 +197,20 @@ class FrontController extends Controller
         $cart->delete();
 
         return redirect('https://wa.me/6281259183075?text='.$order);
+    }
+
+    public function CategoryProduct($id, Request $request){
+        $id = $this->get('id');
+        $category=Category::findOrFail($id);
+        $product = Product::orderBy('created_at', 'desc')
+        ->where('category_id', 'LIKE', '%' .$id.'%')
+        ->get();
+        $site = Site::all();
+        $token = $request->session()->token();
+        $token = csrf_token();
+        $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
+        ->where(['session_id' => $token])
+        ->get();
+        return view('user/pages/home',compact('product', 'site', 'keranjang', 'category'));
     }
 }

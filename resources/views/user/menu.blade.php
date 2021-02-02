@@ -16,7 +16,7 @@
                         <ul class="dropdown-menu" id="navigation-dropdown">
                             <li><a href="{{url('/product')}}">Semua Produk</a></li>
                             @foreach($category as $c)
-                            <li><a href="#">{{ $c -> category}}</a></li>
+                            <li><a href="/product/{{$c->id}}">{{ $c -> category}}</a></li>
                             @endforeach
                         </ul>
 
