@@ -22,17 +22,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="col-md-6 total-data">
                         <!-- <h4>Menampilkan {{($product->currentPage()-1)*$product->perPage()}}
                             dari {{ $product->total() }} produk</h4> -->
-                            <h4>Menampilkan {{($product->currentPage()-1)* $product->perPage()+($product->total() ? 1:0)}}
-                                - {{($product->currentPage()-1)*$product->perPage()+count($product)}}
+                            <h4>Menampilkan {{($product->currentPage()-1)* $product->perPage()+($product->total() ? 1:0)}}-{{($product->currentPage()-1)*$product->perPage()+count($product)}}
                                 dari  {{$product->total()}}  Produk</h4>
                     </div>
                     <div class="col-md-6 select">
-                        <select class="form-control; col-md-4" required="" name="kategori">
-                            <option value=" ">Kategori</option>
-                            @foreach($category as $k)
-                            <option value="{{$k->id}}">{{$k->category}}</option>
-                            @endforeach
-                        </select>
+                        <form action="#">
+                            <select class="form-control; col-md-4" required="" name="kategori">
+                                <option value=" ">Kategori</option>
+                                @foreach($category as $k)
+                                <option value="{{$k->id}}">{{$k->category}}</option>
+                                @endforeach
+                            </select>
+                            <input type="submit" value=" ">
+                        </form>
                     </div>
                 </div>
 
