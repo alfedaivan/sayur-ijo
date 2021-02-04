@@ -58,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         @foreach ($product as $p)
                         <div class="col-md-3 top_brand_left" id="list-product">
                             <div class="hover14 column">
-                                <div class="agile_top_brand_left_grid" id="h3">
+                                <div class="agile_top_brand_left_grid">
                                     <div class="agile_top_brand_left_grid1" >
                                         <figure>
                                             <div class="snipcart-item block">
