@@ -27,8 +27,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="col-md-6 select">
                         <form action="/productcategory">
-                            <select class="form-control; col-md-4" required="" name="kategori">
-                                <option value=" ">Kategori</option>
+                            <select class="form-control; col-md-4" required="" name="kategori" id="kategori">
+                                <option value="0">Kategori</option>
                                 @foreach($category as $k)
                                 <option value="{{$k->id}}">{{$k->category}}</option>
                                 @endforeach
@@ -53,16 +53,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-                <div class="row">
-                    <div class="agile_top_brands_grids" >
+                <div class="row" >
+                    <div class="agile_top_brands_grids" id="product">
                         @foreach ($product as $p)
                         <div class="col-md-3 top_brand_left" id="list-product">
                             <div class="hover14 column">
-                                <div class="agile_top_brand_left_grid">
-                                    <div class="agile_top_brand_left_grid1">
+                                <div class="agile_top_brand_left_grid" id="h3">
+                                    <div class="agile_top_brand_left_grid1" >
                                         <figure>
                                             <div class="snipcart-item block">
-                                                <div class="snipcart-thumb">
+                                                <div class="snipcart-thumb" >
                                                     <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
 
                                                     <h4>{{$p -> product_name}}</h4>
@@ -119,6 +119,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 var value = $(this).text();
                 $('#search').val();
                 $('#product_list').html("");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#kategori').on('change', function(e){
+                var id = e.target.value;
+                $.get('{{ url('productc')}}/'+id, function(data){
+                    console.log(id);
+                    console.log(data);
+                    $('#product').empty();
+                    $.each(data, function(index, element){
+                        $('#product').append("<div class='col-md-3 top_brand_left' id='list-product'>"+
+                        "<div class='hover14 column'>"+
+                        "<div class='agile_top_brand_left_grid'>"+
+                        "<div class='agile_top_brand_left_grid1' >"+
+                        "<figure>"+"<div class='snipcart-item block'>"+
+                        "<div class='snipcart-thumb' >"+"<a >"+
+                        "<img alt=' ' class='img-responsive' src='/images/"+element.photo+"'/>"+"</a>"+
+                        "<h4>"+element.product_name+"</h4>"+
+                        "<p>"+"Rp." + element.price + "/" + element.unit + "</p>"+
+                        "</div>"+
+                        "<div class='snipcart-details top_brand_home_details'>"+
+                        "<a class='btn-produk' href='/checkout?id="+element.id+"'>"+"Pesan"+"</a>"+
+                        "</div>"+
+                        "</div>"+"</figure>"+"</div>"+"</div>"+"</div>"+"</div>");
+                    });
+                });
             });
         });
     </script>

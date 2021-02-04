@@ -64,6 +64,18 @@ class FrontController extends Controller
         return view('user/pages/product', compact('product', 'site', 'keranjang', 'category', 'productCount'));
     }
 
+    public function ProductBy($id)
+    {
+        if($id==0){
+            $product = Product::all();
+        }else{
+            $product = Product::orderBy('product_name', 'desc')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->where('category_id','=',$id)->get();
+        }
+        return $product;
+    }
+
     //searchproduct
     public function Search(Request $request){
         if($request->ajax()) {
