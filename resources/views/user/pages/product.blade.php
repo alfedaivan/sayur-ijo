@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 dari  {{$product->total()}}  Produk</h4>
                     </div>
                     <div class="col-md-6 select">
-                        <form action="/productcategory">
+                        <form>
                             <select class="form-control; col-md-4" required="" name="kategori" id="kategori">
                                 <option value="0">Kategori</option>
                                 @foreach($category as $k)
@@ -126,7 +126,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $(document).ready(function(){
             $('#kategori').on('change', function(e){
                 var id = e.target.value;
-                $.get('{{ url('productc')}}/'+id, function(data){
+                $.get('{{ url('productcategory')}}/'+id, function(data){
                     console.log(id);
                     console.log(data);
                     $('#product').empty();

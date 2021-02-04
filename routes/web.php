@@ -24,8 +24,7 @@ Route::post('/signout', ['as' => 'auth.signout', 'uses' => 'App\Http\Controllers
 
 Route::get('/', 'App\Http\Controllers\FrontController@Index');
 Route::get('/product', 'App\Http\Controllers\FrontController@Product');
-Route::get('/productc/{id}', 'App\Http\Controllers\FrontController@ProductBy');
-Route::get('/productcategory', 'App\Http\Controllers\FrontController@ProductByCategory');
+Route::get('/productcategory/{id}', 'App\Http\Controllers\FrontController@ProductBy');
 Route::get('/product/{id}', 'App\Http\Controllers\FrontController@CategoryProduct');
 Route::get('/search', 'App\Http\Controllers\FrontController@Search');
 Route::get('/checkout', 'App\Http\Controllers\FrontController@cart');
