@@ -179,6 +179,7 @@ class FrontController extends Controller
         // $id = $request->get('id');
         $token = $request->session()->token();
         $token = csrf_token();
+        $site = Site::all();
         $sum = Cart::where('session_id', $token)->sum('total_price');
         $keranjang = Cart::join('products', 'carts.product_id', '=', 'products.id')
         ->where(['session_id' => $token])
@@ -198,6 +199,10 @@ class FrontController extends Controller
             'session_id' => $token
         ]);
 
+        foreach ($site as $s) {
+            $nomor = $s->nomor_wa;
+        }
+
         $orderProduct = '';
         foreach ($keranjang as $data) {
             $orderProduct .= $data->product_name . ' : ' . $data->quantity;
@@ -213,7 +218,7 @@ class FrontController extends Controller
         $cart = Cart::where('session_id', $token);
         $cart->delete();
 
-        return redirect('https://wa.me/6281259183075?text='.$order);
+        return redirect('https://wa.me/'.$nomor.'?text='.$order);
     }
 
     public function CategoryProduct($id, Request $request){
