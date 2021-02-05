@@ -67,32 +67,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
             <h3>Produk Terbaru</h3>
 
-			<div class="agile_top_brands_grids">
-                @foreach ($product as $p)
-                    <div class="col-md-3 top_brand_left" id="list-product">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                    <div class="snipcart-item block">
-                                        <div class="snipcart-thumb">
-                                                <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
-                                                <p>{{$p -> product_name}}</p>
-                                                <h4>Rp. {{$p -> price}} / {{$p -> unit}}</h4>
+			<div class="row" >
+                    <div class="agile_top_brands_grids" id="product">
+                        @foreach ($product as $p)
+                        <div class="col-md-3 top_brand_left" id="list-product">
+                            <div class="hover14 column">
+                                <div class="agile_top_brand_left_grid">
+                                    <div class="agile_top_brand_left_grid1" >
+                                        <figure>
+                                            <div class="snipcart-item block">
+                                                <div class="snipcart-thumb" >
+                                                    <a ><img src="{{ url('/images/'.$p->photo) }}" alt=" " class="img-responsive" /></a>
+
+                                                    <h4>{{$p -> product_name}}</h4>
+                                                    <p>Rp. {{$p -> price}} / {{$p -> unit}}</p>
+                                                </div>
+                                                <div class="snipcart-details top_brand_home_details">
+                                                    <a href="{{url("/checkout?id=".$p -> id)}}" class="btn-produk">Pesan</a>
+                                                </div>
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <a href="{{url("/checkout?id=".$p -> id)}}" class="btn-produk">Pesan</a>
-                                            </div>
-                                        </div>
-                                    </figure>
+                                        </figure>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        <div class="clearfix"></div>
                     </div>
-                @endforeach
-
-				<div class="clearfix"> </div>
-			</div>
+                </div>
 		</div>
 <!-- //content -->
     </div>

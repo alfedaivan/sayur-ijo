@@ -26,15 +26,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 dari  {{$product->total()}}  Produk</h4>
                     </div>
                     <div class="col-md-6 select">
-                        <form>
-                            <select class="form-control; col-md-4" required="" name="kategori" id="kategori">
-                                <option value="0">Kategori</option>
-                                @foreach($category as $k)
-                                <option value="{{$k->id}}">{{$k->category}}</option>
-                                @endforeach
-                            </select>
-                            <input type="submit" value=" ">
-                        </form>
+                        <select class="form-control; col-md-4" required="" name="kategori" id="kategori">
+                            <option value="0">Kategori</option>
+                            @foreach($category as $k)
+                            <option value="{{$k->id}}">{{$k->category}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -150,5 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
     </script>
+
+    
 </body>
 </html>

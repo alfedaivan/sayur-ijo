@@ -1,10 +1,10 @@
     <div class="main-sidebar">
         <aside id="sidebar-wrapper">
             <div class="sidebar-brand">
-                <a href="{{url('/dashboard')}}">Toko Sayur</a>
+                <a href="{{url('/dashboard')}}">Kebon Ijo</a>
             </div>
             <div class="sidebar-brand sidebar-brand-sm">
-                <a href="{{url('/dashboard')}}">Tk</a>
+                <a href="{{url('/dashboard')}}">KI</a>
             </div>
             <ul class="sidebar-menu">
                 <li class="nav-item active">
